@@ -1,0 +1,9 @@
+[
+  { "name": "Ramadan",         "slug": "ramadan",      "img": "/all-pic/AL-HADAYA/Ramadan_Hamper.jpg" },
+  { "name": "Hajj & Umrah",    "slug": "hajj-umrah",   "img": "/all-pic/AL-HADAYA/Hajj_Umrah_medium.png" },
+  { "name": "Wedding (Nikah)", "slug": "wedding",       "img": "/all-pic/AL-HADAYA/Nikah_Return.png" },
+  { "name": "Birthday Gifts",  "slug": "birthday",      "img": "/all-pic/AL-HADAYA/Birthday_Gift.png" },
+  { "name": "Eid Gifts",       "slug": "eid",           "img": "/all-pic/AL-HADAYA/Tawakkul_Eid_Hamper.png" },
+  { "name": "Corporate Gifts", "slug": "corporate",     "img": "/all-pic/AL-HADAYA/9---Corporate-Gifts.png" },
+  { "name": "Return Gifts",    "slug": "return-gifts",  "img": "/all-pic/AL-HADAYA/6---Return-Favors.png" }
+]

@@ -1,0 +1,84 @@
+{
+  "about": {
+    "tagline": "Home of Meaningful Islamic Gifts & Products",
+    "quote": "From Duniya till Akhirah — Wrapped in Blessings"
+  },
+
+  "columns": [
+    {
+      "heading": "About As-Sunnah",
+      "links": [
+        { "label": "About Us",               "href": "/contact" },
+        { "label": "Our Team",               "href": "/contact" },
+        { "label": "Our Blog",               "href": "/blog" },
+        { "label": "Privacy Policy",         "href": "/contact" },
+        { "label": "Shipping Policy",        "href": "/shipping-policy" },
+        { "label": "Refund & Return Policy", "href": "/return-policy" },
+        { "label": "Terms & Conditions",     "href": "/contact" }
+      ]
+    },
+    {
+      "heading": "Collections",
+      "links": [
+        { "label": "Quran Al-Kareem",     "href": "/collections/quran-gift-sets" },
+        { "label": "Resin Art Products",  "href": "/collections/resin-art" },
+        { "label": "Personalised Gifts",  "href": "/collections/personalized-gifts" },
+        { "label": "Ramadan Gifts",       "href": "/collections/ramadan-gifts" },
+        { "label": "Clothing / Abaya",    "href": "/collections/clothing" },
+        { "label": "Corporate Gifts",     "href": "/corporate-gifting" },
+        { "label": "Hajj & Umrah",        "href": "/collections/hajj-umrah" }
+      ]
+    },
+    {
+      "heading": "Let Us Help",
+      "links": [
+        { "label": "Corporate Gifting", "href": "/corporate-gifting" },
+        { "label": "Bulk Orders",       "href": "/corporate-gifting" },
+        { "label": "FAQ's",             "href": "/faq" },
+        { "label": "Contact Us",        "href": "/contact" },
+        { "label": "Track Your Order",  "href": "/shipping-policy" },
+        { "label": "My Profile",        "href": "/contact" }
+      ]
+    }
+  ],
+
+  "locateUs": [
+    "Islamic Gifting Platform",
+    "Worldwide Delivery",
+    "COD Available"
+  ],
+
+  "contact": {
+    "phone": "+91 98765 43210",
+    "email": "support@assunnah.in",
+    "address": "New Delhi, India"
+  },
+
+  "social": [
+    { "label": "Facebook",  "href": "#", "platform": "facebook" },
+    { "label": "Instagram", "href": "#", "platform": "instagram" },
+    { "label": "YouTube",   "href": "#", "platform": "youtube" },
+    { "label": "Pinterest", "href": "#", "platform": "pinterest" }
+  ],
+
+  "paymentMethods": [
+    { "name": "Razorpay", "src": "/all-pic/AL-HADAYA/rarorpay.png" },
+    { "name": "Paytm",    "src": "/all-pic/AL-HADAYA/paytm.png" },
+    { "name": "VISA",     "src": "/all-pic/AL-HADAYA/visa.png" },
+    { "name": "UPI",      "src": "/all-pic/AL-HADAYA/upi.png" }
+  ],
+
+  "trustBadges": [
+    { "img": "/all-pic/AL-HADAYA/Free_Shipping_all_over_India.png", "title": "Free Shipping", "text": "Delivering free across India with trusted courier partners." },
+    { "img": "/all-pic/AL-HADAYA/Best_Quality.png",                 "title": "Best Quality",  "text": "Premium products crafted with care for our customers." },
+    { "img": "/all-pic/AL-HADAYA/Best_Offers.png",                  "title": "Best Offers",   "text": "Amazing offers and discounts on select products." },
+    { "img": "/all-pic/AL-HADAYA/Secure_Payments.png",              "title": "Secure Payments","text": "100% secure checkout with trusted payment methods." }
+  ],
+
+  "newsletter": {
+    "heading": "Join 10,000+ Happy Customers — Get Exclusive Offers!",
+    "placeholder": "Enter your email address"
+  },
+
+  "copyright": "AS-SUNNAH®"
+}

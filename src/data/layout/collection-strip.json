@@ -1,0 +1,12 @@
+[
+  { "label": "Ramadan 2026",       "slug": "ramadan-2026",          "src": "/all-pic/AL-HADAYA/Ramadan_Hamper.jpg" },
+  { "label": "Quran Gift Sets",    "slug": "quran-set-gift",        "src": "/all-pic/AL-HADAYA/1---Quran-Gift-Set.png" },
+  { "label": "Happy Kids",         "slug": "kids-gifts",            "src": "/all-pic/AL-HADAYA/Kids_Gifts.png" },
+  { "label": "Wedding Collection", "slug": "wedding",               "src": "/all-pic/AL-HADAYA/Nikah_Return.png" },
+  { "label": "Resin Art",          "slug": "resin-art-collection",  "src": "/all-pic/AL-HADAYA/Resin_Art_Products.png" },
+  { "label": "Personalised Gifts", "slug": "personalized-gift",     "src": "/all-pic/AL-HADAYA/Personalized_Gift_medium.png" },
+  { "label": "Hajj & Umrah",       "slug": "hajj-umrah",            "src": "/all-pic/AL-HADAYA/Hajj_Umrah_medium.png" },
+  { "label": "Festivals Gifts",    "slug": "festivals-gifts",       "src": "/all-pic/AL-HADAYA/Festivals_Gifts.png" },
+  { "label": "Clothing",           "slug": "clothing",              "src": "/all-pic/AL-HADAYA/7---Clothing.png" },
+  { "label": "Prayer Essentials",  "slug": "prayer-essentials",     "src": "/all-pic/AL-HADAYA/2---Prayer-Essentials.png" }
+]

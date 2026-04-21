@@ -1,0 +1,46 @@
+{
+  "tabs": [
+    { "id": "ramadan", "label": "Ramadan 2026",    "icon": "🌙" },
+    { "id": "hajj",    "label": "Hajj & Umrah",    "icon": "🕌" },
+    { "id": "quran",   "label": "Quran Gift Sets",  "icon": "📖" },
+    { "id": "eid",     "label": "Eid Gifts",        "icon": "✨" },
+    { "id": "wedding", "label": "Wedding (Nikah)",  "icon": "💍" }
+  ],
+  "products": {
+    "ramadan": [
+      { "name": "Ramadan Essentials Box",    "price": "From ₹1,490", "img": "/all-pic/AL-HADAYA/Ramadan_Hamper.jpg" },
+      { "name": "Quran & Prayer Set",        "price": "From ₹1,190", "img": "/all-pic/AL-HADAYA/1---Quran-Gift-Set.png" },
+      { "name": "Attar Collection – Ramadan","price": "From ₹890",   "img": "/all-pic/AL-HADAYA/Resin_Art_Products.png" },
+      { "name": "Ramadan Kids Pack",         "price": "From ₹750",   "img": "/all-pic/AL-HADAYA/Kids_Gifts.png" },
+      { "name": "Iftar Gifting Hamper",      "price": "From ₹2,100", "img": "/all-pic/AL-HADAYA/Festivals_Gifts.png" }
+    ],
+    "hajj": [
+      { "name": "Hajj & Umrah Travel Set", "price": "From ₹1,790", "img": "/all-pic/AL-HADAYA/Hajj_Umrah_medium.png" },
+      { "name": "Ihram Travel Bundle",     "price": "From ₹1,200", "img": "/all-pic/AL-HADAYA/2---Prayer-Essentials.png" },
+      { "name": "Dua & Zikr Card Set",     "price": "From ₹490",   "img": "/all-pic/AL-HADAYA/Prayer_mats.png" },
+      { "name": "Return Gifts – Hajj",     "price": "From ₹350",   "img": "/all-pic/AL-HADAYA/6---Return-Favors.png" },
+      { "name": "Premium Hajj Hamper",     "price": "From ₹3,200", "img": "/all-pic/AL-HADAYA/Kaaba_Design_Cylinder_Gift_Box_with_Taffeta_Prayer_Rug_Tasbih_Luxury_Islamic_Gift_Set.jpg" }
+    ],
+    "quran": [
+      { "name": "Barkat-e-Jariyah Hamper", "price": "From ₹1,690", "img": "/all-pic/AL-HADAYA/Pastel_Pink_Barkat-e-Jariyah_Resin_Quran_Hamper_Luxury_Islamic_Gift_Set.jpg" },
+      { "name": "Mini Quran Set",          "price": "From ₹890",   "img": "/all-pic/AL-HADAYA/Quran_Set_Gift_medium.png" },
+      { "name": "Velvet Quran Gift Set",   "price": "From ₹1,950", "img": "/all-pic/AL-HADAYA/Personalised_Velvet_Quran_Gift_Set.png" },
+      { "name": "Nikah Quran Hamper",      "price": "From ₹2,250", "img": "/all-pic/AL-HADAYA/Nikah_Return.png" },
+      { "name": "Kids Quran Set",          "price": "From ₹750",   "img": "/all-pic/AL-HADAYA/Kids_Gifts.png" }
+    ],
+    "eid": [
+      { "name": "Eid Gift Box",       "price": "From ₹990",   "img": "/all-pic/AL-HADAYA/Festivals_Gifts.png" },
+      { "name": "Kids Eid Bundle",    "price": "From ₹750",   "img": "/all-pic/AL-HADAYA/Kids_Gifts.png" },
+      { "name": "Eid Corporate Set",  "price": "From ₹3,500", "img": "/all-pic/AL-HADAYA/9---Corporate-Gifts.png" },
+      { "name": "Eid Attar Gift Set", "price": "From ₹1,100", "img": "/all-pic/AL-HADAYA/Resin_Art_Products.png" },
+      { "name": "Eid Hamper Premium", "price": "From ₹2,800", "img": "/all-pic/AL-HADAYA/Personalized_Gift_medium.png" }
+    ],
+    "wedding": [
+      { "name": "Wedding Sunnah Hamper", "price": "From ₹2,250", "img": "/all-pic/AL-HADAYA/Nikah_Return.png" },
+      { "name": "Bridal Quran Set",      "price": "From ₹1,690", "img": "/all-pic/AL-HADAYA/Personalised_Velvet_Quran_Gift_Set.png" },
+      { "name": "Couple Prayer Mats",    "price": "From ₹1,100", "img": "/all-pic/AL-HADAYA/Prayer_mats.png" },
+      { "name": "Nikah Dua Card Box",    "price": "From ₹590",   "img": "/all-pic/AL-HADAYA/1---Quran-Gift-Set.png" },
+      { "name": "Return Favors Set",     "price": "From ₹350",   "img": "/all-pic/AL-HADAYA/6---Return-Favors.png" }
+    ]
+  }
+}

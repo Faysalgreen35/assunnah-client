@@ -1,0 +1,10 @@
+{
+  "rating": 4.9,
+  "total": 262,
+  "reviews": [
+    { "name": "Sk Yasir Uddin",  "initial": "SK", "review": "One word awesome. Price may look expensive but once I received it I realised it's worthy",         "stars": 5, "time": "1 year ago" },
+    { "name": "Madhura Rajmane", "initial": "M",  "review": "I ordered the sunnah green gift box. I received it as shown in image. It was really beautiful.", "stars": 5, "time": "1 year ago" },
+    { "name": "R Sk",            "initial": "R",  "review": "Sallah bhi acha hai aor nice quality. I'm impressed with your service.",                          "stars": 5, "time": "1 year ago" },
+    { "name": "Aisha K",         "initial": "A",  "review": "Absolutely love the packaging and quality. Got it for a wedding gift, everyone was amazed!",       "stars": 5, "time": "8 months ago" }
+  ]
+}

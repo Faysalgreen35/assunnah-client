@@ -1,0 +1,17 @@
+{
+  "hero": {
+    "img": "/all-pic/AL-HADAYA/Festivals_Gifts_medium.png",
+    "label": "Exclusive Gifts",
+    "subtitle": "Worldwide"
+  },
+  "items": [
+    { "label": "Send Gifts to Singapore",        "img": "/all-pic/AL-HADAYA/singapore-city.jpg",                      "flag": "/all-pic/AL-HADAYA/Flag_of_Singapore_round_512x512-removebg-preview.png" },
+    { "label": "Send Gifts to Qatar",            "img": "/all-pic/AL-HADAYA/qatar_image.jpg",                         "flag": "/all-pic/AL-HADAYA/qatar_fkg.png" },
+    { "label": "Send Gifts to Dubai",            "img": "/all-pic/AL-HADAYA/Corporate_Gifts (2).png",                     "flag": null },
+    { "label": "Personalised Velvet Quran Set",  "img": "/all-pic/AL-HADAYA/Personalised_Velvet_Quran_Gift_Set.png",  "flag": null },
+    { "label": "Send Gift to Dubai",             "img": "/all-pic/AL-HADAYA/Send_Gift_to_Dubai.png",                  "flag": null },
+    { "label": "Birthday Gifts",                 "img": "/all-pic/AL-HADAYA/Birthday_Gifts.png",                      "flag": null },
+    { "label": "Happy Kids Collection",          "img": "/all-pic/AL-HADAYA/Kids_Gifts.png",                          "flag": null },
+    { "label": "Anniversary Gifts",              "img": "/all-pic/AL-HADAYA/Anniversary_Gifts.png",                   "flag": null }
+  ]
+}

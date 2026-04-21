@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+:root {
+  /* Surfaces */
+  --color-bg: #ffffff;
+  --color-surface: #faf6ef;
+  --color-surface-raised: #fbf7f0;
+  --color-muted-bg: #f3f3f3;
+  --color-stats-bg: #f5ede0;
+
+  /* Borders */
+  --color-border: #e8dcc8;
+  --color-border-subtle: #e8e8e8;
+
+  /* Text */
+  --color-heading: #1a1a1a;
+  --color-body: #555555;
+  --color-muted: #888888;
+  --color-subtle: #999999;
+
+  /* Brand (unchanged across modes) */
+  --color-primary: #a4722c;
+  --color-primary-dark: #654321;
+  --color-primary-hover: #8b5e24;
+  --color-gold-divider: #c9973a;
+  --color-accent-light: #f4e6cc;
+  --color-card-hover-border: #c4a87a;
+
+  /* Legacy aliases (for gradual migration) */
+  --background: #ffffff;
+  --foreground: #121212;
+  --accent: #a4722c;
+  --accent-light: #f4e6cc;
+  --accent-gold: #dea85f;
+  --brown-dark: #654321;
+  --muted: #616161;
+  --border: #e8e8e8;
+  --section-bg: #f3f3f3;
+  --font-assistant: var(--font-assistant);
+}
+
+/* Dark mode overrides */
+.dark {
+  --color-bg: #1a1714;
+  --color-surface: #221e1a;
+  --color-surface-raised: #2a2521;
+  --color-muted-bg: #252019;
+  --color-stats-bg: #2a2521;
+
+  --color-border: #3a332c;
+  --color-border-subtle: #2f2a25;
+
+  --color-heading: #f5ede0;
+  --color-body: #c9b99a;
+  --color-muted: #8a7a6a;
+  --color-subtle: #6a5e52;
+
+  /* Brand stays the same in dark mode */
+  --color-card-hover-border: #a4722c;
+
+  /* Update legacy aliases */
+  --background: #1a1714;
+  --foreground: #f5ede0;
+  --section-bg: #252019;
+  --border: #3a332c;
+}
+
+@theme inline {
+  /* Surfaces */
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-surface-raised: var(--color-surface-raised);
+  --color-muted-bg: var(--color-muted-bg);
+  --color-stats-bg: var(--color-stats-bg);
+
+  /* Borders */
+  --color-border: var(--color-border);
+  --color-border-subtle: var(--color-border-subtle);
+
+  /* Text */
+  --color-heading: var(--color-heading);
+  --color-body: var(--color-body);
+  --color-muted: var(--color-muted);
+  --color-subtle: var(--color-subtle);
+
+  /* Brand */
+  --color-primary: var(--color-primary);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-gold-divider: var(--color-gold-divider);
+  --color-accent-light: var(--color-accent-light);
+  --color-card-hover-border: var(--color-card-hover-border);
+
+  /* Font */
+  --font-sans: var(--font-assistant);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-assistant), "Assistant", "Segoe UI", Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+body::selection {
+  background: rgba(164, 114, 44, 0.2);
+}
+
+.page-width {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+} 
+
+.card-shape {
+  border: 2px solid var(--color-border);
+  background: var(--color-surface-raised);
+
+  /* REAL curved inward shape (all sides, not just corners) */
+  -webkit-mask: 
+    radial-gradient(14px at 50% 0, transparent 98%, black) top,
+    radial-gradient(14px at 50% 100%, transparent 98%, black) bottom,
+    radial-gradient(14px at 0 50%, transparent 98%, black) left,
+    radial-gradient(14px at 100% 50%, transparent 98%, black) right,
+    linear-gradient(black, black);
+
+  -webkit-mask-size: 100% 50%, 100% 50%, 50% 100%, 50% 100%, 100% 100%;
+  -webkit-mask-position: top, bottom, left, right, center;
+  -webkit-mask-repeat: no-repeat;
+
+  mask: 
+    radial-gradient(14px at 50% 0, transparent 98%, black) top,
+    radial-gradient(14px at 50% 100%, transparent 98%, black) bottom,
+    radial-gradient(14px at 0 50%, transparent 98%, black) left,
+    radial-gradient(14px at 100% 50%, transparent 98%, black) right,
+    linear-gradient(black, black);
+
+  mask-size: 100% 50%, 100% 50%, 50% 100%, 50% 100%, 100% 100%;
+  mask-position: top, bottom, left, right, center;
+  mask-repeat: no-repeat;
+}

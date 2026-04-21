@@ -1,0 +1,7 @@
+[
+  { "label": "UNDER",   "price": "₹499",     "pos": "left-[4%]  top-[32%]" },
+  { "label": "UNDER",   "price": "₹999",     "pos": "left-[13%] bottom-[16%]" },
+  { "label": "UNDER",   "price": "₹1400",    "pos": "left-[2%]  top-[8%]" },
+  { "label": "UNDER",   "price": "₹1999",    "pos": "right-[9%] bottom-[20%]" },
+  { "label": "Premium", "price": "GIFT BOX", "pos": "right-[3%] top-[8%]" }
+]

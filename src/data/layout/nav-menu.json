@@ -1,0 +1,99 @@
+[
+  {
+    "label": "QURAN GIFT SETS",
+    "href": "/categories/quran-gift-sets",
+    "submenu": [
+      { "label": "Barkat-e-Jariyah Hampers",      "href": "/collections/quran-gift-sets" },
+      { "label": "Mini Quran Sets",                "href": "/collections/quran-gift-sets" },
+      { "label": "Sunnah Gift Hampers",            "href": "/collections/quran-gift-sets" },
+      { "label": "Kids Collection",                "href": "/collections/kids-gifts" },
+      { "label": "Nikah (Wedding) Quran Hampers",  "href": "/collections/nikah-collection" },
+      { "label": "View All Quran Gifts",           "href": "/collections/quran-gift-sets" }
+    ]
+  },
+  {
+    "label": "PRAYER ESSENTIALS",
+    "href": "/categories/prayer-essentials",
+    "submenu": [
+      { "label": "Quran Collection",     "href": "/collections/quran-gift-sets" },
+      { "label": "Prayer Mats",          "href": "/collections/prayer-essentials" },
+      { "label": "Attar Fragrances",     "href": "/collections/prayer-essentials" },
+      { "label": "Rehal (Quran Stands)", "href": "/collections/prayer-essentials" },
+      { "label": "Tasbeeh",              "href": "/collections/prayer-essentials" }
+    ]
+  },
+  {
+    "label": "SHOP BY OCCASION",
+    "href": "/categories/occasions",
+    "submenu": [
+      { "label": "Wedding (Nikah)",                "href": "/collections/nikah-collection" },
+      { "label": "Hajj & Umrah Essentials",        "href": "/collections/hajj-umrah" },
+      { "label": "Aqiqah & Baby Cradle Ceremony",  "href": "/categories/aqiqah" },
+      { "label": "Ramadan 2026",                   "href": "/collections/ramadan-gifts" },
+      { "label": "Eid-ul-Fitr 2026",               "href": "/collections/eid-gifts" },
+      { "label": "Eid-al-Adha 2026",               "href": "/collections/eid-gifts" }
+    ]
+  },
+  {
+    "label": "SHOP BY RECIPIENT",
+    "href": "/collections/for-him",
+    "submenu": [
+      { "label": "For Him",              "href": "/collections/for-him" },
+      { "label": "For Husband",          "href": "/collections/for-husband" },
+      { "label": "For Father",           "href": "/collections/for-father" },
+      { "label": "For Son",              "href": "/collections/for-son" },
+      { "label": "For Brother",          "href": "/collections/for-brother" },
+      { "label": "For Her",              "href": "/collections/for-wife" },
+      { "label": "For Wife",             "href": "/collections/for-wife" },
+      { "label": "For Mother",           "href": "/collections/for-mother" },
+      { "label": "For Daughter",         "href": "/collections/for-daughter" },
+      { "label": "For Sister",           "href": "/collections/for-sister" },
+      { "label": "For Grandmother",      "href": "/collections/for-grand-mother" },
+      { "label": "For Mother-in-Law",    "href": "/collections/for-mother-in-law" },
+      { "label": "Gifts for Kids",       "href": "/collections/gifts-for-kids" },
+      { "label": "Hafiz-e-Quran Gifts",  "href": "/collections/hafiz-gifts" },
+      { "label": "Aalim & Aalima Gifts", "href": "/collections/aalim-aalima-gifts" },
+      { "label": "Gifts for Teachers",   "href": "/collections/gifts-for-teachers" },
+      { "label": "Students Gifts",       "href": "/collections/students-gifts" }
+    ]
+  },
+  {
+    "label": "HOME DECOR",
+    "href": "/categories/home-decor",
+    "submenu": []
+  },
+  {
+    "label": "RETURN FAVORS",
+    "href": "/collections/return-favors",
+    "submenu": [
+      { "label": "Hajj & Umrah Favors",            "href": "/collections/return-favors" },
+      { "label": "Baraati Return Favors",           "href": "/collections/return-favors" },
+      { "label": "Roza Kushai Return Favors",       "href": "/collections/return-favors" }
+    ]
+  },
+  {
+    "label": "CLOTHING",
+    "href": "/categories/clothing",
+    "submenu": []
+  },
+  {
+    "label": "ON TREND",
+    "href": "/collections/on-trend",
+    "submenu": []
+  },
+  {
+    "label": "CORPORATE GIFTS",
+    "href": "/corporate-gifting",
+    "submenu": [
+      { "label": "Exclusive Eid Gifts",     "href": "/collections/eid-gifts" },
+      { "label": "Premium Corporate Gifts", "href": "/corporate-gifting" },
+      { "label": "Snack Hampers",           "href": "/corporate-gifting" },
+      { "label": "Stationery Hampers",      "href": "/corporate-gifting" }
+    ]
+  },
+  {
+    "label": "INTERNATIONAL",
+    "href": "/collections/international",
+    "submenu": []
+  }
+]

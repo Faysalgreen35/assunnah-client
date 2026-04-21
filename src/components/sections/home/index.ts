@@ -1,0 +1,17 @@
+export { HeroSlideshow } from "./hero";
+export { WelcomeSection } from "./welcome";
+export { MostLovedGifts } from "./most-loved-gifts";
+export { FaithInspiredBanner } from "./faith-inspired-banner";
+export { TabbedCollections } from "./tabbed-collections";
+export { FeelBeforeYouBuy } from "./feel-before-you-buy";
+export { ShopByOccasion } from "./shop-by-occasion";
+export { ShopByRelations } from "./shop-by-relations";
+export { ShopByPrice } from "./shop-by-price";
+export { SameDayDelivery } from "./same-day-delivery";
+export { SendGiftsAbroad } from "./send-gifts-abroad";
+export { GoogleReviews } from "./google-reviews";
+export { IndustryLeaders } from "./industry-leaders";
+export { StatsAndMap } from "./stats-and-map";
+export { InstagramFeed } from "./instagram-feed";
+export { OurStory } from "./our-story";
+export { LatestNews } from "./latest-news";
