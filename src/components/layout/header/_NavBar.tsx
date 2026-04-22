@@ -47,20 +47,20 @@ export function _NavBar({ navItems, openMenu, onEnter, onLeave }: Props) {
               </Link>
 
               {hasSubmenu && isOpen && (
-                <div className={`absolute left-1/2 transform -translate-x-1/2 top-full z-50 w-screen ${isDark ? "bg-[#1a2655]" : "bg-white"} shadow-2xl border-t ${isDark ? "border-[#2a3a6a]" : "border-[#ebebeb]"}`}>
-                  <div className="mx-auto max-w-full px-8 py-8">
-                    <div className="flex items-start gap-12">
+                <div className={`fixed left-0 right-0 top-full z-50 ${isDark ? "bg-[#1a2655]" : "bg-white"} shadow-2xl border-t ${isDark ? "border-[#2a3a6a]" : "border-[#ebebeb]"}`}>
+                  <div className="px-8 py-8 w-full">
+                    <div className="flex items-start gap-16 justify-between">
                       {/* LEFT SIDE - Menu Items */}
                       <div className="flex-1">
                         {isRecipient ? (
-                          <div className="grid grid-cols-3 gap-12">
+                          <div className="grid grid-cols-3 gap-16">
                             {/* Column 1 */}
                             <div className="space-y-4">
                               {item.submenu.slice(0, 6).map(sub => (
                                 <Link
                                   key={sub.label}
                                   href={sub.href}
-                                  className={`block text-[13px] font-medium ${isDark ? "text-white" : "text-[#333]"} hover:text-[#a4722c] hover:font-bold transition-colors`}
+                                  className={`block text-[14px] font-medium ${isDark ? "text-white" : "text-[#333]"} hover:text-[#a4722c] hover:font-bold transition-colors`}
                                 >
                                   {sub.label}
                                 </Link>
@@ -73,7 +73,7 @@ export function _NavBar({ navItems, openMenu, onEnter, onLeave }: Props) {
                                 <Link
                                   key={sub.label}
                                   href={sub.href}
-                                  className={`block text-[13px] font-medium ${isDark ? "text-white" : "text-[#333]"} hover:text-[#a4722c] hover:font-bold transition-colors`}
+                                  className={`block text-[14px] font-medium ${isDark ? "text-white" : "text-[#333]"} hover:text-[#a4722c] hover:font-bold transition-colors`}
                                 >
                                   {sub.label}
                                 </Link>
@@ -86,7 +86,7 @@ export function _NavBar({ navItems, openMenu, onEnter, onLeave }: Props) {
                                 <Link
                                   key={sub.label}
                                   href={sub.href}
-                                  className={`block text-[13px] font-medium ${isDark ? "text-white" : "text-[#333]"} hover:text-[#a4722c] hover:font-bold transition-colors`}
+                                  className={`block text-[14px] font-medium ${isDark ? "text-white" : "text-[#333]"} hover:text-[#a4722c] hover:font-bold transition-colors`}
                                 >
                                   {sub.label}
                                 </Link>
@@ -94,12 +94,12 @@ export function _NavBar({ navItems, openMenu, onEnter, onLeave }: Props) {
                             </div>
                           </div>
                         ) : (
-                          <div className="space-y-3">
+                          <div className="space-y-4">
                             {item.submenu.map(sub => (
                               <Link
                                 key={sub.label}
                                 href={sub.href}
-                                className={`block text-[13px] font-medium ${isDark ? "text-white" : "text-[#333]"} hover:text-[#a4722c] hover:font-bold transition-colors`}
+                                className={`block text-[14px] font-medium ${isDark ? "text-white" : "text-[#333]"} hover:text-[#a4722c] hover:font-bold transition-colors`}
                               >
                                 {sub.label}
                               </Link>
@@ -118,14 +118,14 @@ export function _NavBar({ navItems, openMenu, onEnter, onLeave }: Props) {
 
                       {/* RIGHT SIDE - Picture */}
                       {item.image && (
-                        <div className="flex-shrink-0">
-                          <div className="w-72 h-80 relative rounded-lg overflow-hidden shadow-lg">
+                        <div className="flex-shrink-0 pr-8">
+                          <div className="w-96 h-96 relative rounded-lg overflow-hidden shadow-lg">
                             <Image
                               src={item.image}
                               alt={item.label}
                               fill
                               className="object-cover hover:scale-105 transition-transform duration-300"
-                              sizes="288px"
+                              sizes="384px"
                               priority
                             />
                           </div>
