@@ -27,6 +27,9 @@ export function _NavBar({ navItems, openMenu, onEnter, onLeave }: Props) {
           const hasSubmenu = item.submenu && item.submenu.length > 0;
           const isOpen = openMenu === item.label;
 
+          // Divide submenu items into equal columns
+          const itemsPerColumn = Math.ceil(item.submenu ? item.submenu.length / 4 : 0);
+
           return (
             <div
               key={item.label}
@@ -48,90 +51,95 @@ export function _NavBar({ navItems, openMenu, onEnter, onLeave }: Props) {
 
               {hasSubmenu && isOpen && (
                 <div className={`absolute left-1/2 -translate-x-1/2 top-full z-50 w-screen ${isDark ? "bg-[#1a2655]" : "bg-white"} shadow-2xl border-t ${isDark ? "border-[#2a3a6a]" : "border-[#ebebeb]"}`}>
-                  <div className="px-8 py-8 w-full">
-                    <div className="flex items-start gap-16 justify-between">
-                      {/* LEFT SIDE - Menu Items */}
-                      <div className="flex-1">
-                        {isRecipient ? (
-                          <div className="grid grid-cols-3 gap-16">
-                            {/* Column 1 */}
-                            <div className="space-y-4">
-                              {item.submenu.slice(0, 6).map(sub => (
-                                <Link
-                                  key={sub.label}
-                                  href={sub.href}
-                                  className={`block text-[14px] font-medium ${isDark ? "text-white" : "text-[#333]"} hover:text-[#a4722c] hover:font-bold transition-colors`}
-                                >
-                                  {sub.label}
-                                </Link>
-                              ))}
-                            </div>
-
-                            {/* Column 2 */}
-                            <div className="space-y-4">
-                              {item.submenu.slice(6, 12).map(sub => (
-                                <Link
-                                  key={sub.label}
-                                  href={sub.href}
-                                  className={`block text-[14px] font-medium ${isDark ? "text-white" : "text-[#333]"} hover:text-[#a4722c] hover:font-bold transition-colors`}
-                                >
-                                  {sub.label}
-                                </Link>
-                              ))}
-                            </div>
-
-                            {/* Column 3 */}
-                            <div className="space-y-4">
-                              {item.submenu.slice(12).map(sub => (
-                                <Link
-                                  key={sub.label}
-                                  href={sub.href}
-                                  className={`block text-[14px] font-medium ${isDark ? "text-white" : "text-[#333]"} hover:text-[#a4722c] hover:font-bold transition-colors`}
-                                >
-                                  {sub.label}
-                                </Link>
-                              ))}
-                            </div>
-                          </div>
-                        ) : (
-                          <div className="space-y-4">
-                            {item.submenu.map(sub => (
-                              <Link
-                                key={sub.label}
-                                href={sub.href}
-                                className={`block text-[14px] font-medium ${isDark ? "text-white" : "text-[#333]"} hover:text-[#a4722c] hover:font-bold transition-colors`}
-                              >
-                                {sub.label}
-                              </Link>
-                            ))}
-                          </div>
-                        )}
-
-                        {/* View All link */}
-                        <Link
-                          href={item.href}
-                          className={`inline-block mt-6 text-[12px] font-bold text-[#a4722c] hover:underline`}
-                        >
-                          View All {item.label} →
-                        </Link>
+                  <div className="mx-auto max-w-[1400px] px-8 py-8 flex gap-8 items-start">
+                    {/* MULTIPLE COLUMNS OF ITEMS */}
+                    <div className="flex-1 grid grid-cols-4 gap-8">
+                      {/* Column 1 */}
+                      <div className="space-y-3">
+                        {item.submenu.slice(0, itemsPerColumn).map(sub => (
+                          <Link
+                            key={sub.label}
+                            href={sub.href}
+                            className={`block text-[13px] font-medium ${isDark ? "text-white" : "text-[#333]"} hover:text-[#a4722c] hover:font-bold transition-colors`}
+                          >
+                            {sub.label}
+                          </Link>
+                        ))}
                       </div>
 
-                      {/* RIGHT SIDE - Picture */}
-                      {item.image && (
-                        <div className="flex-shrink-0 pr-8">
-                          <div className="w-96 h-96 relative rounded-lg overflow-hidden shadow-lg">
+                      {/* Column 2 */}
+                      {item.submenu.length > itemsPerColumn && (
+                        <div className="space-y-3">
+                          {item.submenu.slice(itemsPerColumn, itemsPerColumn * 2).map(sub => (
+                            <Link
+                              key={sub.label}
+                              href={sub.href}
+                              className={`block text-[13px] font-medium ${isDark ? "text-white" : "text-[#333]"} hover:text-[#a4722c] hover:font-bold transition-colors`}
+                            >
+                              {sub.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Column 3 */}
+                      {item.submenu.length > itemsPerColumn * 2 && (
+                        <div className="space-y-3">
+                          {item.submenu.slice(itemsPerColumn * 2, itemsPerColumn * 3).map(sub => (
+                            <Link
+                              key={sub.label}
+                              href={sub.href}
+                              className={`block text-[13px] font-medium ${isDark ? "text-white" : "text-[#333]"} hover:text-[#a4722c] hover:font-bold transition-colors`}
+                            >
+                              {sub.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Column 4 */}
+                      {item.submenu.length > itemsPerColumn * 3 && (
+                        <div className="space-y-3">
+                          {item.submenu.slice(itemsPerColumn * 3).map(sub => (
+                            <Link
+                              key={sub.label}
+                              href={sub.href}
+                              className={`block text-[13px] font-medium ${isDark ? "text-white" : "text-[#333]"} hover:text-[#a4722c] hover:font-bold transition-colors`}
+                            >
+                              {sub.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* IMAGE ON RIGHT */}
+                    {item.image && (
+                      <div className="flex-shrink-0">
+                        <div className="relative group">
+                          <div className="w-72 h-80 relative rounded-lg overflow-hidden shadow-lg">
                             <Image
                               src={item.image}
                               alt={item.label}
                               fill
-                              className="object-cover hover:scale-105 transition-transform duration-300"
-                              sizes="384px"
+                              className="object-cover group-hover:scale-105 transition-transform duration-300"
+                              sizes="288px"
                               priority
                             />
                           </div>
+                          {/* Image Label */}
+                          <p className={`text-center mt-3 text-[13px] font-semibold ${isDark ? "text-white" : "text-[#333]"}`}>
+                            {item.label}
+                          </p>
+                          {/* Wishlist Heart */}
+                          <button className={`absolute bottom-3 right-3 p-2 rounded-full ${isDark ? "bg-white/20 hover:bg-white/30" : "bg-black/20 hover:bg-black/30"} transition-colors`}>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+                              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                          </button>
                         </div>
-                      )}
-                    </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               )}
