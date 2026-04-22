@@ -47,7 +47,7 @@ export function _NavBar({ navItems, openMenu, onEnter, onLeave }: Props) {
               </Link>
 
               {hasSubmenu && isOpen && (
-                <div className={`fixed left-0 right-0 top-full z-50 ${isDark ? "bg-[#1a2655]" : "bg-white"} shadow-2xl border-t ${isDark ? "border-[#2a3a6a]" : "border-[#ebebeb]"}`}>
+                <div className={`absolute left-1/2 -translate-x-1/2 top-full z-50 w-screen ${isDark ? "bg-[#1a2655]" : "bg-white"} shadow-2xl border-t ${isDark ? "border-[#2a3a6a]" : "border-[#ebebeb]"}`}>
                   <div className="px-8 py-8 w-full">
                     <div className="flex items-start gap-16 justify-between">
                       {/* LEFT SIDE - Menu Items */}
