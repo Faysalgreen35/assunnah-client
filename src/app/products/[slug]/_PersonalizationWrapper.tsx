@@ -5,7 +5,7 @@ import { PersonalizationOptions } from "@/components/product/PersonalizationOpti
 
 interface PersonalizationWrapperProps {
   isPersonalizable: boolean;
-  onNoteChange: (note: string) => void;
+  onNoteChange?: (note: string) => void;
 }
 
 export function PersonalizationWrapper({
@@ -16,7 +16,7 @@ export function PersonalizationWrapper({
 
   const handleChange = (note: string) => {
     setPersonalizationNote(note);
-    onNoteChange(note);
+    onNoteChange?.(note);
   };
 
   return (

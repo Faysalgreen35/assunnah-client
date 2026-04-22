@@ -120,7 +120,6 @@ export default async function ProductPage({ params }: Props) {
             <div className="mb-5 py-4 border-t border-b border-[#e0d5c5]">
               <PersonalizationWrapper
                 isPersonalizable={displayProduct.features.some((f: string) => f.toLowerCase().includes("personalisation") || f.toLowerCase().includes("personalization"))}
-                onNoteChange={() => {}}
               />
             </div>
 
