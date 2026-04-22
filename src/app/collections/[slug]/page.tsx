@@ -7,7 +7,7 @@ import { Footer } from "@/components/layout/footer";
 import { ProductCard } from "./_ProductCard";
 import { FilterSidebar } from "@/components/product/FilterSidebar";
 import { useParams } from "next/navigation";
-import productsData from "@/data/products.json";
+import productsData from "@/data/all-products.json";
 
 function slugToLabel(slug: string): string {
   const specialLabels: Record<string, string> = {

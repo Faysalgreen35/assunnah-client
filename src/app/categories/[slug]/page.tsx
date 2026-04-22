@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import productsData from "@/data/products.json";
+import productsData from "@/data/all-products.json";
 
 // Keep this mapping for category slug to collection slug
 const categoryToCollectionMap: Record<string, string> = {
