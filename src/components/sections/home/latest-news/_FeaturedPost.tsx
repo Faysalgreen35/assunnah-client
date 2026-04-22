@@ -18,7 +18,7 @@ export function _FeaturedPost({ post }: Props) {
     <Link
       href={`/blog/${post.slug}`}
       className="group relative overflow-hidden rounded-2xl"
-      style={{ minHeight: 400, border: "1.5px solid var(--color-border)" }}
+      style={{ height: 400, maxHeight: 500, border: "1.5px solid var(--color-border)" }}
     >
       <Image src={post.img} alt={post.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="50vw" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent" />

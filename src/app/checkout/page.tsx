@@ -21,7 +21,7 @@ const checkoutSchema = z.object({
   pinCode: z.string().regex(/^\d{6}$/, "PIN code must be 6 digits"),
   shippingMethod: z.string().optional(),
   paymentMethod: z.enum(["razorpay", "cod"], { message: "Select a payment method" }),
-  billingAddress: z.enum(["same", "different"]).default("same"),
+  billingAddress: z.enum(["same", "different"]),
   newsOptIn: z.boolean().optional(),
 });
 
@@ -289,7 +289,7 @@ export default function CheckoutPage() {
                       <p className="text-sm font-medium text-heading line-clamp-2">{item.name}</p>
                       <p className="text-xs text-body">Qty: {item.quantity}</p>
                     </div>
-                    <p className="text-sm font-semibold text-heading">₹{(parseFloat(item.price.replace(/[^\d.-]/g, "")) * item.quantity).toFixed(2)}</p>
+                    <p className="text-sm font-semibold text-heading">₹{(((typeof item.price === "string" ? parseFloat((item.price as string).replace(/[^\d.-]/g, "")) : parseFloat(String(item.price)))) * item.quantity).toFixed(2)}</p>
                   </div>
                 ))}
               </div>

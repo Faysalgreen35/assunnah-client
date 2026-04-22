@@ -5,6 +5,8 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { _Gallery } from "./_Gallery";
 import { _Purchase } from "./_Purchase";
+import { VideoPreview } from "@/components/product/VideoPreview";
+import { PersonalizationWrapper } from "./_PersonalizationWrapper";
 
 const allProducts = [
   { slug: "quran-gift-set-1",       name: "Barkat-e-Jariyah Quran Hamper",         category: "Quran Gift Sets",   price: "From ₹1,690", img: "/all-pic/AL-HADAYA/Pastel_Pink_Barkat-e-Jariyah_Resin_Quran_Hamper_Luxury_Islamic_Gift_Set.jpg", rating: 5,
@@ -187,6 +189,13 @@ export default async function ProductPage({ params }: Props) {
       </div>
 
       <div className="mx-auto max-w-[1280px] px-5 py-6">
+        {/* Video Preview Section */}
+        <VideoPreview
+          videoUrl={undefined}
+          productName={product.name}
+          thumbnail={undefined}
+        />
+
         {/* Main product layout */}
         <div className="flex flex-col gap-6 lg:flex-row lg:gap-8">
           {/* Gallery */}
@@ -233,6 +242,14 @@ export default async function ProductPage({ params }: Props) {
                 </li>
               ))}
             </ul>
+
+            {/* Personalization Options */}
+            <div className="mb-5 py-4 border-t border-b border-[#e0d5c5]">
+              <PersonalizationWrapper
+                isPersonalizable={product.features.some(f => f.toLowerCase().includes("personalisation") || f.toLowerCase().includes("personalization"))}
+                onNoteChange={() => {}}
+              />
+            </div>
 
             {/* Purchase controls (client) */}
             <_Purchase price={product.price} name={product.name} slug={product.slug} image={product.img} />

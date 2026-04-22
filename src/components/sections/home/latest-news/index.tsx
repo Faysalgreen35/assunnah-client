@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { GoldDivider } from "@/components/common/GoldDivider";
-import { SwiperRow } from "@/components/common/SwiperRow";
 import { _FeaturedPost } from "./_FeaturedPost";
 import { _PostCard } from "./_PostCard";
 import blogPosts from "@/data/blog-posts.json";
@@ -25,22 +24,14 @@ export function LatestNews() {
           {/* Featured Post */}
           {featured && <_FeaturedPost post={featured} />}
 
-          {/* Carousel Section */}
-          <div className="flex flex-col">
-            <SwiperRow
-              gridClassName="grid-cols-1"
-              mobileSlides={1.2}
-              tabletSlides={1.2}
-              spaceBetween={16}
-              showPagination={false}
-            >
-              {otherPosts.map((post) => (
-                <_PostCard key={post.slug} post={post} variant="card" />
-              ))}
-            </SwiperRow>
+          {/* Vertical Post Cards Section */}
+          <div className="flex flex-col gap-4">
+            {otherPosts.slice(0, 3).map((post) => (
+              <_PostCard key={post.slug} post={post} variant="horizontal" />
+            ))}
 
             {/* Read All Link */}
-            <Link href="/blog" className="inline-flex items-center gap-2 text-sm font-semibold text-[#a4722c] hover:underline mt-4">
+            <Link href="/blog" className="inline-flex items-center gap-2 text-sm font-semibold text-[#a4722c] hover:underline mt-2">
               Read All Articles →
             </Link>
           </div>

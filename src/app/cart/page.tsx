@@ -4,7 +4,6 @@ import { useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useCart } from "@/hooks/useCart";
-import { pageConfig } from "@/lib/site-data";
 
 export default function CartPage() {
   const { items, totalAmount, itemCount, removeItem, updateQty } = useCart();
