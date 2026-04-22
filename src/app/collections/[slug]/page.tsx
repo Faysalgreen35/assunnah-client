@@ -10,6 +10,16 @@ import { useParams } from "next/navigation";
 import productsData from "@/data/products.json";
 
 function slugToLabel(slug: string): string {
+  const specialLabels: Record<string, string> = {
+    "shop-by-occasion": "Shop by Occasion",
+    "shop-by-recipient": "Shop by Recipient",
+    "shop-by-relations": "Shop by Recipient",
+  };
+
+  if (specialLabels[slug]) {
+    return specialLabels[slug];
+  }
+
   return slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
 }
 
@@ -29,15 +39,31 @@ export default function CollectionSlugPage() {
   // Filter products by collection and selected filters
   const displayProducts = useMemo(() => {
     let filtered = productsData.filter((product: any) => {
-      const collectionMatch = product.category.toLowerCase().replace(/\s+/g, "-") === slug;
-      const occasionMatch =
-        selectedOccasions.length === 0 ||
-        selectedOccasions.some((occ) => product.occasions?.includes(occ));
-      const recipientMatch =
-        selectedRecipients.length === 0 ||
-        selectedRecipients.some((rec) => product.recipients?.includes(rec));
+      // Special handling for shop-by-occasion and shop-by-recipient pages
+      if (slug === "shop-by-occasion") {
+        // Show all products filtered by occasions only
+        const occasionMatch =
+          selectedOccasions.length === 0 ||
+          selectedOccasions.some((occ) => product.occasions?.includes(occ));
+        return occasionMatch;
+      } else if (slug === "shop-by-recipient" || slug === "shop-by-relations") {
+        // Show all products filtered by recipients only
+        const recipientMatch =
+          selectedRecipients.length === 0 ||
+          selectedRecipients.some((rec) => product.recipients?.includes(rec));
+        return recipientMatch;
+      } else {
+        // Regular collection filter by category
+        const collectionMatch = product.category.toLowerCase().replace(/\s+/g, "-") === slug;
+        const occasionMatch =
+          selectedOccasions.length === 0 ||
+          selectedOccasions.some((occ) => product.occasions?.includes(occ));
+        const recipientMatch =
+          selectedRecipients.length === 0 ||
+          selectedRecipients.some((rec) => product.recipients?.includes(rec));
 
-      return collectionMatch && occasionMatch && recipientMatch;
+        return collectionMatch && occasionMatch && recipientMatch;
+      }
     });
 
     // Apply sorting

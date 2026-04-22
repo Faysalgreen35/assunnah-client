@@ -8,7 +8,7 @@
     "rating": 5,
     "description": "A beautifully curated Barkat-e-Jariyah Quran Hamper that makes the perfect Islamic gift.",
     "occasions": ["Wedding", "Eid"],
-    "recipients": ["Her", "Family"]
+    "recipients": ["Her"]
   },
   {
     "slug": "velvet-quran-set",
@@ -29,8 +29,8 @@
     "img": "/all-pic/AL-HADAYA/Royal_Blue_Barkat-e-Jariyah_Resin_Quran_Gift_Hamper_Luxury_Islamic_Set_76043a65-8444-4dba-9443-446fcb9397b6.jpg",
     "rating": 5,
     "description": "The Royal Blue Barkat-e-Jariyah Quran Gift Hamper is a stunning luxury Islamic gift set.",
-    "occasions": ["Wedding", "Hajj"],
-    "recipients": ["Him", "Father"]
+    "occasions": ["Wedding", "Hajj & Umrah"],
+    "recipients": ["Him"]
   },
   {
     "slug": "kaaba-gift-set",
@@ -40,8 +40,8 @@
     "img": "/all-pic/AL-HADAYA/Kaaba_Design_Cylinder_Gift_Box_with_Taffeta_Prayer_Rug_Tasbih_Luxury_Islamic_Gift_Set.jpg",
     "rating": 5,
     "description": "A premium Kaaba-design cylinder gift box containing a taffeta prayer rug and tasbih.",
-    "occasions": ["Hajj", "Umrah"],
-    "recipients": ["Him", "Family"]
+    "occasions": ["Hajj & Umrah", "Aqiqah"],
+    "recipients": ["Him", "Parents"]
   },
   {
     "slug": "prayer-mat-set",
@@ -62,7 +62,7 @@
     "img": "/all-pic/AL-HADAYA/1---Quran-Gift-Set.png",
     "rating": 5,
     "description": "A classic Quran Al-Kareem gift set — the perfect Islamic gift for any occasion.",
-    "occasions": ["Wedding", "Eid"],
+    "occasions": ["Wedding", "Eid", "Ramadan"],
     "recipients": ["Her", "Him"]
   },
   {
@@ -74,7 +74,7 @@
     "rating": 5,
     "description": "A beautifully curated Nikah wedding return hamper for distributing at Islamic wedding ceremonies.",
     "occasions": ["Wedding"],
-    "recipients": ["Family"]
+    "recipients": ["Couples"]
   },
   {
     "slug": "resin-art-products",
@@ -84,8 +84,8 @@
     "img": "/all-pic/AL-HADAYA/Resin_Art_Products.png",
     "rating": 4,
     "description": "Handcrafted resin art Islamic gift set featuring stunning calligraphy.",
-    "occasions": ["Wedding", "Eid"],
-    "recipients": ["Her", "Family"]
+    "occasions": ["Wedding", "Eid", "Festival"],
+    "recipients": ["Her"]
   },
   {
     "slug": "ramadan-hamper",
@@ -96,7 +96,7 @@
     "rating": 5,
     "description": "Everything you need for a blessed Ramadan in one beautiful hamper.",
     "occasions": ["Ramadan"],
-    "recipients": ["Family", "Her"]
+    "recipients": ["Him", "Her"]
   },
   {
     "slug": "hajj-umrah-set",
@@ -106,8 +106,8 @@
     "img": "/all-pic/AL-HADAYA/Hajj_Umrah_medium.png",
     "rating": 5,
     "description": "A comprehensive Hajj & Umrah travel set with all spiritual essentials.",
-    "occasions": ["Hajj", "Umrah"],
-    "recipients": ["Him", "Family"]
+    "occasions": ["Hajj & Umrah"],
+    "recipients": ["Him", "Her"]
   },
   {
     "slug": "kids-gift-set",
@@ -128,7 +128,7 @@
     "img": "/all-pic/AL-HADAYA/9---Corporate-Gifts.png",
     "rating": 4,
     "description": "Elegant premium corporate gift set for Eid and Ramadan business gifting.",
-    "occasions": ["Ramadan", "Eid"],
+    "occasions": ["Corporate", "Ramadan", "Eid"],
     "recipients": ["Corporate"]
   },
   {
@@ -139,8 +139,8 @@
     "img": "/all-pic/AL-HADAYA/5---Home-Decor.png",
     "rating": 4,
     "description": "Transform any home with this beautiful Islamic home decor gift set.",
-    "occasions": ["Housewarming"],
-    "recipients": ["Family"]
+    "occasions": ["Festival"],
+    "recipients": ["Him", "Her"]
   },
   {
     "slug": "eid-hamper",
@@ -151,6 +151,6 @@
     "rating": 5,
     "description": "The Tawakkul Eid Hamper is a premium Eid gift set filled with blessings and joy.",
     "occasions": ["Eid"],
-    "recipients": ["Family"]
+    "recipients": ["Him", "Her"]
   }
 ]
