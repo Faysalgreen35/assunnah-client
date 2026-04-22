@@ -176,7 +176,7 @@ export default async function BlogDetailsPage({ params }: BlogDetailsProps) {
 
             {/* Right Sidebar - 1/4 Width */}
             <div className="lg:col-span-1">
-              <div className="sticky top-24 space-y-6">
+              <div className="space-y-6">
                 {/* Recent Articles - Smaller Cards, 3-4 Visible */}
                 <div className="bg-surface rounded-xl border border-border p-5">
                   <h3 className="text-base font-bold text-heading mb-4">Recent Articles</h3>
@@ -261,7 +261,7 @@ export default async function BlogDetailsPage({ params }: BlogDetailsProps) {
             </div>
 
             {/* Related Articles - Bigger Cards, Only 3 */}
-            <div className="grid gap-8 lg:grid-cols-2">
+            <div className="grid gap-8 lg:grid-cols-3">
               {relatedPosts.map((relatedPost) => (
                 <Link
                   key={relatedPost.slug}
