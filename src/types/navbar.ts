@@ -1,11 +1,13 @@
 export interface ISubMenuItem {
   label: string;
   href: string;
+  image?: string;
 }
 
 export interface INavItem {
   label: string;
   href: string;
+  image?: string;
   submenu?: ISubMenuItem[];
 }
 

@@ -2,6 +2,7 @@
   {
     "label": "QURAN GIFT SETS",
     "href": "/categories/quran-gift-sets",
+    "image": "/all-pic/AL-HADAYA/1---Quran-Gift-Set.png",
     "submenu": [
       { "label": "Barkat-e-Jariyah Hampers",      "href": "/collections/quran-gift-sets" },
       { "label": "Mini Quran Sets",                "href": "/collections/quran-gift-sets" },
@@ -14,6 +15,7 @@
   {
     "label": "PRAYER ESSENTIALS",
     "href": "/categories/prayer-essentials",
+    "image": "/all-pic/AL-HADAYA/2---Prayer-Essentials.png",
     "submenu": [
       { "label": "Quran Collection",     "href": "/collections/quran-gift-sets" },
       { "label": "Prayer Mats",          "href": "/collections/prayer-essentials" },
@@ -25,6 +27,7 @@
   {
     "label": "SHOP BY OCCASION",
     "href": "/categories/occasions",
+    "image": "/all-pic/AL-HADAYA/3---Shop-by-Occasion_d2baa224-9fe0-431f-8c90-4ddf1a933c09.png",
     "submenu": [
       { "label": "Wedding (Nikah)",                "href": "/collections/nikah-collection" },
       { "label": "Hajj & Umrah Essentials",        "href": "/collections/hajj-umrah" },
@@ -37,6 +40,7 @@
   {
     "label": "SHOP BY RECIPIENT",
     "href": "/collections/for-him",
+    "image": "/all-pic/AL-HADAYA/4---Shop-by-Recipient.png",
     "submenu": [
       { "label": "For Him",              "href": "/collections/for-him" },
       { "label": "For Husband",          "href": "/collections/for-husband" },
@@ -60,11 +64,13 @@
   {
     "label": "HOME DECOR",
     "href": "/categories/home-decor",
+    "image": "/all-pic/AL-HADAYA/5---Home-Decor.png",
     "submenu": []
   },
   {
     "label": "RETURN FAVORS",
     "href": "/collections/return-favors",
+    "image": "/all-pic/AL-HADAYA/6---Return-Favors.png",
     "submenu": [
       { "label": "Hajj & Umrah Favors",            "href": "/collections/return-favors" },
       { "label": "Baraati Return Favors",           "href": "/collections/return-favors" },
@@ -74,16 +80,19 @@
   {
     "label": "CLOTHING",
     "href": "/categories/clothing",
+    "image": "/all-pic/AL-HADAYA/7---Clothing.png",
     "submenu": []
   },
   {
     "label": "ON TREND",
     "href": "/collections/on-trend",
+    "image": "/all-pic/AL-HADAYA/8---On-Trend.png",
     "submenu": []
   },
   {
     "label": "CORPORATE GIFTS",
     "href": "/corporate-gifting",
+    "image": "/all-pic/AL-HADAYA/9---Corporate-Gifts.png",
     "submenu": [
       { "label": "Exclusive Eid Gifts",     "href": "/collections/eid-gifts" },
       { "label": "Premium Corporate Gifts", "href": "/corporate-gifting" },
@@ -94,6 +103,7 @@
   {
     "label": "INTERNATIONAL",
     "href": "/collections/international",
+    "image": "/all-pic/AL-HADAYA/10---International.png",
     "submenu": []
   }
 ]
