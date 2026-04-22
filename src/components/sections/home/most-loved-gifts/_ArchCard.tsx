@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,7 +8,7 @@ interface Props {
   img: string;
 }
 
-export function _ArchCard({ name, slug, img }: Props) {
+export const _ArchCard = memo(function ArchCard({ name, slug, img }: Props) {
   return (
     <Link href={`/categories/${slug}`} className="group flex flex-col items-center">
       <div
@@ -31,4 +32,4 @@ export function _ArchCard({ name, slug, img }: Props) {
       </p>
     </Link>
   );
-}
+});

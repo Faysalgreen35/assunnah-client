@@ -1,5 +1,6 @@
 "use client";
 
+import { memo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,7 +12,7 @@ interface Product {
   rating: number;
 }
 
-function StarRating({ rating }: { rating: number }) {
+const StarRating = memo(function StarRating({ rating }: { rating: number }) {
   return (
     <div className="flex gap-px">
       {[1,2,3,4,5].map(s => (
@@ -21,9 +22,9 @@ function StarRating({ rating }: { rating: number }) {
       ))}
     </div>
   );
-}
+});
 
-export function ProductCard({ product }: { product: Product }) {
+export const ProductCard = memo(function ProductCard({ product }: { product: Product }) {
   return (
     <div
       className="group relative flex flex-col bg-white overflow-hidden transition-all duration-200 hover:shadow-[0_4px_20px_rgba(0,0,0,0.10)]"
@@ -69,4 +70,4 @@ export function ProductCard({ product }: { product: Product }) {
       </div>
     </div>
   );
-}
+});

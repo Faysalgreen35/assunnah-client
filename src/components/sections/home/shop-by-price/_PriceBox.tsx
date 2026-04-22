@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Link from "next/link";
 
 interface Props {
@@ -6,7 +7,7 @@ interface Props {
   pos: string;
 }
 
-export function _PriceBox({ label, price, pos }: Props) {
+export const _PriceBox = memo(function PriceBox({ label, price, pos }: Props) {
   return (
     <Link
       href="/collections"
@@ -29,4 +30,4 @@ export function _PriceBox({ label, price, pos }: Props) {
       </div>
     </Link>
   );
-}
+});

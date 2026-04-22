@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 interface Review {
   name: string;
   initial: string;
@@ -10,7 +12,7 @@ interface Props {
   review: Review;
 }
 
-export function _ReviewCard({ review }: Props) {
+export const _ReviewCard = memo(function ReviewCard({ review }: Props) {
   return (
     <div className="shrink-0 w-56 rounded-2xl border border-[#e8dcc8] bg-white p-5 shadow-sm">
       <div className="mb-3 flex items-center gap-2.5">
@@ -31,4 +33,4 @@ export function _ReviewCard({ review }: Props) {
       <button className="mt-2 text-[11px] font-semibold text-[#4285f4]">See More</button>
     </div>
   );
-}
+});

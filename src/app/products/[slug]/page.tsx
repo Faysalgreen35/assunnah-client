@@ -235,7 +235,7 @@ export default async function ProductPage({ params }: Props) {
             </ul>
 
             {/* Purchase controls (client) */}
-            <_Purchase price={product.price} name={product.name} />
+            <_Purchase price={product.price} name={product.name} slug={product.slug} image={product.img} />
           </div>
         </div>
 

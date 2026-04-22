@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Image from "next/image";
 
 interface Props {
@@ -5,7 +6,7 @@ interface Props {
   index: number;
 }
 
-export function _FeedCard({ src, index }: Props) {
+export const _FeedCard = memo(function FeedCard({ src, index }: Props) {
   return (
     <div
       className="group relative shrink-0 overflow-hidden rounded-2xl shadow-sm"
@@ -21,4 +22,4 @@ export function _FeedCard({ src, index }: Props) {
       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors" />
     </div>
   );
-}
+});

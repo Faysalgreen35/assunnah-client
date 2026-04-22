@@ -1,21 +1,41 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
+import { useCart } from "@/hooks/useCart";
+import { useWishlist } from "@/hooks/useWishlist";
 
 interface Props {
   price: string;
   name: string;
+  slug: string;
+  image: string;
+  personalizationNote?: string;
 }
 
-export function _Purchase({ price, name }: Props) {
+export function _Purchase({ price, name, slug, image, personalizationNote = "" }: Props) {
   const [qty, setQty] = useState(1);
-  const [wishlisted, setWishlisted] = useState(false);
   const [added, setAdded] = useState(false);
+  const { addItem } = useCart();
+  const { items: wishlistItems, toggle } = useWishlist();
 
-  function handleAddToCart() {
+  const isInWishlist = wishlistItems.some(item => item.productId === slug);
+
+  const handleAddToCart = useCallback(() => {
+    addItem({
+      productId: slug,
+      name,
+      price,
+      image,
+      quantity: qty,
+      personalizationNote,
+    });
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
-  }
+  }, [addItem, slug, name, price, image, qty, personalizationNote]);
+
+  const handleWishlistToggle = useCallback(() => {
+    toggle(slug);
+  }, [toggle, slug]);
 
   return (
     <div className="flex flex-col gap-4">
@@ -76,13 +96,13 @@ export function _Purchase({ price, name }: Props) {
       {/* Wishlist + Share */}
       <div className="flex items-center gap-4 text-[11.5px] text-[#888]">
         <button
-          onClick={() => setWishlisted(v => !v)}
+          onClick={handleWishlistToggle}
           className="flex items-center gap-1.5 hover:text-[#a4722c] transition-colors"
         >
-          <svg width="13" height="13" viewBox="0 0 24 24" fill={wishlisted ? "#e53935" : "none"} stroke={wishlisted ? "#e53935" : "currentColor"} strokeWidth="2">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill={isInWishlist ? "#e53935" : "none"} stroke={isInWishlist ? "#e53935" : "currentColor"} strokeWidth="2">
             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
           </svg>
-          {wishlisted ? "Saved" : "Add to Wishlist"}
+          {isInWishlist ? "Saved" : "Add to Wishlist"}
         </button>
         <span className="text-[#ddd]">|</span>
         <button

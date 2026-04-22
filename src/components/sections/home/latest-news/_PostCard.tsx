@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,7 +16,7 @@ interface Props {
   variant?: "horizontal" | "card";
 }
 
-export function _PostCard({ post, variant = "horizontal" }: Props) {
+export const _PostCard = memo(function PostCard({ post, variant = "horizontal" }: Props) {
   if (variant === "card") {
     return (
       <Link
@@ -60,4 +61,4 @@ export function _PostCard({ post, variant = "horizontal" }: Props) {
       </div>
     </Link>
   );
-}
+});

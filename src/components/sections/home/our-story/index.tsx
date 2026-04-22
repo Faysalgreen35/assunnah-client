@@ -1,5 +1,6 @@
 import { GoldDivider } from "@/components/common/GoldDivider";
 import { BotanicalCorner } from "@/components/common/BotanicalCorner";
+import { SwiperRow } from "@/components/common/SwiperRow";
 import { _StoryCard } from "./_StoryCard";
 import stories from "@/data/home/our-story.json";
 
@@ -16,11 +17,11 @@ export function OurStory() {
           </h2>
           <GoldDivider />
         </div>
-        <div className="grid gap-8 md:grid-cols-3">
+        <SwiperRow gridClassName="grid-cols-1 md:grid-cols-3" spaceBetween={32}>
           {stories.map(story => (
             <_StoryCard key={story.title} title={story.title} desc={story.desc} img={story.img} />
           ))}
-        </div>
+        </SwiperRow>
       </div>
     </section>
   );

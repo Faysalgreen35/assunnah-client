@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { GoldDivider } from "@/components/common/GoldDivider";
+import { SwiperRow } from "@/components/common/SwiperRow";
 import { _TabButtons } from "./_TabButtons";
 import { _ProductCard } from "./_ProductCard";
 import data from "@/data/home/tabbed-collections.json";
@@ -23,7 +24,7 @@ export function TabbedCollections() {
           <GoldDivider />
         </div>
         <_TabButtons tabs={data.tabs} active={activeTab} onChange={setActiveTab} />
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6 lg:gap-4">
+        <SwiperRow gridClassName="grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
           {products.map(product => (
             <_ProductCard key={product.name} name={product.name} price={product.price} img={product.img} />
           ))}
@@ -34,7 +35,7 @@ export function TabbedCollections() {
             <span className="text-2xl text-[#a4722c] mb-1">→</span>
             <p className="text-xs font-semibold text-[#a4722c]">View All</p>
           </Link>
-        </div>
+        </SwiperRow>
       </div>
     </section>
   );

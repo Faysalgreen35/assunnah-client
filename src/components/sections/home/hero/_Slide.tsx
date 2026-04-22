@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Image from "next/image";
 
 interface Props {
@@ -6,7 +7,7 @@ interface Props {
   active: boolean;
 }
 
-export function _Slide({ img, title, active }: Props) {
+export const _Slide = memo(function Slide({ img, title, active }: Props) {
   return (
     <div
       className="absolute inset-0 transition-opacity duration-700"
@@ -15,4 +16,4 @@ export function _Slide({ img, title, active }: Props) {
       <Image src={img} alt={title} fill className="object-cover object-center" sizes="100vw" />
     </div>
   );
-}
+});

@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -6,7 +7,7 @@ interface Props {
   img: string;
 }
 
-export function _DeliveryCard({ label, img }: Props) {
+export const _DeliveryCard = memo(function DeliveryCard({ label, img }: Props) {
   return (
     <Link href="/collections" className="group flex flex-col items-center gap-3">
       <div
@@ -26,4 +27,4 @@ export function _DeliveryCard({ label, img }: Props) {
       </p>
     </Link>
   );
-}
+});

@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 interface Props {
   total: number;
   active: number;
@@ -6,7 +8,7 @@ interface Props {
   onNext: () => void;
 }
 
-export function _SlideControls({ total, active, onDot, onPrev, onNext }: Props) {
+export const _SlideControls = memo(function SlideControls({ total, active, onDot, onPrev, onNext }: Props) {
   return (
     <>
       {/* Dot indicators */}
@@ -36,4 +38,4 @@ export function _SlideControls({ total, active, onDot, onPrev, onNext }: Props) 
       >›</button>
     </>
   );
-}
+});

@@ -1,4 +1,5 @@
 import { GoldDivider } from "@/components/common/GoldDivider";
+import { SwiperRow } from "@/components/common/SwiperRow";
 import { _DeliveryCard } from "./_DeliveryCard";
 import items from "@/data/home/same-day-delivery.json";
 
@@ -12,11 +13,11 @@ export function SameDayDelivery() {
           </h2>
           <GoldDivider />
         </div>
-        <div className="grid grid-cols-2 gap-5 md:grid-cols-4">
+        <SwiperRow gridClassName="grid-cols-2 md:grid-cols-4">
           {items.map(item => (
             <_DeliveryCard key={item.label} label={item.label} img={item.img} />
           ))}
-        </div>
+        </SwiperRow>
       </div>
     </section>
   );

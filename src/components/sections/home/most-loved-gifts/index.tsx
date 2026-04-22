@@ -1,4 +1,5 @@
 import { GoldDivider } from "@/components/common/GoldDivider";
+import { SwiperRow } from "@/components/common/SwiperRow";
 import { _ArchCard } from "./_ArchCard";
 import items from "@/data/home/most-loved-gifts.json";
 
@@ -18,11 +19,11 @@ export function MostLovedGifts() {
           </h2>
           <GoldDivider />
         </div>
-        <div className="grid grid-cols-2 gap-5 md:gap-8 sm:grid-cols-4">
+        <SwiperRow gridClassName="grid-cols-2 sm:grid-cols-4">
           {items.map(item => (
             <_ArchCard key={item.slug} name={item.name} slug={item.slug} img={item.img} />
           ))}
-        </div>
+        </SwiperRow>
       </div>
     </section>
   );

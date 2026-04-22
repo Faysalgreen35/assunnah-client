@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Install - As-Sunnah App</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Assistant', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #a4722c 0%, #c9973a 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    header {
+      text-align: center;
+      color: white;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1em;
+      opacity: 0.95;
+    }
+
+    .methods {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .method-card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .method-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .method-card h2 {
+      color: #a4722c;
+      font-size: 1.5em;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .method-card .step {
+      margin: 15px 0;
+      padding: 12px 15px;
+      background: #f5f0e8;
+      border-left: 4px solid #a4722c;
+      border-radius: 4px;
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+
+    .method-card .step strong {
+      color: #a4722c;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .done {
+      background: #e8f5e9;
+      color: #2e7d32;
+      padding: 12px 15px;
+      border-radius: 8px;
+      margin-top: 15px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .benefits {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .benefits h2 {
+      color: #a4722c;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .benefit {
+      text-align: center;
+      padding: 15px;
+    }
+
+    .benefit-icon {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .benefit h3 {
+      color: #a4722c;
+      font-size: 1.1em;
+      margin-bottom: 5px;
+    }
+
+    .benefit p {
+      color: #666;
+      font-size: 0.9em;
+    }
+
+    .cta-section {
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      margin-bottom: 30px;
+    }
+
+    .cta-section h2 {
+      color: #a4722c;
+      font-size: 1.5em;
+      margin-bottom: 15px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #a4722c 0%, #c9973a 100%);
+      color: white;
+      padding: 15px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.1em;
+      font-weight: bold;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .cta-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(164, 114, 44, 0.4);
+    }
+
+    .faq-mini {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .faq-mini h2 {
+      color: #a4722c;
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item strong {
+      color: #a4722c;
+      font-size: 1em;
+    }
+
+    .faq-item p {
+      color: #666;
+      margin-top: 8px;
+      font-size: 0.95em;
+    }
+
+    footer {
+      text-align: center;
+      color: white;
+      padding: 30px;
+      opacity: 0.9;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+
+      .method-card {
+        padding: 20px;
+      }
+
+      .benefits h2, .cta-section h2 {
+        font-size: 1.3em;
+      }
+
+      .cta-button {
+        padding: 12px 30px;
+        font-size: 1em;
+      }
+    }
+
+    .emoji {
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📱 Install As-Sunnah App</h1>
+      <p>Get the best shopping experience in 4 easy steps</p>
+    </header>
+
+    <div class="benefits">
+      <h2>Why Install?</h2>
+      <div class="benefits-grid">
+        <div class="benefit">
+          <div class="benefit-icon">⚡</div>
+          <h3>Faster</h3>
+          <p>Loads instantly</p>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">📴</div>
+          <h3>Offline</h3>
+          <p>Works without internet</p>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">📲</div>
+          <h3>Easy Access</h3>
+          <p>One tap from home screen</p>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">🎯</div>
+          <h3>Native Feel</h3>
+          <p>Just like a real app</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="methods">
+      <!-- Android -->
+      <div class="method-card">
+        <h2><span class="emoji">🤖</span> Android</h2>
+        <div class="step">
+          <strong>1. Open Chrome</strong>
+          Visit assunnah.com
+        </div>
+        <div class="step">
+          <strong>2. Tap Menu</strong>
+          ⋮ (three dots) → "Install app"
+        </div>
+        <div class="step">
+          <strong>3. Confirm</strong>
+          Tap "Install"
+        </div>
+        <div class="done">✅ Done! Check your home screen</div>
+      </div>
+
+      <!-- iPhone -->
+      <div class="method-card">
+        <h2><span class="emoji">🍎</span> iPhone</h2>
+        <div class="step">
+          <strong>1. Open Safari</strong>
+          Visit assunnah.com
+        </div>
+        <div class="step">
+          <strong>2. Tap Share</strong>
+          ⬆️ → "Add to Home Screen"
+        </div>
+        <div class="step">
+          <strong>3. Confirm</strong>
+          Tap "Add"
+        </div>
+        <div class="done">✅ Done! App is on home screen</div>
+      </div>
+
+      <!-- Desktop -->
+      <div class="method-card">
+        <h2><span class="emoji">💻</span> Desktop</h2>
+        <div class="step">
+          <strong>1. Open Browser</strong>
+          Chrome, Edge, Safari, or Firefox
+        </div>
+        <div class="step">
+          <strong>2. Click Install</strong>
+          Icon in address bar (or menu)
+        </div>
+        <div class="step">
+          <strong>3. Confirm</strong>
+          Click "Install"
+        </div>
+        <div class="done">✅ Done! Check desktop or apps menu</div>
+      </div>
+    </div>
+
+    <div class="cta-section">
+      <h2>Ready to Shop Smarter?</h2>
+      <p style="margin-bottom: 20px; color: #666;">Install the As-Sunnah app now and enjoy faster, offline shopping</p>
+      <button class="cta-button" onclick="window.location.href='/'">Go to As-Sunnah Store</button>
+    </div>
+
+    <div class="faq-mini">
+      <h2>Quick Questions?</h2>
+
+      <div class="faq-item">
+        <strong>Q: Is it the same as the website?</strong>
+        <p>Yes! Same products, same store. Just faster and easier.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Q: Will it work offline?</strong>
+        <p>Yes, partially. Browse cached products offline, but you need internet to order.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Q: How much storage?</strong>
+        <p>Very little — 5-20 MB. Like a normal app.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Q: Can I uninstall it?</strong>
+        <p>Yes, anytime. Like any other app.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Q: Need an account?</strong>
+        <p>Only to place orders. Browsing is free for everyone.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Q: Updates?</strong>
+        <p>Automatic! App updates itself. No action needed.</p>
+      </div>
+    </div>
+
+    <footer>
+      <p>As-Sunnah Store — India's First Online Islamic Gifting Platform</p>
+      <p style="margin-top: 10px; font-size: 0.9em;">📧 support@assunnah.com</p>
+    </footer>
+  </div>
+</body>
+</html>

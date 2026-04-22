@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,7 +8,7 @@ interface Props {
   img: string;
 }
 
-export function _ProductCard({ name, price, img }: Props) {
+export const _ProductCard = memo(function ProductCard({ name, price, img }: Props) {
   return (
     <Link
       href="/collections"
@@ -28,4 +29,4 @@ export function _ProductCard({ name, price, img }: Props) {
       </div>
     </Link>
   );
-}
+});

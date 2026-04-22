@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Image from "next/image";
 
 interface Props {
@@ -6,7 +7,7 @@ interface Props {
   img: string;
 }
 
-export function _StoryCard({ title, desc, img }: Props) {
+export const _StoryCard = memo(function StoryCard({ title, desc, img }: Props) {
   return (
     <div
       className="flex flex-col rounded-2xl overflow-hidden"
@@ -23,4 +24,4 @@ export function _StoryCard({ title, desc, img }: Props) {
       </div>
     </div>
   );
-}
+});

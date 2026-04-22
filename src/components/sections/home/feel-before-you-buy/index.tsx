@@ -1,4 +1,5 @@
 import { GoldDivider } from "@/components/common/GoldDivider";
+import { SwiperRow } from "@/components/common/SwiperRow";
 import { _ArchCard } from "./_ArchCard";
 import products from "@/data/home/feel-before-you-buy.json";
 
@@ -12,11 +13,11 @@ export function FeelBeforeYouBuy() {
           </h2>
           <GoldDivider />
         </div>
-        <div className="grid grid-cols-2 gap-5 md:grid-cols-4">
+        <SwiperRow gridClassName="grid-cols-2 md:grid-cols-4">
           {products.map(item => (
             <_ArchCard key={item.name} name={item.name} img={item.img} />
           ))}
-        </div>
+        </SwiperRow>
       </div>
     </section>
   );

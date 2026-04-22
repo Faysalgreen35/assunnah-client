@@ -1,10 +1,12 @@
+import { memo } from "react";
+
 interface Props {
   value: string;
   label: string;
   size?: "lg" | "sm";
 }
 
-export function _StatItem({ value, label, size = "sm" }: Props) {
+export const _StatItem = memo(function StatItem({ value, label, size = "sm" }: Props) {
   return (
     <div>
       <p
@@ -16,4 +18,4 @@ export function _StatItem({ value, label, size = "sm" }: Props) {
       <p className="text-[12px] text-[#888] font-medium leading-4 mt-1" dangerouslySetInnerHTML={{ __html: label }} />
     </div>
   );
-}
+});

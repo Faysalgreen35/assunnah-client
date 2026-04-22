@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Image from "next/image";
 
 interface Props {
@@ -5,7 +6,7 @@ interface Props {
   index: number;
 }
 
-export function _LogoItem({ src, index }: Props) {
+export const _LogoItem = memo(function LogoItem({ src, index }: Props) {
   return (
     <div
       className="relative shrink-0 overflow-hidden bg-white"
@@ -14,4 +15,4 @@ export function _LogoItem({ src, index }: Props) {
       <Image src={src} alt={`Partner ${index + 1}`} fill className="object-contain p-2" sizes="128px" />
     </div>
   );
-}
+});

@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { memo, type ReactNode } from "react";
 
 interface Props {
   title: string;
@@ -7,7 +7,7 @@ interface Props {
   bordered: boolean;
 }
 
-export function _FeatureCard({ title, desc, icon, bordered }: Props) {
+export const _FeatureCard = memo(function FeatureCard({ title, desc, icon, bordered }: Props) {
   return (
     <div className={`flex flex-col items-center text-center px-8 py-10 ${bordered ? "md:border-r border-border" : ""}`}>
       <div
@@ -20,4 +20,4 @@ export function _FeatureCard({ title, desc, icon, bordered }: Props) {
       <p className="text-[13px] leading-7 text-muted">{desc}</p>
     </div>
   );
-}
+});
