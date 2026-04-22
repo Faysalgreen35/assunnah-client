@@ -8,6 +8,7 @@ export interface INavItem {
   label: string;
   href: string;
   image?: string;
+  columns?: number;
   submenu?: ISubMenuItem[];
 }
 

@@ -1,98 +1,148 @@
 [
   {
     "label": "QURAN GIFT SETS",
-    "href": "/categories/quran-gift-sets",
-    "image": "/all-pic/AL-HADAYA/1---Quran-Gift-Set.png",
+    "href": "#",
+    "image": "/al-hadaya/quran-gift-sets.png",
+    "columns": 1,
     "submenu": [
-      { "label": "Barkat-e-Jariyah Hampers",      "href": "/collections/quran-gift-sets" },
-      { "label": "Mini Quran Sets",                "href": "/collections/quran-gift-sets" },
-      { "label": "Sunnah Gift Hampers",            "href": "/collections/quran-gift-sets" },
-      { "label": "Kids Collection",                "href": "/collections/kids-gifts" },
-      { "label": "Nikah (Wedding) Quran Hampers",  "href": "/collections/nikah-collection" },
-      { "label": "View All Quran Gifts",           "href": "/collections/quran-gift-sets" }
+      { "label": "Luxe Hubb Al-Iman Collection",     "href": "/collections/quran-gift-sets" },
+      { "label": "Barkat-e-Jariyah Hampers",        "href": "/collections/quran-gift-sets" },
+      { "label": "Mini Quran Sets",                  "href": "/collections/quran-gift-sets" },
+      { "label": "Premium Velvet Collection",        "href": "/collections/quran-gift-sets" },
+      { "label": "Sunnah Gift Hampers",              "href": "/collections/quran-gift-sets" },
+      { "label": "Kids Collection",                  "href": "/collections/kids-gifts" },
+      { "label": "Nikah (Wedding) Quran Hampers",    "href": "/collections/nikah-collection" },
+      { "label": "View All Quran Gifts",             "href": "/collections/quran-gift-sets" }
     ]
   },
   {
     "label": "PRAYER ESSENTIALS",
-    "href": "/categories/prayer-essentials",
-    "image": "/all-pic/AL-HADAYA/2---Prayer-Essentials.png",
+    "href": "#",
+    "image": "/al-hadaya/PRAYER-ESSENTIALS.png",
+    "columns": 3,
     "submenu": [
-      { "label": "Quran Collection",     "href": "/collections/quran-gift-sets" },
-      { "label": "Prayer Mats",          "href": "/collections/prayer-essentials" },
-      { "label": "Attar Fragrances",     "href": "/collections/prayer-essentials" },
-      { "label": "Rehal (Quran Stands)", "href": "/collections/prayer-essentials" },
-      { "label": "Tasbeeh",              "href": "/collections/prayer-essentials" }
+      { "label": "Quran Collection",       "href": "/collections/quran-gift-sets" },
+      { "label": "Arabic Quran",           "href": "/collections/quran-gift-sets" },
+      { "label": "Roman Urdu Translation", "href": "/collections/quran-gift-sets" },
+      { "label": "English Translation Quran", "href": "/collections/quran-gift-sets" },
+      { "label": "Urdu Translation",       "href": "/collections/quran-gift-sets" },
+      { "label": "Trading Quran",          "href": "/collections/quran-gift-sets" },
+      { "label": "Prayer Mats",            "href": "/collections/prayer-essentials" },
+      { "label": "Turkish Prayer Mats",    "href": "/collections/prayer-essentials" },
+      { "label": "Electronic Prayer Mats", "href": "/collections/prayer-essentials" },
+      { "label": "Couple Prayer Rugs",     "href": "/collections/prayer-essentials" },
+      { "label": "Kids Prayer Mats",       "href": "/collections/prayer-essentials" },
+      { "label": "Relaxed Prayer Mats",    "href": "/collections/prayer-essentials" },
+      { "label": "Shop more",              "href": "/collections/prayer-essentials" },
+      { "label": "Tasbih & Counters",      "href": "/collections/prayer-essentials" },
+      { "label": "Rehal (Quran Stands)",   "href": "/collections/prayer-essentials" },
+      { "label": "Bismillah Bookmarks",    "href": "/collections/prayer-essentials" },
+      { "label": "Attar Fragrances",       "href": "/collections/prayer-essentials" }
     ]
   },
   {
     "label": "SHOP BY OCCASION",
-    "href": "/categories/occasions",
-    "image": "/all-pic/AL-HADAYA/3---Shop-by-Occasion_d2baa224-9fe0-431f-8c90-4ddf1a933c09.png",
+    "href": "#",
+    "image": "/al-hadaya/SHOP-BY-OCCASION.png",
+    "columns": 5,
     "submenu": [
-      { "label": "Wedding (Nikah)",                "href": "/collections/nikah-collection" },
-      { "label": "Hajj & Umrah Essentials",        "href": "/collections/hajj-umrah" },
-      { "label": "Aqiqah & Baby Cradle Ceremony",  "href": "/categories/aqiqah" },
-      { "label": "Ramadan 2026",                   "href": "/collections/ramadan-gifts" },
-      { "label": "Eid-ul-Fitr 2026",               "href": "/collections/eid-gifts" },
-      { "label": "Eid-al-Adha 2026",               "href": "/collections/eid-gifts" }
+      { "label": "Wedding (Nikah)",              "href": "/collections/nikah-collection" },
+      { "label": "Nikah Nama",                   "href": "/collections/nikah-collection" },
+      { "label": "Bridal Quran Hampers",         "href": "/collections/nikah-collection" },
+      { "label": "Couple Frames",                "href": "/collections/nikah-collection" },
+      { "label": "Haq Mehar",                    "href": "/collections/nikah-collection" },
+      { "label": "Couple Prayer Mats",           "href": "/collections/nikah-collection" },
+      { "label": "Nikah Essentials",             "href": "/collections/nikah-collection" },
+      { "label": "Wedding Gift Hampers",         "href": "/collections/nikah-collection" },
+      { "label": "Birthday",                     "href": "/collections/birthday-gifts" },
+      { "label": "Anniversary",                  "href": "/collections/anniversary-gifts" },
+      { "label": "Beat Pakhi (Engagement)",      "href": "/collections/engagement-gifts" },
+      { "label": "Daawat-e-Khass",               "href": "/collections/engagement-gifts" },
+      { "label": "Hajj & Umrah Essentials",      "href": "/collections/hajj-umrah" },
+      { "label": "Hajj & Umrah Gifts",           "href": "/collections/hajj-umrah" },
+      { "label": "Quran Makhammed (Completion of Quran)", "href": "/collections/quran-completion" },
+      { "label": "Bismillah Ceremony",           "href": "/collections/bismillah-gifts" },
+      { "label": "Aqiqah & Baby Cradle Ceremony", "href": "/categories/aqiqah" },
+      { "label": "Housewarming",                 "href": "/collections/housewarming" },
+      { "label": "Roza Kushai (First Roza)",     "href": "/collections/roza-kushai" },
+      { "label": "Festivals",                    "href": "/collections/festivals" },
+      { "label": "Ramadan 2026",                 "href": "/collections/ramadan-gifts" },
+      { "label": "Eid-ul-Fitr 2026",             "href": "/collections/eid-gifts" },
+      { "label": "Eid-al-Adha 2026",             "href": "/collections/eid-gifts" }
     ]
   },
   {
     "label": "SHOP BY RECIPIENT",
-    "href": "/collections/for-him",
-    "image": "/all-pic/AL-HADAYA/4---Shop-by-Recipient.png",
+    "href": "#",
+    "image": "/al-hadaya/shop-by-recipient.png",
+    "columns": 3,
     "submenu": [
-      { "label": "For Him",              "href": "/collections/for-him" },
-      { "label": "For Husband",          "href": "/collections/for-husband" },
-      { "label": "For Father",           "href": "/collections/for-father" },
-      { "label": "For Son",              "href": "/collections/for-son" },
-      { "label": "For Brother",          "href": "/collections/for-brother" },
-      { "label": "For Her",              "href": "/collections/for-wife" },
-      { "label": "For Wife",             "href": "/collections/for-wife" },
-      { "label": "For Mother",           "href": "/collections/for-mother" },
-      { "label": "For Daughter",         "href": "/collections/for-daughter" },
-      { "label": "For Sister",           "href": "/collections/for-sister" },
-      { "label": "For Grandmother",      "href": "/collections/for-grand-mother" },
-      { "label": "For Mother-in-Law",    "href": "/collections/for-mother-in-law" },
-      { "label": "Gifts for Kids",       "href": "/collections/gifts-for-kids" },
-      { "label": "Hafiz-e-Quran Gifts",  "href": "/collections/hafiz-gifts" },
-      { "label": "Aalim & Aalima Gifts", "href": "/collections/aalim-aalima-gifts" },
-      { "label": "Gifts for Teachers",   "href": "/collections/gifts-for-teachers" },
-      { "label": "Students Gifts",       "href": "/collections/students-gifts" }
+      { "label": "For Him",             "href": "/collections/for-him" },
+      { "label": "For Husband",         "href": "/collections/for-husband" },
+      { "label": "For Father",          "href": "/collections/for-father" },
+      { "label": "For Son",             "href": "/collections/for-son" },
+      { "label": "For Brother",         "href": "/collections/for-brother" },
+      { "label": "For Her",             "href": "/collections/for-wife" },
+      { "label": "For Wife",            "href": "/collections/for-wife" },
+      { "label": "For Mother",          "href": "/collections/for-mother" },
+      { "label": "For Daughter",        "href": "/collections/for-daughter" },
+      { "label": "For Sister",          "href": "/collections/for-sister" },
+      { "label": "For Grand mother",    "href": "/collections/for-grand-mother" },
+      { "label": "For Mother -in-Law",  "href": "/collections/for-mother-in-law" },
+      { "label": "For Couples",         "href": "/collections/for-couples" },
+      { "label": "For Kids",            "href": "/collections/gifts-for-kids" },
+      { "label": "Hafiz-e-Quran",       "href": "/collections/hafiz-gifts" },
+      { "label": "Aalim/Aalimah",       "href": "/collections/aalim-aalima-gifts" },
+      { "label": "Teachers",            "href": "/collections/gifts-for-teachers" },
+      { "label": "Students",            "href": "/collections/students-gifts" }
     ]
   },
   {
     "label": "HOME DECOR",
-    "href": "/categories/home-decor",
-    "image": "/all-pic/AL-HADAYA/5---Home-Decor.png",
-    "submenu": []
+    "href": "#",
+    "image": "/al-hadaya/home-decor.png",
+    "columns": 1,
+    "submenu": [
+      { "label": "Wall Art",                "href": "/collections/home-decor" },
+      { "label": "Table décor",             "href": "/collections/home-decor" },
+      { "label": "Resin Art Collection",    "href": "/collections/home-decor" },
+      { "label": "Resin Quran Stand",       "href": "/collections/home-decor" }
+    ]
   },
   {
     "label": "RETURN FAVORS",
-    "href": "/collections/return-favors",
-    "image": "/all-pic/AL-HADAYA/6---Return-Favors.png",
+    "href": "#",
+    "image": "/al-hadaya/return-favor.png",
+    "columns": 1,
     "submenu": [
-      { "label": "Hajj & Umrah Favors",            "href": "/collections/return-favors" },
-      { "label": "Baraati Return Favors",           "href": "/collections/return-favors" },
-      { "label": "Roza Kushai Return Favors",       "href": "/collections/return-favors" }
+      { "label": "Hajj & Umrah Favors",       "href": "/collections/return-favors" },
+      { "label": "Baraati Return Favors",     "href": "/collections/return-favors" },
+      { "label": "Muharram Tabarruk",         "href": "/collections/return-favors" },
+      { "label": "Ameen Favors",              "href": "/collections/return-favors" },
+      { "label": "Roza Kushai Return Favors", "href": "/collections/return-favors" },
+      { "label": "Salana Jalsaa Favors",      "href": "/collections/return-favors" },
+      { "label": "Aab-e-ZamZam (آبِ زمزم)",    "href": "/collections/return-favors" }
     ]
   },
   {
     "label": "CLOTHING",
     "href": "/categories/clothing",
     "image": "/all-pic/AL-HADAYA/7---Clothing.png",
+    "columns": 1,
     "submenu": []
   },
   {
     "label": "ON TREND",
     "href": "/collections/on-trend",
     "image": "/all-pic/AL-HADAYA/8---On-Trend.png",
+    "columns": 1,
     "submenu": []
   },
   {
     "label": "CORPORATE GIFTS",
     "href": "/corporate-gifting",
     "image": "/all-pic/AL-HADAYA/9---Corporate-Gifts.png",
+    "columns": 1,
     "submenu": [
       { "label": "Exclusive Eid Gifts",     "href": "/collections/eid-gifts" },
       { "label": "Premium Corporate Gifts", "href": "/corporate-gifting" },
@@ -104,6 +154,7 @@
     "label": "INTERNATIONAL",
     "href": "/collections/international",
     "image": "/all-pic/AL-HADAYA/10---International.png",
+    "columns": 1,
     "submenu": []
   }
 ]

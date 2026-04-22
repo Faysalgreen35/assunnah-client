@@ -23,12 +23,17 @@ export function _NavBar({ navItems, openMenu, onEnter, onLeave }: Props) {
     <div className={`hidden md:block border-b ${isDark ? "border-[#2a3a6a]" : "border-[#ebebeb]"} ${bgClass}`}>
       <nav className="mx-auto flex max-w-[1280px] items-center justify-center px-4">
         {navItems.map(item => {
-          const isRecipient = item.label === "SHOP BY RECIPIENT";
           const hasSubmenu = item.submenu && item.submenu.length > 0;
           const isOpen = openMenu === item.label;
+          const columnCount = item.columns || 4;
 
           // Divide submenu items into equal columns
-          const itemsPerColumn = Math.ceil(item.submenu ? item.submenu.length / 4 : 0);
+          const itemsPerColumn = Math.ceil(item.submenu ? item.submenu.length / columnCount : 0);
+
+          // Generate columns dynamically
+          const columns = Array.from({ length: columnCount }, (_, i) =>
+            item.submenu.slice(i * itemsPerColumn, (i + 1) * itemsPerColumn)
+          );
 
           return (
             <div
@@ -51,69 +56,8 @@ export function _NavBar({ navItems, openMenu, onEnter, onLeave }: Props) {
 
               {hasSubmenu && isOpen && (
                 <div className={`absolute left-1/2 -translate-x-1/2 top-full z-50 w-screen ${isDark ? "bg-[#1a2655]" : "bg-white"} shadow-2xl border-t ${isDark ? "border-[#2a3a6a]" : "border-[#ebebeb]"}`}>
-                  <div className="mx-auto max-w-[1400px] px-8 py-8 flex gap-8 items-start">
-                    {/* MULTIPLE COLUMNS OF ITEMS */}
-                    <div className="flex-1 grid grid-cols-4 gap-8">
-                      {/* Column 1 */}
-                      <div className="space-y-3">
-                        {item.submenu.slice(0, itemsPerColumn).map(sub => (
-                          <Link
-                            key={sub.label}
-                            href={sub.href}
-                            className={`block text-[13px] font-medium ${isDark ? "text-white" : "text-[#333]"} hover:text-[#a4722c] hover:font-bold transition-colors`}
-                          >
-                            {sub.label}
-                          </Link>
-                        ))}
-                      </div>
-
-                      {/* Column 2 */}
-                      {item.submenu.length > itemsPerColumn && (
-                        <div className="space-y-3">
-                          {item.submenu.slice(itemsPerColumn, itemsPerColumn * 2).map(sub => (
-                            <Link
-                              key={sub.label}
-                              href={sub.href}
-                              className={`block text-[13px] font-medium ${isDark ? "text-white" : "text-[#333]"} hover:text-[#a4722c] hover:font-bold transition-colors`}
-                            >
-                              {sub.label}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-
-                      {/* Column 3 */}
-                      {item.submenu.length > itemsPerColumn * 2 && (
-                        <div className="space-y-3">
-                          {item.submenu.slice(itemsPerColumn * 2, itemsPerColumn * 3).map(sub => (
-                            <Link
-                              key={sub.label}
-                              href={sub.href}
-                              className={`block text-[13px] font-medium ${isDark ? "text-white" : "text-[#333]"} hover:text-[#a4722c] hover:font-bold transition-colors`}
-                            >
-                              {sub.label}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-
-                      {/* Column 4 */}
-                      {item.submenu.length > itemsPerColumn * 3 && (
-                        <div className="space-y-3">
-                          {item.submenu.slice(itemsPerColumn * 3).map(sub => (
-                            <Link
-                              key={sub.label}
-                              href={sub.href}
-                              className={`block text-[13px] font-medium ${isDark ? "text-white" : "text-[#333]"} hover:text-[#a4722c] hover:font-bold transition-colors`}
-                            >
-                              {sub.label}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-
-                    {/* IMAGE ON RIGHT */}
+                  <div className={`mx-auto max-w-[1400px] px-8 py-8 flex gap-8 items-start ${columnCount === 1 ? "flex-row-reverse" : ""}`}>
+                    {/* IMAGE */}
                     {item.image && (
                       <div className="flex-shrink-0">
                         <div className="relative group">
@@ -138,6 +82,39 @@ export function _NavBar({ navItems, openMenu, onEnter, onLeave }: Props) {
                             </svg>
                           </button>
                         </div>
+                      </div>
+                    )}
+
+                    {/* SUBMENU ITEMS */}
+                    {columnCount === 1 ? (
+                      // Single column: show items in a simple list
+                      <div className="flex-1 space-y-3">
+                        {columns[0]?.map(sub => (
+                          <Link
+                            key={sub.label}
+                            href={sub.href}
+                            className={`block text-[13px] font-medium ${isDark ? "text-white" : "text-[#333]"} hover:text-[#a4722c] hover:font-bold transition-colors`}
+                          >
+                            {sub.label}
+                          </Link>
+                        ))}
+                      </div>
+                    ) : (
+                      // Multiple columns: grid layout
+                      <div className={`flex-1 grid gap-8 ${columnCount === 3 ? "grid-cols-3" : columnCount === 5 ? "grid-cols-5" : "grid-cols-4"}`}>
+                        {columns.map((columnItems, idx) => (
+                          <div key={idx} className="space-y-3">
+                            {columnItems.map(sub => (
+                              <Link
+                                key={sub.label}
+                                href={sub.href}
+                                className={`block text-[13px] font-medium ${isDark ? "text-white" : "text-[#333]"} hover:text-[#a4722c] hover:font-bold transition-colors`}
+                              >
+                                {sub.label}
+                              </Link>
+                            ))}
+                          </div>
+                        ))}
                       </div>
                     )}
                   </div>

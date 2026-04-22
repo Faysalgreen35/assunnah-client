@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/layout/header";
@@ -132,7 +135,43 @@ const categories = [
   },
 ];
 
+const ITEMS_PER_PAGE = 12;
+
 export default function CollectionsPage() {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = Math.ceil(categories.length / ITEMS_PER_PAGE);
+  const paginatedCategories = useMemo(() => {
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    return categories.slice(start, start + ITEMS_PER_PAGE);
+  }, [currentPage]);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const getPaginationPages = () => {
+    const pages = [];
+    const showPages = 5;
+    let start = Math.max(1, currentPage - Math.floor(showPages / 2));
+    let end = Math.min(totalPages, start + showPages - 1);
+
+    if (end - start < showPages - 1) {
+      start = Math.max(1, end - showPages + 1);
+    }
+
+    if (start > 1) pages.push(1);
+    if (start > 2) pages.push("...");
+
+    for (let i = start; i <= end; i++) pages.push(i);
+
+    if (end < totalPages - 1) pages.push("...");
+    if (end < totalPages) pages.push(totalPages);
+
+    return pages;
+  };
+
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#1a1a1a]">
       <Header />
@@ -160,55 +199,83 @@ export default function CollectionsPage() {
         </div>
       </div>
 
-      {/* Masonry Category Grid */}
+      {/* Grid Category Layout */}
       <div className="mx-auto max-w-[1280px] px-5 py-8">
-        <div
-          className="gap-3"
-          style={{
-            columnCount: 3,
-            columnGap: "12px",
-          }}
-        >
-          {categories.map((cat) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {paginatedCategories.map((cat) => (
             <Link
               key={cat.slug}
               href={`/collections/${cat.slug}`}
-              className="group relative mb-3 block overflow-hidden rounded-2xl border border-[#e8dcc8] bg-white transition-all hover:shadow-lg hover:border-[#c4a87a]"
-              style={{ breakInside: "avoid" }}
+              className="group relative block overflow-hidden rounded-xl border border-[#e8dcc8] bg-white transition-all hover:shadow-lg hover:border-[#c4a87a] h-72"
             >
               {/* Image */}
-              <div
-                className="relative w-full overflow-hidden"
-                style={{ aspectRatio: cat.aspect === "portrait" ? "3/4" : "1/1" }}
-              >
+              <div className="relative w-full h-56 overflow-hidden">
                 <Image
                   src={cat.img}
                   alt={cat.name}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 />
                 {/* Dark gradient overlay at bottom */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
-                {/* Text overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <h2 className="text-[15px] font-bold text-white leading-5 mb-0.5">
-                    {cat.name}
-                  </h2>
-                  <p className="text-[11px] text-white/75 font-medium">{cat.count}</p>
-                </div>
-
                 {/* Arrow on hover */}
-                <div className="absolute top-3 right-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/0 text-white opacity-0 transition-all duration-300 group-hover:bg-white/20 group-hover:opacity-100">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <div className="absolute top-2 right-2 flex h-7 w-7 items-center justify-center rounded-full bg-white/0 text-white opacity-0 transition-all duration-300 group-hover:bg-white/20 group-hover:opacity-100">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </div>
               </div>
+
+              {/* Text Section */}
+              <div className="p-3 flex flex-col justify-between h-16">
+                <h2 className="text-[13px] font-bold text-[#1a1a1a] leading-4 line-clamp-2">
+                  {cat.name}
+                </h2>
+                <p className="text-[11px] text-[#888] font-medium">{cat.count}</p>
+              </div>
             </Link>
           ))}
         </div>
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <div className="mt-12 flex items-center justify-center gap-2">
+            <button
+              onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
+              disabled={currentPage === 1}
+              className="px-3 py-2 rounded-lg border border-[#e8dcc8] text-[13px] font-medium text-[#a4722c] hover:bg-[#f9f3ee] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            >
+              ← Prev
+            </button>
+
+            {getPaginationPages().map((page, idx) => (
+              <button
+                key={idx}
+                onClick={() => typeof page === "number" && handlePageChange(page)}
+                disabled={page === "..."}
+                className={`px-3 py-2 rounded-lg text-[13px] font-medium transition-colors ${
+                  page === currentPage
+                    ? "bg-[#a4722c] text-white"
+                    : page === "..."
+                    ? "cursor-default text-[#ccc]"
+                    : "border border-[#e8dcc8] text-[#a4722c] hover:bg-[#f9f3ee]"
+                }`}
+              >
+                {page}
+              </button>
+            ))}
+
+            <button
+              onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
+              disabled={currentPage === totalPages}
+              className="px-3 py-2 rounded-lg border border-[#e8dcc8] text-[13px] font-medium text-[#a4722c] hover:bg-[#f9f3ee] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            >
+              Next →
+            </button>
+          </div>
+        )}
       </div>
 
       <Footer />
