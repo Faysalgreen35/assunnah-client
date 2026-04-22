@@ -2,6 +2,22 @@ import Link from "next/link";
 import Image from "next/image";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import productsData from "@/data/products.json";
+
+// Keep this mapping for category slug to collection slug
+const categoryToCollectionMap: Record<string, string> = {
+  "quran-gift-sets": "quran-gift-sets",
+  "prayer-essentials": "prayer-essentials",
+  "nikah-collection": "nikah-collection",
+  "ramadan-gifts": "ramadan-2026",
+  "hajj-umrah": "hajj-umrah",
+  "kids-gifts": "kids-gifts",
+  "resin-art": "resin-art",
+  "corporate-gifts": "corporate-gifts",
+  "home-decor": "home-decor",
+  "attar-fragrance": "attar-fragrance",
+  "return-favors": "return-favors",
+};
 
 const allProducts = [
   { slug: "quran-gift-set-1",       name: "Barkat-e-Jariyah Quran Hamper",         category: "Quran Gift Sets",   price: "From ₹1,690", img: "/all-pic/AL-HADAYA/Pastel_Pink_Barkat-e-Jariyah_Resin_Quran_Hamper_Luxury_Islamic_Gift_Set.jpg", rating: 5 },
@@ -57,8 +73,8 @@ export default async function CategorySlugPage({ params }: Props) {
   const meta = slugToCategory[slug];
   const label = meta?.label ?? slugToLabel(slug);
   const description = meta?.description ?? "Explore our curated Islamic gift collections.";
-  const filtered = meta ? allProducts.filter(p => p.category === meta.category) : allProducts;
-  const displayProducts = filtered.length > 0 ? filtered : allProducts;
+  const filtered = meta ? productsData.filter((p: any) => p.category === meta.category) : productsData;
+  const displayProducts = filtered.length > 0 ? filtered : productsData;
 
   // Related categories (exclude current)
   const relatedCategories = Object.entries(slugToCategory)
@@ -110,7 +126,7 @@ export default async function CategorySlugPage({ params }: Props) {
               <div className="h-px w-20 bg-gradient-to-l from-transparent to-[#c9973a]" />
             </div>
             <Link
-              href={`/collections/${slug}`}
+              href={`/collections/${categoryToCollectionMap[slug] || slug}`}
               className="mt-4 inline-block text-[11.5px] font-semibold text-[#a4722c] hover:underline underline-offset-2"
             >
               View all {displayProducts.length} products →
@@ -144,7 +160,9 @@ export default async function CategorySlugPage({ params }: Props) {
                   <p className="text-[12px] font-semibold text-[#333] group-hover:text-[#a4722c] transition-colors leading-5 line-clamp-2 mb-1">
                     {product.name}
                   </p>
-                  <p className="text-[11.5px] font-bold text-[#a4722c] mb-1.5">{product.price}</p>
+                  <p className="text-[11.5px] font-bold text-[#a4722c] mb-1.5">
+                    {typeof product.price === 'number' ? `From ₹${product.price.toLocaleString()}` : product.price}
+                  </p>
                   <span className="inline-block text-[11px] font-bold text-[#a4722c] border border-[#c9973a] rounded-full px-3 py-0.5 group-hover:bg-[#a4722c] group-hover:text-white transition-colors">
                     Shop Now
                   </span>

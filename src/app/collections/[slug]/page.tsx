@@ -14,6 +14,11 @@ function slugToLabel(slug: string): string {
     "shop-by-occasion": "Shop by Occasion",
     "shop-by-recipient": "Shop by Recipient",
     "shop-by-relations": "Shop by Recipient",
+    "ramadan-2026": "Ramadan 2026",
+    "hajj-umrah": "Hajj & Umrah",
+    "quran-gift-sets": "Quran Gift Sets",
+    "eid-gifts": "Eid Gifts",
+    "wedding": "Wedding (Nikah)",
   };
 
   if (specialLabels[slug]) {
@@ -36,11 +41,27 @@ export default function CollectionSlugPage() {
   const isLoading = false;
   const error = null;
 
+  // Map special slugs to occasions
+  const occasionMap: Record<string, string> = {
+    "ramadan-2026": "Ramadan",
+    "hajj-umrah": "Hajj & Umrah",
+    "quran-gift-sets": "Wedding",
+    "eid-gifts": "Eid",
+    "wedding": "Wedding",
+  };
+
   // Filter products by collection and selected filters
   const displayProducts = useMemo(() => {
     let filtered = productsData.filter((product: any) => {
+      // Special handling for occasion-based slugs (from tabbed-collections)
+      if (occasionMap[slug]) {
+        const mappedOccasion = occasionMap[slug];
+        const occasionMatch = product.occasions?.includes(mappedOccasion) ||
+                            selectedOccasions.some((occ) => product.occasions?.includes(occ));
+        return occasionMatch;
+      }
       // Special handling for shop-by-occasion and shop-by-recipient pages
-      if (slug === "shop-by-occasion") {
+      else if (slug === "shop-by-occasion") {
         // Show all products filtered by occasions only
         const occasionMatch =
           selectedOccasions.length === 0 ||

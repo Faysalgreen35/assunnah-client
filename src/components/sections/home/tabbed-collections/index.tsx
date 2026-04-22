@@ -10,9 +10,19 @@ import data from "@/data/home/tabbed-collections.json";
 
 type ProductMap = Record<string, { name: string; price: string; img: string }[]>;
 
+// Map tab IDs to collection slugs
+const tabCollectionMap: Record<string, string> = {
+  "ramadan": "ramadan-2026",
+  "hajj": "hajj-umrah",
+  "quran": "quran-gift-sets",
+  "eid": "eid-gifts",
+  "wedding": "wedding",
+};
+
 export function TabbedCollections() {
   const [activeTab, setActiveTab] = useState(data.tabs[0].id);
   const products = (data.products as ProductMap)[activeTab] ?? [];
+  const collectionSlug = tabCollectionMap[activeTab] || "/collections";
 
   return (
     <section className="py-14 bg-white">
@@ -29,7 +39,7 @@ export function TabbedCollections() {
             <_ProductCard key={product.name} name={product.name} price={product.price} img={product.img} />
           ))}
           <Link
-            href="/collections"
+            href={`/collections/${collectionSlug}`}
             className="group flex flex-col items-center justify-center rounded-2xl border border-dashed border-[#c4a87a] bg-[#fdf8f2] transition hover:bg-[#f9efe0] min-h-[200px]"
           >
             <span className="text-2xl text-[#a4722c] mb-1">→</span>
