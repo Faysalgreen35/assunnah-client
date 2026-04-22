@@ -41,13 +41,17 @@ export default function CollectionSlugPage() {
   const isLoading = false;
   const error = null;
 
-  // Map special slugs to occasions
+  // Map special slugs to occasions or handle as collections
   const occasionMap: Record<string, string> = {
     "ramadan-2026": "Ramadan",
     "hajj-umrah": "Hajj & Umrah",
     "quran-gift-sets": "Wedding",
     "eid-gifts": "Eid",
     "wedding": "Wedding",
+    "attar-fragrance": "Eid",
+    "prayer-essentials": "Ramadan",
+    "resin-art": "Wedding",
+    "kids-gifts": "Eid",
   };
 
   // Filter products by collection and selected filters
