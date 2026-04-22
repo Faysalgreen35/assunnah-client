@@ -38,99 +38,95 @@ export function _NavBar({ navItems, openMenu, onEnter, onLeave }: Props) {
               </Link>
 
               {hasSubmenu && isOpen && (
-                <div
-                  className="absolute left-0 top-full z-50 rounded-b-lg border border-t-0 border-[#e8e8e8] bg-white shadow-xl"
-                  style={{
-                    width: isRecipient ? "900px" : "550px",
-                    minHeight: isRecipient ? "400px" : "auto",
-                  }}
-                >
-                  {isRecipient ? (
-                    <div className="flex h-full">
-                      {/* First 3 columns with lists */}
-                      <div className="flex flex-1">
-                        {/* Column 1 */}
-                        <div className="flex-1 border-r border-[#f0f0f0] px-6 py-6">
-                          {item.submenu.slice(0, 6).map(sub => (
-                            <Link
-                              key={sub.label}
-                              href={sub.href}
-                              className="block py-2 text-[12px] text-[#444] hover:text-[#a4722c] hover:font-semibold transition-colors"
-                            >
-                              {sub.label}
-                            </Link>
-                          ))}
+                <div className="absolute left-1/2 transform -translate-x-1/2 top-full z-50 w-screen bg-[#1a2655] shadow-2xl">
+                  <div className="mx-auto max-w-[1280px] px-4">
+                    {isRecipient ? (
+                      <div className="flex items-center gap-8 py-8">
+                        {/* First 3 columns with lists */}
+                        <div className="flex flex-1 gap-8">
+                          {/* Column 1 */}
+                          <div className="flex-1">
+                            {item.submenu.slice(0, 6).map(sub => (
+                              <Link
+                                key={sub.label}
+                                href={sub.href}
+                                className="block py-2.5 text-[13px] text-white hover:text-[#a4722c] hover:font-semibold transition-colors"
+                              >
+                                {sub.label}
+                              </Link>
+                            ))}
+                          </div>
+
+                          {/* Column 2 */}
+                          <div className="flex-1">
+                            {item.submenu.slice(6, 12).map(sub => (
+                              <Link
+                                key={sub.label}
+                                href={sub.href}
+                                className="block py-2.5 text-[13px] text-white hover:text-[#a4722c] hover:font-semibold transition-colors"
+                              >
+                                {sub.label}
+                              </Link>
+                            ))}
+                          </div>
+
+                          {/* Column 3 */}
+                          <div className="flex-1">
+                            {item.submenu.slice(12).map(sub => (
+                              <Link
+                                key={sub.label}
+                                href={sub.href}
+                                className="block py-2.5 text-[13px] text-white hover:text-[#a4722c] hover:font-semibold transition-colors"
+                              >
+                                {sub.label}
+                              </Link>
+                            ))}
+                          </div>
                         </div>
 
-                        {/* Column 2 */}
-                        <div className="flex-1 border-r border-[#f0f0f0] px-6 py-6">
-                          {item.submenu.slice(6, 12).map(sub => (
-                            <Link
-                              key={sub.label}
-                              href={sub.href}
-                              className="block py-2 text-[12px] text-[#444] hover:text-[#a4722c] hover:font-semibold transition-colors"
-                            >
-                              {sub.label}
-                            </Link>
-                          ))}
-                        </div>
-
-                        {/* Column 3 */}
-                        <div className="flex-1 border-r border-[#f0f0f0] px-6 py-6">
-                          {item.submenu.slice(12).map(sub => (
-                            <Link
-                              key={sub.label}
-                              href={sub.href}
-                              className="block py-2 text-[12px] text-[#444] hover:text-[#a4722c] hover:font-semibold transition-colors"
-                            >
-                              {sub.label}
-                            </Link>
-                          ))}
-                        </div>
+                        {/* Column 4 - Image */}
+                        {item.image && (
+                          <div className="w-64 h-64 relative flex-shrink-0 rounded-lg overflow-hidden">
+                            <Image
+                              src={item.image}
+                              alt={item.label}
+                              fill
+                              className="object-cover hover:scale-110 transition-transform duration-300"
+                              sizes="256px"
+                            />
+                          </div>
+                        )}
                       </div>
-
-                      {/* Column 4 - Image */}
-                      {item.image && (
-                        <div className="w-56 relative overflow-hidden rounded-br-lg">
-                          <Image
-                            src={item.image}
-                            alt={item.label}
-                            fill
-                            className="object-cover hover:scale-105 transition-transform duration-300"
-                            sizes="224px"
-                          />
+                    ) : (
+                      <div className="flex items-center gap-8 py-8">
+                        {/* List on left */}
+                        <div className="flex-1 space-y-1">
+                          {item.submenu.map(sub => (
+                            <Link
+                              key={sub.label}
+                              href={sub.href}
+                              className="block py-2.5 text-[13px] text-white hover:text-[#a4722c] hover:font-semibold transition-colors"
+                            >
+                              {sub.label}
+                            </Link>
+                          ))}
                         </div>
-                      )}
-                    </div>
-                  ) : (
-                    <div className="flex">
-                      {/* List on left */}
-                      <div className="flex-1 px-6 py-4 space-y-1">
-                        {item.submenu.map(sub => (
-                          <Link
-                            key={sub.label}
-                            href={sub.href}
-                            className="block py-2.5 text-[12px] text-[#444] hover:bg-[#fdf6ee] hover:text-[#a4722c] hover:font-semibold transition-colors px-2 rounded"
-                          >
-                            {sub.label}
-                          </Link>
-                        ))}
+
+                        {/* Image on right */}
+                        {item.image && (
+                          <div className="w-56 h-56 relative flex-shrink-0 rounded-lg overflow-hidden">
+                            <Image
+                              src={item.image}
+                              alt={item.label}
+                              fill
+                              className="object-cover hover:scale-110 transition-transform duration-300"
+                              sizes="224px"
+                            />
+                          </div>
+                        )}
                       </div>
-
-                      {/* Image on right */}
-                      {item.image && (
-                        <div className="w-48 relative overflow-hidden rounded-br-lg">
-                          <Image
-                            src={item.image}
-                            alt={item.label}
-                            fill
-                            className="object-cover hover:scale-105 transition-transform duration-300"
-                            sizes="192px"
-                          />
-                        </div>
-                      )}
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
               )}
             </div>
