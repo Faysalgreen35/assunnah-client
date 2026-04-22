@@ -7,15 +7,21 @@ import productsData from "@/data/all-products.json";
 // Keep this mapping for category slug to collection slug
 const categoryToCollectionMap: Record<string, string> = {
   "quran-gift-sets": "quran-gift-sets",
+  "quran-set-gift": "quran-gift-sets",
   "prayer-essentials": "prayer-essentials",
   "nikah-collection": "nikah-collection",
   "ramadan-gifts": "ramadan-2026",
+  "festivals-gifts": "ramadan-2026",
   "hajj-umrah": "hajj-umrah",
   "kids-gifts": "kids-gifts",
+  "kids-collection": "kids-gifts",
   "resin-art": "resin-art",
+  "resin-art-collection": "resin-art",
   "corporate-gifts": "corporate-gifts",
   "home-decor": "home-decor",
+  "personalized-gift": "quran-gift-sets",
   "attar-fragrance": "attar-fragrance",
+  "clothing": "attar-fragrance",
   "return-favors": "return-favors",
 };
 
@@ -48,17 +54,21 @@ const allProducts = [
 
 const slugToCategory: Record<string, { label: string; category: string; description: string }> = {
   "quran-gift-sets":    { label: "Quran Gift Sets",   category: "Quran Gift Sets",   description: "Beautifully curated Quran hampers and Islamic gift sets for every occasion." },
+  "quran-set-gift":     { label: "Quran Gift Sets",   category: "Quran Gift Sets",   description: "Beautifully curated Quran hampers and Islamic gift sets for every occasion." },
   "prayer-essentials":  { label: "Prayer Essentials", category: "Prayer Essentials", description: "Everything needed for daily Islamic worship — prayer mats, tasbih, attars and more." },
   "nikah-collection":   { label: "Nikah Collection",  category: "Nikah Collection",  description: "Elegant Islamic gifts for weddings, nikah ceremonies, and anniversaries." },
   "ramadan-gifts":      { label: "Ramadan Gifts",     category: "Ramadan Gifts",     description: "Celebrate the blessed month of Ramadan with thoughtfully curated gift sets." },
+  "festivals-gifts":    { label: "Festivals Gifts",   category: "Ramadan Gifts",     description: "Celebrate Islamic festivals with thoughtfully curated festival gift sets." },
   "hajj-umrah":         { label: "Hajj & Umrah",      category: "Hajj & Umrah",      description: "Spiritual travel essentials and return gifts for Hajj and Umrah pilgrims." },
   "kids-gifts":         { label: "Kids Gifts",        category: "Kids Gifts",        description: "Fun, faith-building Islamic gifts for little ones — books, mats, and more." },
   "kids-collection":    { label: "Kids Collection",   category: "Kids Gifts",        description: "Fun, faith-building Islamic gifts for little ones — books, mats, and more." },
   "resin-art":          { label: "Resin Art",         category: "Resin Art",         description: "Stunning handcrafted resin art Islamic gift sets with calligraphy designs." },
-  "resin-art-collection": { label: "Resin Art",       category: "Resin Art",         description: "Stunning handcrafted resin art Islamic gift sets with calligraphy designs." },
+  "resin-art-collection": { label: "Resin Art Collection", category: "Resin Art",    description: "Stunning handcrafted resin art Islamic gift sets with calligraphy designs." },
   "corporate-gifts":    { label: "Corporate Gifts",   category: "Corporate Gifts",   description: "Premium Islamic corporate gift sets for Eid, Ramadan, and business gifting." },
   "home-decor":         { label: "Home Decor",        category: "Home Decor",        description: "Beautiful Islamic home décor pieces — calligraphy frames, resin art, and more." },
+  "personalized-gift":  { label: "Personalized Gift", category: "Quran Gift Sets",   description: "Custom and personalized Islamic gift sets with your special touch." },
   "attar-fragrance":    { label: "Attar & Fragrance", category: "Attar & Fragrance", description: "Premium attars and Islamic fragrance collections inspired by Sunnah living." },
+  "clothing":           { label: "Clothing",          category: "Attar & Fragrance", description: "Premium attars and Islamic fragrance collections inspired by Sunnah living." },
   "return-favors":      { label: "Return Favors",     category: "Return Favors",     description: "Beautiful return favor sets for Hajj, Umrah, Nikah, and special occasions." },
 };
 

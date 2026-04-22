@@ -11,6 +11,17 @@
     "recipients": ["Her"]
   },
   {
+    "slug": "quran-gift-set-mini",
+    "name": "Mini Quran Gift Set",
+    "category": "Quran Gift Sets",
+    "price": 890,
+    "img": "/all-pic/AL-HADAYA/1---Quran-Gift-Set.png",
+    "rating": 5,
+    "description": "Compact and portable Quran gift set",
+    "occasions": ["Eid", "Birthday"],
+    "recipients": ["Kids", "Him", "Her"]
+  },
+  {
     "slug": "velvet-quran-set",
     "name": "Personalised Velvet Quran Gift Set",
     "category": "Quran Gift Sets",
@@ -261,6 +272,138 @@
     "rating": 5,
     "description": "Ultra-premium Islamic gift collection",
     "occasions": ["Wedding", "Corporate", "Eid"],
+    "recipients": ["Him", "Her"]
+  },
+  {
+    "slug": "resin-art-classic",
+    "name": "Classic Resin Art Islamic Frame",
+    "category": "Resin Art",
+    "price": 1590,
+    "img": "/all-pic/AL-HADAYA/Resin_Art_Products.png",
+    "rating": 4,
+    "description": "Beautiful classic resin art frame",
+    "occasions": ["Wedding", "Festival"],
+    "recipients": ["Her", "Him"]
+  },
+  {
+    "slug": "resin-art-modern",
+    "name": "Modern Resin Art Gift Box",
+    "category": "Resin Art",
+    "price": 1890,
+    "img": "/all-pic/AL-HADAYA/Resin_Art_Products.png",
+    "rating": 5,
+    "description": "Contemporary resin art collection",
+    "occasions": ["Eid", "Wedding"],
+    "recipients": ["Her"]
+  },
+  {
+    "slug": "personalized-quran",
+    "name": "Personalized Quran with Name Engraving",
+    "category": "Quran Gift Sets",
+    "price": 1950,
+    "img": "/all-pic/AL-HADAYA/Personalised_Velvet_Quran_Gift_Set.png",
+    "rating": 5,
+    "description": "Custom Quran with personalized engraving",
+    "occasions": ["Wedding", "Graduation", "Birthday"],
+    "recipients": ["Him", "Her"]
+  },
+  {
+    "slug": "personalized-gift-box",
+    "name": "Personalized Islamic Gift Box",
+    "category": "Quran Gift Sets",
+    "price": 1650,
+    "img": "/all-pic/AL-HADAYA/Personalized_Gift_medium.png",
+    "rating": 5,
+    "description": "Fully customized Islamic gift box",
+    "occasions": ["Wedding", "Birthday"],
+    "recipients": ["Him", "Her"]
+  },
+  {
+    "slug": "festivals-hamper-deluxe",
+    "name": "Deluxe Festivals Gift Hamper",
+    "category": "Ramadan Gifts",
+    "price": 2100,
+    "img": "/all-pic/AL-HADAYA/Festivals_Gifts.png",
+    "rating": 5,
+    "description": "Premium festivals celebration hamper",
+    "occasions": ["Festival", "Ramadan", "Eid"],
+    "recipients": ["Family", "Him", "Her"]
+  },
+  {
+    "slug": "attar-collection-premium",
+    "name": "Premium Attar Collection Gift Set",
+    "category": "Attar & Fragrance",
+    "price": 1890,
+    "img": "/all-pic/AL-HADAYA/7---Clothing.png",
+    "rating": 4,
+    "description": "Premium collection of attars and fragrances",
+    "occasions": ["Eid", "Ramadan"],
+    "recipients": ["Him", "Her"]
+  },
+  {
+    "slug": "attar-collection-deluxe",
+    "name": "Deluxe Attar Fragrance Set",
+    "category": "Attar & Fragrance",
+    "price": 2250,
+    "img": "/all-pic/AL-HADAYA/7---Clothing.png",
+    "rating": 5,
+    "description": "Deluxe attar and fragrance collection",
+    "occasions": ["Wedding", "Eid"],
+    "recipients": ["Her"]
+  },
+  {
+    "slug": "prayer-mat-premium",
+    "name": "Premium Silk Prayer Mat",
+    "category": "Prayer Essentials",
+    "price": 1450,
+    "img": "/all-pic/AL-HADAYA/Prayer_mats.png",
+    "rating": 5,
+    "description": "Luxury silk prayer mat with tasbih",
+    "occasions": ["Ramadan", "Hajj & Umrah"],
+    "recipients": ["Him", "Her"]
+  },
+  {
+    "slug": "nikah-bridal-set",
+    "name": "Bridal Nikah Gift Set",
+    "category": "Nikah Collection",
+    "price": 2490,
+    "img": "/all-pic/AL-HADAYA/Nikah_Return.png",
+    "rating": 5,
+    "description": "Exquisite bridal nikah gift set",
+    "occasions": ["Wedding"],
+    "recipients": ["Her", "Couples"]
+  },
+  {
+    "slug": "kids-Islamic-learning",
+    "name": "Kids Islamic Learning Gift Set",
+    "category": "Kids Gifts",
+    "price": 1150,
+    "img": "/all-pic/AL-HADAYA/Kids_Gifts.png",
+    "rating": 5,
+    "description": "Educational Islamic gift for children",
+    "occasions": ["Eid", "Birthday"],
+    "recipients": ["Kids"]
+  },
+  {
+    "slug": "return-favors-premium",
+    "name": "Premium Return Favor Set",
+    "category": "Return Favors",
+    "price": 650,
+    "img": "/all-pic/AL-HADAYA/6---Return-Favors.png",
+    "rating": 4,
+    "description": "Premium return gifts for special occasions",
+    "occasions": ["Hajj & Umrah", "Wedding"],
+    "recipients": ["Family"]
+  },
+  {
+    "slug": "home-decor-wall-art",
+    "name": "Islamic Wall Art Decor Set",
+    "category": "Home Decor",
+    "price": 2290,
+    "img": "/all-pic/AL-HADAYA/5---Home-Decor.png",
+    "rating": 4,
+    "description": "Beautiful Islamic calligraphy wall art",
+    "occasions": ["Festival", "Wedding"],
     "recipients": ["Him", "Her"]
   }
 ]
