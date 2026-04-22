@@ -1,0 +1,156 @@
+[
+  {
+    "slug": "quran-gift-set-1",
+    "name": "Barkat-e-Jariyah Quran Hamper",
+    "category": "Quran Gift Sets",
+    "price": 1690,
+    "img": "/all-pic/AL-HADAYA/Pastel_Pink_Barkat-e-Jariyah_Resin_Quran_Hamper_Luxury_Islamic_Gift_Set.jpg",
+    "rating": 5,
+    "description": "A beautifully curated Barkat-e-Jariyah Quran Hamper that makes the perfect Islamic gift.",
+    "occasions": ["Wedding", "Eid"],
+    "recipients": ["Her", "Family"]
+  },
+  {
+    "slug": "velvet-quran-set",
+    "name": "Personalised Velvet Quran Gift Set",
+    "category": "Quran Gift Sets",
+    "price": 1950,
+    "img": "/all-pic/AL-HADAYA/Personalised_Velvet_Quran_Gift_Set.png",
+    "rating": 5,
+    "description": "Luxurious velvet Quran gift set with personalised name engraving.",
+    "occasions": ["Wedding", "Graduation"],
+    "recipients": ["Her", "Him"]
+  },
+  {
+    "slug": "royal-blue-quran",
+    "name": "Royal Blue Barkat-e-Jariyah Quran Set",
+    "category": "Quran Gift Sets",
+    "price": 2250,
+    "img": "/all-pic/AL-HADAYA/Royal_Blue_Barkat-e-Jariyah_Resin_Quran_Gift_Hamper_Luxury_Islamic_Set_76043a65-8444-4dba-9443-446fcb9397b6.jpg",
+    "rating": 5,
+    "description": "The Royal Blue Barkat-e-Jariyah Quran Gift Hamper is a stunning luxury Islamic gift set.",
+    "occasions": ["Wedding", "Hajj"],
+    "recipients": ["Him", "Father"]
+  },
+  {
+    "slug": "kaaba-gift-set",
+    "name": "Kaaba Luxury Islamic Gift Set",
+    "category": "Prayer Essentials",
+    "price": 2490,
+    "img": "/all-pic/AL-HADAYA/Kaaba_Design_Cylinder_Gift_Box_with_Taffeta_Prayer_Rug_Tasbih_Luxury_Islamic_Gift_Set.jpg",
+    "rating": 5,
+    "description": "A premium Kaaba-design cylinder gift box containing a taffeta prayer rug and tasbih.",
+    "occasions": ["Hajj", "Umrah"],
+    "recipients": ["Him", "Family"]
+  },
+  {
+    "slug": "prayer-mat-set",
+    "name": "Premium Prayer Mat Gift Set",
+    "category": "Prayer Essentials",
+    "price": 890,
+    "img": "/all-pic/AL-HADAYA/Prayer_mats.png",
+    "rating": 4,
+    "description": "High-quality prayer mat gift set designed for comfort and durability.",
+    "occasions": ["Eid", "Ramadan"],
+    "recipients": ["Her", "Him"]
+  },
+  {
+    "slug": "quran-set-gift",
+    "name": "Quran Al-Kareem Gift Set",
+    "category": "Quran Gift Sets",
+    "price": 1190,
+    "img": "/all-pic/AL-HADAYA/1---Quran-Gift-Set.png",
+    "rating": 5,
+    "description": "A classic Quran Al-Kareem gift set — the perfect Islamic gift for any occasion.",
+    "occasions": ["Wedding", "Eid"],
+    "recipients": ["Her", "Him"]
+  },
+  {
+    "slug": "nikah-hamper",
+    "name": "Nikah Wedding Return Hamper",
+    "category": "Nikah Collection",
+    "price": 1490,
+    "img": "/all-pic/AL-HADAYA/Nikah_Return.png",
+    "rating": 5,
+    "description": "A beautifully curated Nikah wedding return hamper for distributing at Islamic wedding ceremonies.",
+    "occasions": ["Wedding"],
+    "recipients": ["Family"]
+  },
+  {
+    "slug": "resin-art-products",
+    "name": "Resin Art Islamic Gift Set",
+    "category": "Resin Art",
+    "price": 1290,
+    "img": "/all-pic/AL-HADAYA/Resin_Art_Products.png",
+    "rating": 4,
+    "description": "Handcrafted resin art Islamic gift set featuring stunning calligraphy.",
+    "occasions": ["Wedding", "Eid"],
+    "recipients": ["Her", "Family"]
+  },
+  {
+    "slug": "ramadan-hamper",
+    "name": "Ramadan Essentials Hamper",
+    "category": "Ramadan Gifts",
+    "price": 1490,
+    "img": "/all-pic/AL-HADAYA/Ramadan_Hamper.jpg",
+    "rating": 5,
+    "description": "Everything you need for a blessed Ramadan in one beautiful hamper.",
+    "occasions": ["Ramadan"],
+    "recipients": ["Family", "Her"]
+  },
+  {
+    "slug": "hajj-umrah-set",
+    "name": "Hajj & Umrah Travel Set",
+    "category": "Hajj & Umrah",
+    "price": 1790,
+    "img": "/all-pic/AL-HADAYA/Hajj_Umrah_medium.png",
+    "rating": 5,
+    "description": "A comprehensive Hajj & Umrah travel set with all spiritual essentials.",
+    "occasions": ["Hajj", "Umrah"],
+    "recipients": ["Him", "Family"]
+  },
+  {
+    "slug": "kids-gift-set",
+    "name": "Happy Kids Islamic Gift Collection",
+    "category": "Kids Gifts",
+    "price": 750,
+    "img": "/all-pic/AL-HADAYA/Kids_Gifts.png",
+    "rating": 5,
+    "description": "Fun and educational Islamic gift collection for children.",
+    "occasions": ["Eid", "Birthday"],
+    "recipients": ["Kids"]
+  },
+  {
+    "slug": "corporate-gift-set",
+    "name": "Premium Corporate Gift Set",
+    "category": "Corporate Gifts",
+    "price": 3500,
+    "img": "/all-pic/AL-HADAYA/9---Corporate-Gifts.png",
+    "rating": 4,
+    "description": "Elegant premium corporate gift set for Eid and Ramadan business gifting.",
+    "occasions": ["Ramadan", "Eid"],
+    "recipients": ["Corporate"]
+  },
+  {
+    "slug": "home-decor-set",
+    "name": "Islamic Home Decor Gift Set",
+    "category": "Home Decor",
+    "price": 1990,
+    "img": "/all-pic/AL-HADAYA/5---Home-Decor.png",
+    "rating": 4,
+    "description": "Transform any home with this beautiful Islamic home decor gift set.",
+    "occasions": ["Housewarming"],
+    "recipients": ["Family"]
+  },
+  {
+    "slug": "eid-hamper",
+    "name": "Tawakkul Eid Hamper Gift Set",
+    "category": "Ramadan Gifts",
+    "price": 1690,
+    "img": "/all-pic/AL-HADAYA/Tawakkul_Eid_Hamper.png",
+    "rating": 5,
+    "description": "The Tawakkul Eid Hamper is a premium Eid gift set filled with blessings and joy.",
+    "occasions": ["Eid"],
+    "recipients": ["Family"]
+  }
+]

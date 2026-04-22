@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ProductCard } from "./_ProductCard";
 import { FilterSidebar } from "@/components/product/FilterSidebar";
-import { useGetProductsQuery } from "@/services/api/productApi";
 import { useParams } from "next/navigation";
+import productsData from "@/data/products.json";
 
 function slugToLabel(slug: string): string {
   return slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
@@ -22,18 +22,35 @@ export default function CollectionSlugPage() {
   const [selectedRecipients, setSelectedRecipients] = useState<string[]>([]);
   const [sortBy, setSortBy] = useState("");
 
-  const queryParams = {
-    occasion: selectedOccasions.length > 0 ? selectedOccasions.join(",") : undefined,
-    recipient: selectedRecipients.length > 0 ? selectedRecipients.join(",") : undefined,
-    sort: sortBy || undefined,
-    limit: 100,
-  };
+  // TODO: Replace with RTK Query useGetProductsQuery when backend is ready
+  const isLoading = false;
+  const error = null;
 
-  const { data: productsData, isLoading, error } = useGetProductsQuery(
-    Object.fromEntries(Object.entries(queryParams).filter(([_, v]) => v !== undefined))
-  );
+  // Filter products by collection and selected filters
+  const displayProducts = useMemo(() => {
+    let filtered = productsData.filter((product: any) => {
+      const collectionMatch = product.category.toLowerCase().replace(/\s+/g, "-") === slug;
+      const occasionMatch =
+        selectedOccasions.length === 0 ||
+        selectedOccasions.some((occ) => product.occasions?.includes(occ));
+      const recipientMatch =
+        selectedRecipients.length === 0 ||
+        selectedRecipients.some((rec) => product.recipients?.includes(rec));
 
-  const displayProducts = productsData?.data || [];
+      return collectionMatch && occasionMatch && recipientMatch;
+    });
+
+    // Apply sorting
+    if (sortBy === "-price") {
+      filtered.sort((a: any, b: any) => b.price - a.price);
+    } else if (sortBy === "price") {
+      filtered.sort((a: any, b: any) => a.price - b.price);
+    } else if (sortBy === "-rating") {
+      filtered.sort((a: any, b: any) => b.rating - a.rating);
+    }
+
+    return filtered;
+  }, [slug, selectedOccasions, selectedRecipients, sortBy]);
 
   const handleOccasionChange = (occasion: string) => {
     setSelectedOccasions((prev) =>
@@ -95,10 +112,9 @@ export default function CollectionSlugPage() {
               className="text-[12px] font-semibold text-[#555] hover:text-[#a4722c] transition-colors cursor-pointer bg-transparent border-0"
             >
               <option value="">Featured</option>
-              <option value="-averageRating">Best Rating</option>
+              <option value="-rating">Best Rating</option>
               <option value="price">Price: Low to High</option>
               <option value="-price">Price: High to Low</option>
-              <option value="-createdAt">Newest First</option>
             </select>
           </div>
           <span className="text-[12px] text-[#bbb]">
@@ -136,7 +152,7 @@ export default function CollectionSlugPage() {
             ) : (
               <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
                 {displayProducts.map((product: any) => (
-                  <ProductCard key={product._id} product={product} />
+                  <ProductCard key={product.slug} product={product} />
                 ))}
               </div>
             )}
