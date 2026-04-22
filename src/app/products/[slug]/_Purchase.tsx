@@ -5,14 +5,15 @@ import { useCart } from "@/hooks/useCart";
 import { useWishlist } from "@/hooks/useWishlist";
 
 interface Props {
-  price: string;
+  price: string | number;
+  numericPrice?: number;
   name: string;
   slug: string;
   image: string;
   personalizationNote?: string;
 }
 
-export function _Purchase({ price, name, slug, image, personalizationNote = "" }: Props) {
+export function _Purchase({ price, numericPrice, name, slug, image, personalizationNote = "" }: Props) {
   const [qty, setQty] = useState(1);
   const [added, setAdded] = useState(false);
   const { addItem } = useCart();
@@ -20,22 +21,32 @@ export function _Purchase({ price, name, slug, image, personalizationNote = "" }
 
   const isInWishlist = wishlistItems.some(item => item.productId === slug);
 
+  // Extract numeric price from string if not provided
+  const actualNumericPrice = numericPrice ||
+    (typeof price === 'number' ? price :
+     parseInt(String(price).replace(/[^\d]/g, '')) || 0);
+
   const handleAddToCart = useCallback(() => {
     addItem({
       productId: slug,
       name,
-      price,
+      price: actualNumericPrice,
       image,
       quantity: qty,
       personalizationNote,
     });
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
-  }, [addItem, slug, name, price, image, qty, personalizationNote]);
+  }, [addItem, slug, name, actualNumericPrice, image, qty, personalizationNote]);
 
   const handleWishlistToggle = useCallback(() => {
-    toggle(slug);
-  }, [toggle, slug]);
+    toggle({
+      productId: slug,
+      name,
+      price: actualNumericPrice,
+      image,
+    });
+  }, [toggle, slug, name, actualNumericPrice, image]);
 
   return (
     <div className="flex flex-col gap-4">

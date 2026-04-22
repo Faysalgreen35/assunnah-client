@@ -74,7 +74,7 @@ export function _MobileDrawer({ navItems, onClose }: Props) {
                   {isRecipient ? (
                     <div className="space-y-4">
                       {/* Recipient items in a single column for mobile */}
-                      {item.submenu.map(sub => (
+                      {item.submenu?.map(sub => (
                         <Link
                           key={sub.label}
                           href={sub.href}
@@ -100,7 +100,7 @@ export function _MobileDrawer({ navItems, onClose }: Props) {
                     </div>
                   ) : (
                     <div className="space-y-2">
-                      {item.submenu.map(sub => (
+                      {item.submenu?.map(sub => (
                         <Link
                           key={sub.label}
                           href={sub.href}

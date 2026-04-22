@@ -32,7 +32,7 @@ export function _NavBar({ navItems, openMenu, onEnter, onLeave }: Props) {
 
           // Generate columns dynamically
           const columns = Array.from({ length: columnCount }, (_, i) =>
-            item.submenu.slice(i * itemsPerColumn, (i + 1) * itemsPerColumn)
+            item.submenu?.slice(i * itemsPerColumn, (i + 1) * itemsPerColumn) || []
           );
 
           return (

@@ -19,7 +19,7 @@ export default function WishlistPage() {
     addItem({
       productId: product._id,
       name: product.name,
-      price: `₹${product.price}`,
+      price: typeof product.price === 'number' ? product.price : parseInt(String(product.price).replace(/[^\d]/g, '')) || 0,
       image: product.imageUrls?.[0] || product.image,
       quantity: 1,
     });
