@@ -1,3 +1,6 @@
+"use client";
+
+import { useTheme } from "@/providers/theme-provider";
 import Link from "next/link";
 import Image from "next/image";
 import type { INavItem } from "@/types/navbar";
@@ -10,8 +13,15 @@ interface Props {
 }
 
 export function _NavBar({ navItems, openMenu, onEnter, onLeave }: Props) {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+
+  const bgClass = isDark ? "bg-[#1a2655]" : "bg-white";
+  const textClass = isDark ? "text-white" : "text-[#2a2a2a]";
+  const textHoverClass = isDark ? "hover:text-[#a4722c]" : "hover:text-[#a4722c]";
+
   return (
-    <div className="hidden border-b border-[#ebebeb] bg-white lg:block">
+    <div className={`hidden md:block border-b ${isDark ? "border-[#2a3a6a]" : "border-[#ebebeb]"} ${bgClass}`}>
       <nav className="mx-auto flex max-w-[1280px] items-center justify-center px-4">
         {navItems.map(item => {
           const isRecipient = item.label === "SHOP BY RECIPIENT";
@@ -27,7 +37,7 @@ export function _NavBar({ navItems, openMenu, onEnter, onLeave }: Props) {
             >
               <Link
                 href={item.href}
-                className="flex items-center gap-0.5 whitespace-nowrap px-2.5 py-3 text-[11px] font-bold tracking-[0.05em] text-[#2a2a2a] hover:text-[#a4722c] transition-colors"
+                className={`flex items-center gap-0.5 whitespace-nowrap px-2.5 py-3 text-[11px] font-bold tracking-[0.05em] ${textClass} ${textHoverClass} transition-colors`}
               >
                 {item.label}
                 {hasSubmenu && (
@@ -38,45 +48,41 @@ export function _NavBar({ navItems, openMenu, onEnter, onLeave }: Props) {
               </Link>
 
               {hasSubmenu && isOpen && (
-                <div className="absolute left-1/2 transform -translate-x-1/2 top-full z-50 w-screen bg-[#1a2655] shadow-2xl">
+                <div className={`absolute left-1/2 transform -translate-x-1/2 top-full z-50 w-screen ${isDark ? "bg-[#1a2655]" : "bg-white"} shadow-2xl`}>
                   <div className="mx-auto max-w-[1280px] px-4">
                     {isRecipient ? (
                       <div className="flex items-center gap-8 py-8">
-                        {/* First 3 columns with lists */}
                         <div className="flex flex-1 gap-8">
-                          {/* Column 1 */}
                           <div className="flex-1">
                             {item.submenu.slice(0, 6).map(sub => (
                               <Link
                                 key={sub.label}
                                 href={sub.href}
-                                className="block py-2.5 text-[13px] text-white hover:text-[#a4722c] hover:font-semibold transition-colors"
+                                className={`block py-2.5 text-[13px] ${isDark ? "text-white" : "text-[#444]"} hover:text-[#a4722c] hover:font-semibold transition-colors`}
                               >
                                 {sub.label}
                               </Link>
                             ))}
                           </div>
 
-                          {/* Column 2 */}
                           <div className="flex-1">
                             {item.submenu.slice(6, 12).map(sub => (
                               <Link
                                 key={sub.label}
                                 href={sub.href}
-                                className="block py-2.5 text-[13px] text-white hover:text-[#a4722c] hover:font-semibold transition-colors"
+                                className={`block py-2.5 text-[13px] ${isDark ? "text-white" : "text-[#444]"} hover:text-[#a4722c] hover:font-semibold transition-colors`}
                               >
                                 {sub.label}
                               </Link>
                             ))}
                           </div>
 
-                          {/* Column 3 */}
                           <div className="flex-1">
                             {item.submenu.slice(12).map(sub => (
                               <Link
                                 key={sub.label}
                                 href={sub.href}
-                                className="block py-2.5 text-[13px] text-white hover:text-[#a4722c] hover:font-semibold transition-colors"
+                                className={`block py-2.5 text-[13px] ${isDark ? "text-white" : "text-[#444]"} hover:text-[#a4722c] hover:font-semibold transition-colors`}
                               >
                                 {sub.label}
                               </Link>
@@ -84,7 +90,6 @@ export function _NavBar({ navItems, openMenu, onEnter, onLeave }: Props) {
                           </div>
                         </div>
 
-                        {/* Column 4 - Image */}
                         {item.image && (
                           <div className="w-64 h-64 relative flex-shrink-0 rounded-lg overflow-hidden">
                             <Image
@@ -99,20 +104,18 @@ export function _NavBar({ navItems, openMenu, onEnter, onLeave }: Props) {
                       </div>
                     ) : (
                       <div className="flex items-center gap-8 py-8">
-                        {/* List on left */}
                         <div className="flex-1 space-y-1">
                           {item.submenu.map(sub => (
                             <Link
                               key={sub.label}
                               href={sub.href}
-                              className="block py-2.5 text-[13px] text-white hover:text-[#a4722c] hover:font-semibold transition-colors"
+                              className={`block py-2.5 text-[13px] ${isDark ? "text-white" : "text-[#444]"} hover:text-[#a4722c] hover:font-semibold transition-colors`}
                             >
                               {sub.label}
                             </Link>
                           ))}
                         </div>
 
-                        {/* Image on right */}
                         {item.image && (
                           <div className="w-56 h-56 relative flex-shrink-0 rounded-lg overflow-hidden">
                             <Image
