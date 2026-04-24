@@ -65,9 +65,9 @@ export function _MegaNavBar({ navItems }: Props) {
         className="hidden md:block sticky top-0 z-40 w-full bg-[#f5efe6] border-b border-[#e8ddd1] shadow-sm"
         onMouseLeave={handleMouseLeave}
       >
-        <div className="mx-auto max-w-[1920px] px-6 py-0">
+        <div className="mx-auto max-w-[1920px] px-2 py-0">
           {/* Menu Items */}
-          <div className="flex items-center justify-center gap-2">
+          <div className="flex items-center justify-center gap-0">
             {navItems.map((item) => (
               <div
                 key={item.label}
@@ -77,7 +77,7 @@ export function _MegaNavBar({ navItems }: Props) {
                 {/* Menu Item Button */}
                 <Link
                   href={item.href}
-                  className="flex items-center gap-1 px-4 py-4 text-[12px] font-semibold tracking-wide text-[#3d3d3d] uppercase whitespace-nowrap transition-all duration-200 hover:text-[#8b6f47] border-b-2 border-transparent hover:border-[#8b6f47]"
+                  className="flex items-center gap-1 px-2 py-4 text-[12px] font-semibold tracking-wide text-[#3d3d3d] uppercase whitespace-nowrap transition-all duration-200 hover:text-[#8b6f47] border-b-2 border-transparent hover:border-[#8b6f47]"
                   style={{
                     borderColor: openMenu === item.label ? "#8b6f47" : "transparent",
                     color: openMenu === item.label ? "#8b6f47" : "#3d3d3d",
