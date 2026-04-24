@@ -79,8 +79,9 @@ export default function CollectionSlugPage() {
           selectedRecipients.some((rec) => product.recipients?.includes(rec));
         return recipientMatch;
       } else {
-        // Regular collection filter by category
-        const collectionMatch = product.category.toLowerCase().replace(/\s+/g, "-") === slug;
+        // Regular collection filter by category - extract first part of slug for collections
+        const categorySlug = product.slug?.split('/')[0] || product.category.toLowerCase().replace(/\s+/g, "-");
+        const collectionMatch = categorySlug === slug;
         const occasionMatch =
           selectedOccasions.length === 0 ||
           selectedOccasions.some((occ) => product.occasions?.includes(occ));

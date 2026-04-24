@@ -9,11 +9,12 @@ import { VideoPreview } from "@/components/product/VideoPreview";
 import { PersonalizationWrapper } from "./_PersonalizationWrapper";
 import productsData from "@/data/all-products.json";
 
-type Props = { params: Promise<{ slug: string }> };
+type Props = { params: Promise<{ slug: string[] }> };
 
 export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
-  const product = (productsData as any[]).find((p: any) => p.slug === slug);
+  const fullSlug = slug.join('/');
+  const product = (productsData as any[]).find((p: any) => p.slug === fullSlug);
 
   if (!product) notFound();
 
@@ -54,7 +55,7 @@ export default async function ProductPage({ params }: Props) {
             <span>/</span>
             <Link href="/collections" className="hover:text-[#a4722c] transition-colors">Collections</Link>
             <span>/</span>
-            <Link href={`/collections/${slug}`} className="hover:text-[#a4722c] transition-colors">{displayProduct.category}</Link>
+            <Link href={`/collections/${slug[0]}`} className="hover:text-[#a4722c] transition-colors">{displayProduct.category}</Link>
             <span>/</span>
             <span className="text-[#a4722c] line-clamp-1">{displayProduct.name}</span>
           </nav>

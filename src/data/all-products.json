@@ -1,6 +1,6 @@
 [
   {
-    "slug": "quran-gift-set-1",
+    "slug": "quran/gift-sets/barkat-e-jariyah-quran-hamper-pastel-pink",
     "name": "Barkat-e-Jariyah Quran Hamper",
     "category": "Quran Gift Sets",
     "price": 1690,
@@ -11,7 +11,7 @@
     "recipients": ["Her"]
   },
   {
-    "slug": "quran-gift-set-mini",
+    "slug": "quran/gift-sets/mini-quran-gift-set",
     "name": "Mini Quran Gift Set",
     "category": "Quran Gift Sets",
     "price": 890,
@@ -22,7 +22,7 @@
     "recipients": ["Kids", "Him", "Her"]
   },
   {
-    "slug": "velvet-quran-set",
+    "slug": "quran/gift-sets/personalised-quran-gift-set-velvet",
     "name": "Personalised Velvet Quran Gift Set",
     "category": "Quran Gift Sets",
     "price": 1950,
@@ -33,7 +33,7 @@
     "recipients": ["Her", "Him"]
   },
   {
-    "slug": "royal-blue-quran",
+    "slug": "quran/gift-sets/barkat-e-jariyah-quran-set-royal-blue",
     "name": "Royal Blue Barkat-e-Jariyah Quran Set",
     "category": "Quran Gift Sets",
     "price": 2250,
@@ -44,7 +44,7 @@
     "recipients": ["Him"]
   },
   {
-    "slug": "kaaba-gift-set",
+    "slug": "prayer/essentials/kaaba-luxury-islamic-gift-set",
     "name": "Kaaba Luxury Islamic Gift Set",
     "category": "Prayer Essentials",
     "price": 2490,
@@ -55,7 +55,7 @@
     "recipients": ["Him", "Parents"]
   },
   {
-    "slug": "prayer-mat-set",
+    "slug": "prayer/essentials/premium-prayer-mat-gift-set",
     "name": "Premium Prayer Mat Gift Set",
     "category": "Prayer Essentials",
     "price": 890,
@@ -66,7 +66,7 @@
     "recipients": ["Her", "Him"]
   },
   {
-    "slug": "quran-set-gift",
+    "slug": "quran/gift-sets/quran-al-kareem-gift-set",
     "name": "Quran Al-Kareem Gift Set",
     "category": "Quran Gift Sets",
     "price": 1190,
@@ -77,7 +77,7 @@
     "recipients": ["Her", "Him"]
   },
   {
-    "slug": "nikah-hamper",
+    "slug": "nikah/collection/nikah-wedding-return-hamper",
     "name": "Nikah Wedding Return Hamper",
     "category": "Nikah Collection",
     "price": 1490,
@@ -88,7 +88,7 @@
     "recipients": ["Couples"]
   },
   {
-    "slug": "resin-art-products",
+    "slug": "resin/art/islamic-gift-set-resin",
     "name": "Resin Art Islamic Gift Set",
     "category": "Resin Art",
     "price": 1290,
@@ -99,7 +99,7 @@
     "recipients": ["Her"]
   },
   {
-    "slug": "ramadan-hamper",
+    "slug": "ramadan/gifts/ramadan-essentials-hamper",
     "name": "Ramadan Essentials Hamper",
     "category": "Ramadan Gifts",
     "price": 1490,
@@ -110,7 +110,7 @@
     "recipients": ["Him", "Her", "Family"]
   },
   {
-    "slug": "hajj-umrah-set",
+    "slug": "hajj/umrah/travel-set",
     "name": "Hajj & Umrah Travel Set",
     "category": "Hajj & Umrah",
     "price": 1790,
@@ -121,7 +121,7 @@
     "recipients": ["Him", "Her"]
   },
   {
-    "slug": "kids-gift-set",
+    "slug": "kids/gifts/happy-kids-islamic-gift-collection",
     "name": "Happy Kids Islamic Gift Collection",
     "category": "Kids Gifts",
     "price": 750,
@@ -132,7 +132,7 @@
     "recipients": ["Kids"]
   },
   {
-    "slug": "corporate-gift-set",
+    "slug": "corporate/gifts/premium-corporate-gift-set",
     "name": "Premium Corporate Gift Set",
     "category": "Corporate Gifts",
     "price": 3500,
@@ -143,7 +143,7 @@
     "recipients": ["Corporate"]
   },
   {
-    "slug": "festivals-gifts",
+    "slug": "ramadan/gifts/festivals-celebration-gift-box",
     "name": "Festivals Celebration Gift Box",
     "category": "Ramadan Gifts",
     "price": 990,
@@ -154,7 +154,7 @@
     "recipients": ["Family"]
   },
   {
-    "slug": "personalized-gift",
+    "slug": "quran/gift-sets/personalised-islamic-gift-set",
     "name": "Personalised Islamic Gift Set",
     "category": "Quran Gift Sets",
     "price": 1350,
@@ -165,7 +165,7 @@
     "recipients": ["Her", "Him"]
   },
   {
-    "slug": "prayer-essentials-set",
+    "slug": "prayer/essentials/prayer-essentials-gift-bundle",
     "name": "Prayer Essentials Gift Bundle",
     "category": "Prayer Essentials",
     "price": 1100,
@@ -176,7 +176,7 @@
     "recipients": ["Her", "Him"]
   },
   {
-    "slug": "return-favors-set",
+    "slug": "return/favors/hajj-umrah-return-favors",
     "name": "Hajj & Umrah Return Favors",
     "category": "Return Favors",
     "price": 350,
@@ -187,7 +187,7 @@
     "recipients": ["Family"]
   },
   {
-    "slug": "resin-art-2",
+    "slug": "resin/art/quran-hamper-wine-resin",
     "name": "Wine Elegance Resin Quran Hamper",
     "category": "Resin Art",
     "price": 1890,
@@ -198,7 +198,7 @@
     "recipients": ["Her"]
   },
   {
-    "slug": "home-decor-set",
+    "slug": "home/decor/islamic-home-decor-gift-set",
     "name": "Islamic Home Decor Gift Set",
     "category": "Home Decor",
     "price": 1990,
@@ -209,7 +209,7 @@
     "recipients": ["Him", "Her"]
   },
   {
-    "slug": "clothing-set",
+    "slug": "attar/fragrance/islamic-modest-fashion-collection",
     "name": "Islamic Modest Fashion Collection",
     "category": "Attar & Fragrance",
     "price": 1250,
@@ -220,7 +220,7 @@
     "recipients": ["Her"]
   },
   {
-    "slug": "eid-hamper",
+    "slug": "ramadan/gifts/tawakkul-eid-hamper-gift-set",
     "name": "Tawakkul Eid Hamper Gift Set",
     "category": "Ramadan Gifts",
     "price": 1690,
@@ -231,7 +231,7 @@
     "recipients": ["Him", "Her", "Family"]
   },
   {
-    "slug": "anniversary-gift",
+    "slug": "nikah/collection/anniversary-celebration-gift-box",
     "name": "Anniversary Celebration Gift Box",
     "category": "Nikah Collection",
     "price": 1490,
@@ -242,7 +242,7 @@
     "recipients": ["Couples"]
   },
   {
-    "slug": "birthday-gift",
+    "slug": "kids/gifts/birthday-gift-celebration-set",
     "name": "Birthday Gift Celebration Set",
     "category": "Kids Gifts",
     "price": 890,
@@ -253,7 +253,7 @@
     "recipients": ["Kids"]
   },
   {
-    "slug": "zamzam-water-set",
+    "slug": "hajj/umrah/zamzam-water-premium-gift-set",
     "name": "Zamzam Water Premium Gift Set",
     "category": "Hajj & Umrah",
     "price": 650,
@@ -264,7 +264,7 @@
     "recipients": ["Family"]
   },
   {
-    "slug": "premium-gifts",
+    "slug": "corporate/gifts/premium-islamic-gift-collection",
     "name": "Premium Islamic Gift Collection",
     "category": "Corporate Gifts",
     "price": 2800,
@@ -275,7 +275,7 @@
     "recipients": ["Him", "Her"]
   },
   {
-    "slug": "resin-art-classic",
+    "slug": "resin/art/classic-islamic-frame-resin",
     "name": "Classic Resin Art Islamic Frame",
     "category": "Resin Art",
     "price": 1590,
@@ -286,7 +286,7 @@
     "recipients": ["Her", "Him"]
   },
   {
-    "slug": "resin-art-modern",
+    "slug": "resin/art/modern-gift-box-resin",
     "name": "Modern Resin Art Gift Box",
     "category": "Resin Art",
     "price": 1890,
@@ -297,7 +297,7 @@
     "recipients": ["Her"]
   },
   {
-    "slug": "personalized-quran",
+    "slug": "quran/gift-sets/quran-with-name-engraving",
     "name": "Personalized Quran with Name Engraving",
     "category": "Quran Gift Sets",
     "price": 1950,
@@ -308,7 +308,7 @@
     "recipients": ["Him", "Her"]
   },
   {
-    "slug": "personalized-gift-box",
+    "slug": "quran/gift-sets/personalized-islamic-gift-box",
     "name": "Personalized Islamic Gift Box",
     "category": "Quran Gift Sets",
     "price": 1650,
@@ -319,7 +319,7 @@
     "recipients": ["Him", "Her"]
   },
   {
-    "slug": "festivals-hamper-deluxe",
+    "slug": "ramadan/gifts/deluxe-festivals-gift-hamper",
     "name": "Deluxe Festivals Gift Hamper",
     "category": "Ramadan Gifts",
     "price": 2100,
@@ -330,7 +330,7 @@
     "recipients": ["Family", "Him", "Her"]
   },
   {
-    "slug": "attar-collection-premium",
+    "slug": "attar/fragrance/premium-attar-collection-gift-set",
     "name": "Premium Attar Collection Gift Set",
     "category": "Attar & Fragrance",
     "price": 1890,
@@ -341,7 +341,7 @@
     "recipients": ["Him", "Her"]
   },
   {
-    "slug": "attar-collection-deluxe",
+    "slug": "attar/fragrance/deluxe-attar-fragrance-set",
     "name": "Deluxe Attar Fragrance Set",
     "category": "Attar & Fragrance",
     "price": 2250,
@@ -352,7 +352,7 @@
     "recipients": ["Her"]
   },
   {
-    "slug": "prayer-mat-premium",
+    "slug": "prayer/essentials/premium-silk-prayer-mat",
     "name": "Premium Silk Prayer Mat",
     "category": "Prayer Essentials",
     "price": 1450,
@@ -363,7 +363,7 @@
     "recipients": ["Him", "Her"]
   },
   {
-    "slug": "nikah-bridal-set",
+    "slug": "nikah/collection/bridal-nikah-gift-set",
     "name": "Bridal Nikah Gift Set",
     "category": "Nikah Collection",
     "price": 2490,
@@ -374,7 +374,7 @@
     "recipients": ["Her", "Couples"]
   },
   {
-    "slug": "kids-Islamic-learning",
+    "slug": "kids/gifts/kids-islamic-learning-gift-set",
     "name": "Kids Islamic Learning Gift Set",
     "category": "Kids Gifts",
     "price": 1150,
@@ -385,7 +385,7 @@
     "recipients": ["Kids"]
   },
   {
-    "slug": "return-favors-premium",
+    "slug": "return/favors/premium-return-favor-set",
     "name": "Premium Return Favor Set",
     "category": "Return Favors",
     "price": 650,
@@ -396,7 +396,7 @@
     "recipients": ["Family"]
   },
   {
-    "slug": "home-decor-wall-art",
+    "slug": "home/decor/islamic-wall-art-decor-set",
     "name": "Islamic Wall Art Decor Set",
     "category": "Home Decor",
     "price": 2290,
