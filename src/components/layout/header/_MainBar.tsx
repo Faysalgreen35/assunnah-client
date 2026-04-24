@@ -35,11 +35,11 @@ interface Props {
 
 export function _MainBar({ onMenuToggle }: Props) {
   return (
-    <div className="border-b border-border-subtle bg-surface">
-      <div className="mx-auto max-w-[1280px] px-5 py-0">
-        {/* Top Row — Hamburger, Logo, Action Icons */}
-        <div className="flex items-center justify-between h-20">
-          {/* Left — Hamburger */}
+    <div className="border-b border-border-subtle bg-surface h-20">
+      <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-4 px-5 py-0 h-full">
+
+        {/* Left — hamburger + search */}
+        <div className="flex flex-1 items-center gap-3 min-w-0">
           <button
             className="shrink-0 rounded p-1 text-body hover:text-primary lg:hidden"
             onClick={onMenuToggle}
@@ -50,45 +50,6 @@ export function _MainBar({ onMenuToggle }: Props) {
             </svg>
           </button>
 
-          {/* Center — Logo */}
-          <Link href="/" className="flex shrink-0 items-center -my-8">
-            <div className="relative h-40 w-40 hover:opacity-80 transition-opacity">
-              <Image
-                src="/logo/bg_remove_logo_black.png"
-                alt="As-Sunnah Logo"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-          </Link>
-
-          {/* Right — Action Icons */}
-          <div className="flex items-center justify-end gap-0.5 sm:gap-1">
-            {actionIcons.map(item => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="relative flex flex-col items-center gap-0.5 px-2 py-1 text-body hover:text-primary transition-colors"
-                aria-label={item.label}
-              >
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                  {item.path}
-                </svg>
-                <span className="hidden text-[9px] font-semibold uppercase tracking-[0.07em] text-muted lg:block">{item.label}</span>
-                {item.badge !== null && (
-                  <span className="absolute -right-0.5 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-[#a4722c] text-[9px] font-bold text-white">
-                    {item.badge}
-                  </span>
-                )}
-              </Link>
-            ))}
-            <_ThemeToggle />
-          </div>
-        </div>
-
-        {/* Bottom Row — Search Bar */}
-        <div className="flex items-center justify-center gap-3 py-3">
           {/* Location pill — desktop only */}
           <button className="hidden lg:flex shrink-0 items-center gap-1.5 rounded-full border border-border-subtle px-3 py-1.5 text-[11px] text-body hover:border-primary transition-colors">
             <svg width="10" height="13" viewBox="0 0 12 15" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -100,11 +61,11 @@ export function _MainBar({ onMenuToggle }: Props) {
           </button>
 
           {/* Search */}
-          <div className="relative flex-1 max-w-[400px]">
+          <div className="relative flex-1 max-w-[280px]">
             <input
               type="text"
               placeholder="Search gifts, occasions..."
-              className="w-full rounded-full border border-border bg-muted-bg py-2.5 pl-4 pr-9 text-[12px] outline-none focus:border-primary focus:bg-bg transition-colors"
+              className="w-full rounded-full border border-border bg-muted-bg py-2 pl-4 pr-9 text-[12px] outline-none focus:border-primary focus:bg-bg transition-colors"
             />
             <button className="absolute right-3 top-1/2 -translate-y-1/2 text-subtle hover:text-primary">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
@@ -113,6 +74,43 @@ export function _MainBar({ onMenuToggle }: Props) {
             </button>
           </div>
         </div>
+
+        {/* Center — Logo */}
+        <Link href="/" className="flex shrink-0 items-center -my-8">
+          <div className="relative h-40 w-40 hover:opacity-80 transition-opacity">
+            <Image
+              src="/logo/bg_remove_logo_black.png"
+              alt="As-Sunnah Logo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+        </Link>
+
+        {/* Right — Action Icons */}
+        <div className="flex flex-1 items-center justify-end gap-0.5 sm:gap-1">
+          {actionIcons.map(item => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="relative flex flex-col items-center gap-0.5 px-2 py-1 text-body hover:text-primary transition-colors"
+              aria-label={item.label}
+            >
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                {item.path}
+              </svg>
+              <span className="hidden text-[9px] font-semibold uppercase tracking-[0.07em] text-muted lg:block">{item.label}</span>
+              {item.badge !== null && (
+                <span className="absolute -right-0.5 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-[#a4722c] text-[9px] font-bold text-white">
+                  {item.badge}
+                </span>
+              )}
+            </Link>
+          ))}
+          <_ThemeToggle />
+        </div>
+
       </div>
     </div>
   );
