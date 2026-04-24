@@ -2,8 +2,8 @@
   {
     "label": "QURAN GIFT SETS",
     "href": "#",
-    "image": "/al-hadaya/quran-gift-sets.png",
-    "columns": 1,
+    "image": "/all-pic/AL-HADAYA/1---Quran-Gift-Set.png",
+    "columns": 4,
     "submenu": [
       { "label": "Luxe Hubb Al-Iman Collection",     "href": "/collections/quran-gift-sets" },
       { "label": "Barkat-e-Jariyah Hampers",        "href": "/collections/quran-gift-sets" },
@@ -18,8 +18,8 @@
   {
     "label": "PRAYER ESSENTIALS",
     "href": "#",
-    "image": "/al-hadaya/PRAYER-ESSENTIALS.png",
-    "columns": 3,
+    "image": "/all-pic/AL-HADAYA/2---Prayer-Essentials.png",
+    "columns": 4,
     "submenu": [
       { "label": "Quran Collection",       "href": "/collections/quran-gift-sets" },
       { "label": "Arabic Quran",           "href": "/collections/quran-gift-sets" },
@@ -43,8 +43,8 @@
   {
     "label": "SHOP BY OCCASION",
     "href": "#",
-    "image": "/al-hadaya/SHOP-BY-OCCASION.png",
-    "columns": 5,
+    "image": "/all-pic/AL-HADAYA/3---Shop-by-Occasion_d2baa224-9fe0-431f-8c90-4ddf1a933c09.png",
+    "columns": 4,
     "submenu": [
       { "label": "Wedding (Nikah)",              "href": "/collections/nikah-collection" },
       { "label": "Nikah Nama",                   "href": "/collections/nikah-collection" },
@@ -74,8 +74,8 @@
   {
     "label": "SHOP BY RECIPIENT",
     "href": "#",
-    "image": "/al-hadaya/shop-by-recipient.png",
-    "columns": 3,
+    "image": "/all-pic/AL-HADAYA/4---Shop-by-Recipient.png",
+    "columns": 4,
     "submenu": [
       { "label": "For Him",             "href": "/collections/for-him" },
       { "label": "For Husband",         "href": "/collections/for-husband" },
@@ -100,8 +100,8 @@
   {
     "label": "HOME DECOR",
     "href": "#",
-    "image": "/al-hadaya/home-decor.png",
-    "columns": 1,
+    "image": "/all-pic/AL-HADAYA/5---Home-Decor.png",
+    "columns": 4,
     "submenu": [
       { "label": "Wall Art",                "href": "/collections/home-decor" },
       { "label": "Table décor",             "href": "/collections/home-decor" },
@@ -112,8 +112,8 @@
   {
     "label": "RETURN FAVORS",
     "href": "#",
-    "image": "/al-hadaya/return-favor.png",
-    "columns": 1,
+    "image": "/all-pic/AL-HADAYA/6---Return-Favors.png",
+    "columns": 4,
     "submenu": [
       { "label": "Hajj & Umrah Favors",       "href": "/collections/return-favors" },
       { "label": "Baraati Return Favors",     "href": "/collections/return-favors" },
@@ -128,21 +128,21 @@
     "label": "CLOTHING",
     "href": "/categories/clothing",
     "image": "/all-pic/AL-HADAYA/7---Clothing.png",
-    "columns": 1,
+    "columns": 4,
     "submenu": []
   },
   {
     "label": "ON TREND",
     "href": "/collections/on-trend",
     "image": "/all-pic/AL-HADAYA/8---On-Trend.png",
-    "columns": 1,
+    "columns": 4,
     "submenu": []
   },
   {
     "label": "CORPORATE GIFTS",
     "href": "/corporate-gifting",
     "image": "/all-pic/AL-HADAYA/9---Corporate-Gifts.png",
-    "columns": 1,
+    "columns": 4,
     "submenu": [
       { "label": "Exclusive Eid Gifts",     "href": "/collections/eid-gifts" },
       { "label": "Premium Corporate Gifts", "href": "/corporate-gifting" },
@@ -154,7 +154,7 @@
     "label": "INTERNATIONAL",
     "href": "/collections/international",
     "image": "/all-pic/AL-HADAYA/10---International.png",
-    "columns": 1,
+    "columns": 4,
     "submenu": []
   }
 ]

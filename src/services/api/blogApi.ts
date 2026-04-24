@@ -4,13 +4,13 @@ export const blogApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
     getBlogs: build.query({
       query: (params?: { category?: string; limit?: number; page?: number }) => ({
-        url: "/blogs",
+        url: "/blog",
         params,
       }),
       providesTags: ["Blog"],
     }),
     getBlogBySlug: build.query({
-      query: (slug: string) => `/blogs/${slug}`,
+      query: (slug: string) => `/blog/${slug}`,
       providesTags: ["Blog"],
     }),
   }),

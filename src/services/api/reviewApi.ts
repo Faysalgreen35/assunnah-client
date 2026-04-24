@@ -3,15 +3,15 @@ import { baseApi } from "./baseApi";
 export const reviewApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
     getProductReviews: build.query({
-      query: (productId: string) => `/reviews?product=${productId}`,
+      query: (productId: string) => `/review/product/${productId}`,
       providesTags: ["Review"],
     }),
     addReview: build.mutation({
-      query: (body) => ({ url: "/reviews", method: "POST", body }),
+      query: (body) => ({ url: "/review", method: "POST", body }),
       invalidatesTags: ["Review"],
     }),
     deleteReview: build.mutation({
-      query: (id: string) => ({ url: `/reviews/${id}`, method: "DELETE" }),
+      query: (id: string) => ({ url: `/review/${id}`, method: "DELETE" }),
       invalidatesTags: ["Review"],
     }),
   }),

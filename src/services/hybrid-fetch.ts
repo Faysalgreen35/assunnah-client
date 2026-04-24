@@ -1,6 +1,8 @@
 import productsData from "@/data/all-products.json";
+import { API_BASE_URL } from "@/constants";
 
 export interface Product {
+  _id?: string;
   slug: string;
   name: string;
   category: string;
@@ -13,7 +15,27 @@ export interface Product {
   features?: string[];
   specs?: Record<string, string>;
   sku?: string;
-  [key: string]: any;
+  [key: string]: unknown;
+}
+
+type HybridQueryResult<T> = {
+  data?: T | { data?: T } | null;
+  isError?: boolean;
+};
+
+function unwrapHybridData<T>(value: T | { data?: T } | null | undefined): T | undefined {
+  if (!value) return undefined;
+
+  if (typeof value === "object" && "data" in value) {
+    return (value as { data?: T }).data;
+  }
+
+  return value as T;
+}
+
+export function useHybrid<T>(query: HybridQueryResult<T>, fallback: T): T {
+  const data = unwrapHybridData(query.data);
+  return query.isError || data === undefined || data === null ? fallback : data;
 }
 
 /**
@@ -22,10 +44,8 @@ export interface Product {
  */
 export async function getProductsHybrid(): Promise<Product[]> {
   try {
-    // Attempt to fetch from backend API
-    // Replace with your actual API endpoint
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001"}/api/products`,
+      `${API_BASE_URL}/product`,
       {
         method: "GET",
         headers: {
@@ -38,7 +58,7 @@ export async function getProductsHybrid(): Promise<Product[]> {
 
     if (response.ok) {
       const data = await response.json();
-      return Array.isArray(data) ? data : data.data || [];
+      return Array.isArray(data) ? data : data.data?.result || data.data || [];
     }
   } catch (error) {
     console.warn("API fetch failed, falling back to JSON:", error);
@@ -53,9 +73,8 @@ export async function getProductsHybrid(): Promise<Product[]> {
  */
 export async function getProductBySlugHybrid(slug: string): Promise<Product | null> {
   try {
-    // Try API first
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001"}/api/products/${slug}`,
+      `${API_BASE_URL}/product/${slug}`,
       {
         method: "GET",
         headers: {
@@ -67,7 +86,7 @@ export async function getProductBySlugHybrid(slug: string): Promise<Product | nu
 
     if (response.ok) {
       const data = await response.json();
-      return data || null;
+      return data.data || data || null;
     }
   } catch (error) {
     console.warn("API fetch for single product failed, falling back to JSON:", error);

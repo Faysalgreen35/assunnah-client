@@ -9,9 +9,8 @@ export const wishlistApi = baseApi.injectEndpoints({
     }),
     addToWishlist: builder.mutation<IApiResponse<null>, string>({
       query: (productId) => ({
-        url: "/wishlist",
+        url: `/wishlist/${productId}`,
         method: "POST",
-        body: { productId },
       }),
       invalidatesTags: ["Wishlist"],
     }),

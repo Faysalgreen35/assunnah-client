@@ -3,19 +3,23 @@ import { baseApi } from "./baseApi";
 export const orderApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
     createOrder: build.mutation({
-      query: (body) => ({ url: "/orders", method: "POST", body }),
+      query: (body) => ({ url: "/order", method: "POST", body }),
       invalidatesTags: ["Order"],
     }),
     getMyOrders: build.query({
-      query: () => "/orders/my-orders",
+      query: () => "/order/my-orders",
       providesTags: ["Order"],
     }),
     getOrderById: build.query({
-      query: (id: string) => `/orders/${id}`,
+      query: (id: string) => `/order/${id}`,
       providesTags: ["Order"],
     }),
     cancelOrder: build.mutation({
-      query: (id: string) => ({ url: `/orders/${id}/cancel`, method: "PATCH" }),
+      query: (id: string) => ({
+        url: `/order/${id}/status`,
+        method: "PATCH",
+        body: { status: "Cancelled" },
+      }),
       invalidatesTags: ["Order"],
     }),
   }),
