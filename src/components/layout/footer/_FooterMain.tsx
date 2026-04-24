@@ -41,13 +41,15 @@ export function _FooterMain({ data }: Props) {
 
         {/* Brand Column */}
         <div className="flex flex-col gap-4">
-          <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-[#c9973a] bg-gradient-to-br from-[#f9eed8] to-[#e8cc88] shadow">
-              <span className="text-xl font-extrabold tracking-wider text-[#654321]">AS</span>
-            </div>
-            <div>
-              <p className="text-base font-extrabold tracking-[0.18em] text-[#1a1a1a]">AS-SUNNAH</p>
-              <p className="text-[9px] tracking-[0.18em] text-[#999] uppercase">Islamic Gifting</p>
+          <Link href="/" className="inline-flex shrink-0 hover:opacity-80 transition-opacity">
+            <div className="relative h-48 w-48">
+              <Image
+                src="/logo/bg_remove_logo_white.png"
+                alt="As-Sunnah Logo"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
           </Link>
 

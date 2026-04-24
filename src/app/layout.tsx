@@ -14,9 +14,18 @@ export const metadata: Metadata = {
   title: "As-Sunnah Store",
   description: "India's first online Islamic gifting platform. Curated collections for Ramadan, Eid, Nikah, Aqiqah and every meaningful milestone.",
   manifest: "/manifest.json",
+  icons: {
+    icon: [
+      { url: "/logo/bg_remove_logo_black.png", type: "image/png", sizes: "32x32" },
+      { url: "/logo/bg_remove_logo_black.png", type: "image/png", sizes: "16x16" },
+    ],
+    apple: [
+      { url: "/logo/bg_remove_logo_white.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#a4722c" },
-    { media: "(prefers-color-scheme: dark)", color: "#a4722c" },
+    { media: "(prefers-color-scheme: light)", color: "#f5efe6" },
+    { media: "(prefers-color-scheme: dark)", color: "#1a2655" },
   ],
   appleWebApp: {
     capable: true,
@@ -43,7 +52,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.svg" />
+        <link rel="apple-touch-icon" href="/logo/bg_remove_logo_white.png" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />

@@ -36,6 +36,7 @@ export default function CollectionSlugPage() {
   const [selectedOccasions, setSelectedOccasions] = useState<string[]>([]);
   const [selectedRecipients, setSelectedRecipients] = useState<string[]>([]);
   const [sortBy, setSortBy] = useState("");
+  const [showFilters, setShowFilters] = useState(false);
 
   // TODO: Replace with RTK Query useGetProductsQuery when backend is ready
   const isLoading = false;
@@ -154,9 +155,22 @@ export default function CollectionSlugPage() {
       </div>
 
       <div className="mx-auto max-w-[1280px] px-5 py-5">
-        {/* Sort bar */}
+        {/* Sort bar & Filter button */}
         <div className="mb-4 flex items-center justify-between rounded border border-[#ede8df] bg-white px-4 py-2">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 flex-1">
+            {/* Filter button (mobile only) */}
+            <button
+              onClick={() => setShowFilters(!showFilters)}
+              className="md:hidden flex items-center gap-2 text-[12px] font-semibold text-[#555] hover:text-[#a4722c] transition-colors"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="4" y1="6" x2="20" y2="6" />
+                <line x1="4" y1="12" x2="20" y2="12" />
+                <line x1="4" y1="18" x2="20" y2="18" />
+              </svg>
+              Filters
+            </button>
+
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
@@ -174,8 +188,8 @@ export default function CollectionSlugPage() {
         </div>
 
         <div className="flex gap-5 items-start">
-          {/* Sidebar with Filters */}
-          <div className="w-72">
+          {/* Sidebar with Filters - Hidden on mobile */}
+          <div className="hidden md:block w-72">
             <FilterSidebar
               selectedOccasions={selectedOccasions}
               selectedRecipients={selectedRecipients}
@@ -201,7 +215,7 @@ export default function CollectionSlugPage() {
                 <p className="text-[#888]">No products found. Try adjusting your filters.</p>
               </div>
             ) : (
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+              <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
                 {displayProducts.map((product: any) => (
                   <ProductCard key={product.slug} product={product} />
                 ))}
@@ -209,6 +223,33 @@ export default function CollectionSlugPage() {
             )}
           </div>
         </div>
+
+        {/* Mobile Filter Modal */}
+        {showFilters && (
+          <div className="md:hidden fixed inset-0 z-50 bg-black/50" onClick={() => setShowFilters(false)}>
+            <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-lg p-6 max-h-[80vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-lg font-semibold">Filters</h2>
+                <button
+                  onClick={() => setShowFilters(false)}
+                  className="text-[#888] hover:text-[#1a1a1a]"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </button>
+              </div>
+              <FilterSidebar
+                selectedOccasions={selectedOccasions}
+                selectedRecipients={selectedRecipients}
+                onOccasionChange={handleOccasionChange}
+                onRecipientChange={handleRecipientChange}
+                onClearFilters={handleClearFilters}
+              />
+            </div>
+          </div>
+        )}
       </div>
 
       <Footer />

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { _ThemeToggle } from "./_ThemeToggle";
 
 const actionIcons = [
@@ -34,8 +35,8 @@ interface Props {
 
 export function _MainBar({ onMenuToggle }: Props) {
   return (
-    <div className="border-b border-border-subtle bg-surface">
-      <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-4 px-5 py-3">
+    <div className="border-b border-border-subtle bg-surface h-20">
+      <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-4 px-5 py-0 h-full">
 
         {/* Left — hamburger + search */}
         <div className="flex flex-1 items-center gap-3 min-w-0">
@@ -75,13 +76,15 @@ export function _MainBar({ onMenuToggle }: Props) {
         </div>
 
         {/* Center — Logo */}
-        <Link href="/" className="flex shrink-0 items-center gap-2.5">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-gold-divider bg-gradient-to-br from-[#f9eed8] to-[#e8cc88] shadow-sm">
-            <span className="text-[15px] font-extrabold tracking-wider text-primary-dark">AS</span>
-          </div>
-          <div className="leading-tight">
-            <p className="text-[15px] font-extrabold tracking-[0.2em] text-heading">AS-SUNNAH</p>
-            <p className="text-[9px] tracking-[0.16em] text-subtle uppercase font-medium">Islamic Gifting</p>
+        <Link href="/" className="flex shrink-0 items-center -my-8">
+          <div className="relative h-40 w-40 hover:opacity-80 transition-opacity">
+            <Image
+              src="/logo/bg_remove_logo_black.png"
+              alt="As-Sunnah Logo"
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
         </Link>
 
