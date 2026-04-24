@@ -54,11 +54,11 @@ export function _MainBar({ onMenuToggle }: Props) {
   }, []);
 
   return (
-    <div className="border-b border-border-subtle bg-surface h-20">
-      <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-4 px-5 py-0 h-full">
-
-        {/* Left — hamburger + search */}
-        <div className="flex flex-1 items-center gap-3 min-w-0">
+    <div className="border-b border-border-subtle bg-surface">
+      {/* Top Row */}
+      <div className="mx-auto max-w-[1280px] px-5 py-0">
+        <div className="flex items-center justify-between h-20">
+          {/* Left — Hamburger */}
           <button
             className="shrink-0 rounded p-1 text-body hover:text-primary lg:hidden"
             onClick={onMenuToggle}
@@ -69,60 +69,85 @@ export function _MainBar({ onMenuToggle }: Props) {
             </svg>
           </button>
 
-
-          {/* Search */}
-          <div className="relative flex-1 max-w-[280px]">
-            <input
-              type="text"
-              placeholder={displayText}
-              className="w-full rounded-full border border-border bg-muted-bg py-2 pl-4 pr-9 text-[12px] outline-none focus:border-primary focus:bg-bg transition-colors"
-            />
-            <button className="absolute right-3 top-1/2 -translate-y-1/2 text-subtle hover:text-primary">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          {/* Desktop Left — Location pill + Search */}
+          <div className="hidden md:flex flex-1 items-center gap-3 min-w-0">
+            <button className="shrink-0 items-center gap-1.5 rounded-full border border-border-subtle px-3 py-1.5 text-[11px] text-body hover:border-primary transition-colors flex">
+              <svg width="10" height="13" viewBox="0 0 12 15" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M6 1C3.79 1 2 2.79 2 5c0 3.5 4 9 4 9s4-5.5 4-9c0-2.21-1.79-4-4-4z"/>
+                <circle cx="6" cy="5" r="1.5"/>
               </svg>
+              <span className="font-semibold text-heading">Where to deliver?</span>
+              <span className="text-muted">India ▼</span>
             </button>
+
+            <div className="relative flex-1 max-w-[280px]">
+              <input
+                type="text"
+                placeholder={displayText}
+                className="w-full rounded-full border border-border bg-muted-bg py-2 pl-4 pr-9 text-[12px] outline-none focus:border-primary focus:bg-bg transition-colors"
+              />
+              <button className="absolute right-3 top-1/2 -translate-y-1/2 text-subtle hover:text-primary">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                  <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          {/* Center — Logo */}
+          <Link href="/" className="flex shrink-0 items-center -my-8">
+            <div className="relative h-40 w-40 hover:opacity-80 transition-opacity">
+              <Image
+                src="/logo/bg_remove_logo_black.png"
+                alt="As-Sunnah Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+          </Link>
+
+          {/* Right — Action Icons */}
+          <div className="flex flex-1 items-center justify-end gap-0.5 sm:gap-1">
+            {actionIcons.map(item => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className={`relative flex flex-col items-center gap-0.5 px-2 py-1 text-body hover:text-primary transition-colors ${
+                  item.label === "Chat" ? "hidden md:flex" : ""
+                }`}
+                aria-label={item.label}
+              >
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  {item.path}
+                </svg>
+                <span className="hidden text-[9px] font-semibold uppercase tracking-[0.07em] text-muted lg:block">{item.label}</span>
+                {item.badge !== null && (
+                  <span className="absolute -right-0.5 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-[#a4722c] text-[9px] font-bold text-white">
+                    {item.badge}
+                  </span>
+                )}
+              </Link>
+            ))}
+            <_ThemeToggle />
           </div>
         </div>
+      </div>
 
-        {/* Center — Logo */}
-        <Link href="/" className="flex shrink-0 items-center -my-8">
-          <div className="relative h-40 w-40 hover:opacity-80 transition-opacity">
-            <Image
-              src="/logo/bg_remove_logo_black.png"
-              alt="As-Sunnah Logo"
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
-        </Link>
-
-        {/* Right — Action Icons */}
-        <div className="flex flex-1 items-center justify-end gap-0.5 sm:gap-1">
-          {actionIcons.map(item => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className={`relative flex flex-col items-center gap-0.5 px-2 py-1 text-body hover:text-primary transition-colors ${
-                item.label === "Chat" ? "hidden md:flex" : ""
-              }`}
-              aria-label={item.label}
-            >
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                {item.path}
-              </svg>
-              <span className="hidden text-[9px] font-semibold uppercase tracking-[0.07em] text-muted lg:block">{item.label}</span>
-              {item.badge !== null && (
-                <span className="absolute -right-0.5 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-[#a4722c] text-[9px] font-bold text-white">
-                  {item.badge}
-                </span>
-              )}
-            </Link>
-          ))}
-          <_ThemeToggle />
+      {/* Mobile Search Bar — Below Logo */}
+      <div className="mx-auto max-w-[1280px] px-5 py-3 md:hidden">
+        <div className="relative">
+          <input
+            type="text"
+            placeholder={displayText}
+            className="w-full rounded-full border border-border bg-muted-bg py-2.5 pl-4 pr-9 text-[12px] outline-none focus:border-primary focus:bg-bg transition-colors"
+          />
+          <button className="absolute right-3 top-1/2 -translate-y-1/2 text-subtle hover:text-primary">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+          </button>
         </div>
-
       </div>
     </div>
   );
