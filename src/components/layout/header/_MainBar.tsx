@@ -94,7 +94,9 @@ export function _MainBar({ onMenuToggle }: Props) {
             <Link
               key={item.label}
               href={item.href}
-              className="relative flex flex-col items-center gap-0.5 px-2 py-1 text-body hover:text-primary transition-colors"
+              className={`relative flex flex-col items-center gap-0.5 px-2 py-1 text-body hover:text-primary transition-colors ${
+                item.label === "Chat" ? "hidden md:flex" : ""
+              }`}
               aria-label={item.label}
             >
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
