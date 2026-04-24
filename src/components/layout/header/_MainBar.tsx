@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import { _ThemeToggle } from "./_ThemeToggle";
 
 const actionIcons = [
@@ -33,7 +34,25 @@ interface Props {
   onMenuToggle: () => void;
 }
 
+const TYPEWRITER_TEXT = "Search gifts, occasions...";
+
 export function _MainBar({ onMenuToggle }: Props) {
+  const [displayText, setDisplayText] = useState("");
+
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      if (index < TYPEWRITER_TEXT.length) {
+        setDisplayText(TYPEWRITER_TEXT.slice(0, index + 1));
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 50);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="border-b border-border-subtle bg-surface h-20">
       <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-4 px-5 py-0 h-full">
@@ -50,21 +69,12 @@ export function _MainBar({ onMenuToggle }: Props) {
             </svg>
           </button>
 
-          {/* Location pill — desktop only */}
-          <button className="hidden lg:flex shrink-0 items-center gap-1.5 rounded-full border border-border-subtle px-3 py-1.5 text-[11px] text-body hover:border-primary transition-colors">
-            <svg width="10" height="13" viewBox="0 0 12 15" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path d="M6 1C3.79 1 2 2.79 2 5c0 3.5 4 9 4 9s4-5.5 4-9c0-2.21-1.79-4-4-4z"/>
-              <circle cx="6" cy="5" r="1.5"/>
-            </svg>
-            <span className="font-semibold text-heading">Where to deliver?</span>
-            <span className="text-muted">India ▼</span>
-          </button>
 
           {/* Search */}
           <div className="relative flex-1 max-w-[280px]">
             <input
               type="text"
-              placeholder="Search gifts, occasions..."
+              placeholder={displayText}
               className="w-full rounded-full border border-border bg-muted-bg py-2 pl-4 pr-9 text-[12px] outline-none focus:border-primary focus:bg-bg transition-colors"
             />
             <button className="absolute right-3 top-1/2 -translate-y-1/2 text-subtle hover:text-primary">
