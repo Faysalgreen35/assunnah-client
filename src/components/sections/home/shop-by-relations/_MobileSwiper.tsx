@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, A11y } from "swiper/modules";
-import type SwiperCore from "swiper";
+import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import { _DiagonalCard } from "./_DiagonalCard";
 
@@ -20,12 +20,12 @@ export function _MobileSwiper({
   items: DiagonalCardItem[];
   basePath?: string;
 }) {
-  const swiperRef = useRef<SwiperCore | null>(null);
+  const swiperRef = useRef<SwiperType>(null);
 
   return (
     <>
       <Swiper
-        ref={swiperRef}
+        ref={swiperRef as any}
         modules={[Autoplay, A11y]}
         spaceBetween={16}
         slidesPerView={3}
