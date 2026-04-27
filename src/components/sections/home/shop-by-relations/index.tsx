@@ -1,5 +1,5 @@
 import { GoldDivider } from "@/components/common/GoldDivider";
-import { CircleCardsRow } from "@/components/common/CircleCardsRow";
+import { _DiagonalCardsRow } from "./_DiagonalCardsRow";
 import items from "@/data/home/shop-by-relations.json";
 
 export function ShopByRelations() {
@@ -12,7 +12,7 @@ export function ShopByRelations() {
           </h2>
           <GoldDivider />
         </div>
-        <CircleCardsRow items={items} />
+        <_DiagonalCardsRow items={items} />
       </div>
     </section>
   );

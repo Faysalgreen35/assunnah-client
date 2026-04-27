@@ -22,6 +22,7 @@ export const OCCASION_TAGS = [
   "Graduation",
   "Birthday",
   "Festival",
+  "Anniversary",
 ] as const;
 
 export const RECIPIENT_TAGS = [
@@ -33,6 +34,7 @@ export const RECIPIENT_TAGS = [
   "Teacher",
   "Parents",
   "Student",
+  "Family",
 ] as const;
 
 export const SORT_OPTIONS = [

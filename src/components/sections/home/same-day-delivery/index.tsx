@@ -13,7 +13,12 @@ export function SameDayDelivery() {
           </h2>
           <GoldDivider />
         </div>
-        <SwiperRow gridClassName="grid-cols-2 md:grid-cols-4">
+        <SwiperRow
+          gridClassName="grid-cols-2 md:grid-cols-4"
+          mobileSlides={3}
+          autoplay
+          autoplayDelay={2000}
+        >
           {items.map(item => (
             <_DeliveryCard key={item.label} label={item.label} img={item.img} />
           ))}

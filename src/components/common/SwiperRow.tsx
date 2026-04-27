@@ -2,17 +2,19 @@
 
 import React, { ReactNode, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, A11y } from "swiper/modules";
+import { Pagination, A11y, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
 interface SwiperRowProps {
   children: ReactNode[];
-  gridClassName?: string; // Desktop grid classes, e.g., "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"
+  gridClassName?: string;
   mobileSlides?: number;
   tabletSlides?: number;
   spaceBetween?: number;
   showPagination?: boolean;
+  autoplay?: boolean;
+  autoplayDelay?: number;
 }
 
 export function SwiperRow({
@@ -22,6 +24,8 @@ export function SwiperRow({
   tabletSlides = 2.3,
   spaceBetween = 16,
   showPagination = true,
+  autoplay = false,
+  autoplayDelay = 3000,
 }: SwiperRowProps) {
   const [isDesktop, setIsDesktop] = useState(false);
 
@@ -40,9 +44,11 @@ export function SwiperRow({
     );
   }
 
+  const autoplayConfig = autoplay ? { delay: autoplayDelay, disableOnInteraction: false } : false;
+
   return (
     <Swiper
-      modules={[Pagination, A11y]}
+      modules={[Pagination, A11y, ...(autoplay ? [Autoplay] : [])]}
       spaceBetween={spaceBetween}
       slidesPerView={mobileSlides}
       breakpoints={{
@@ -51,6 +57,7 @@ export function SwiperRow({
         },
       }}
       pagination={showPagination ? { clickable: true, dynamicBullets: true } : false}
+      autoplay={autoplayConfig}
       a11y={{ enabled: true }}
       grabCursor
       className="w-full"

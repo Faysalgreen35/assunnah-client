@@ -13,7 +13,12 @@ export function FeelBeforeYouBuy() {
           </h2>
           <GoldDivider />
         </div>
-        <SwiperRow gridClassName="grid-cols-2 md:grid-cols-4">
+        <SwiperRow
+          gridClassName="grid-cols-2 md:grid-cols-4"
+          mobileSlides={2}
+          autoplay
+          autoplayDelay={2000}
+        >
           {products.map(item => (
             <_ArchCard key={item.name} name={item.name} img={item.img} />
           ))}

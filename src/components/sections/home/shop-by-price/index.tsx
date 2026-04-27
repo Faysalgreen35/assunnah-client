@@ -17,13 +17,46 @@ export function ShopByPrice() {
           </h2>
           <GoldDivider />
         </div>
-        <div className="relative flex items-center justify-center" style={{ minHeight: "380px" }}>
-          <div className="relative h-80 w-72 z-10">
-            <Image src="/all-pic/AL-HADAYA/price-image.png" alt="Shop by price" fill className="object-contain" sizes="288px" />
+
+        {/* Desktop Layout */}
+        <div className="hidden md:flex relative items-center justify-center" style={{ minHeight: "600px" }}>
+          <div className="relative" style={{ height: "500px", width: "450px" }}>
+            <Image src="/all-pic/AL-HADAYA/price-image.png" alt="Shop by price" fill className="object-contain" sizes="450px" />
           </div>
           {priceBoxes.map(box => (
             <_PriceBox key={box.price} label={box.label} price={box.price} pos={box.pos} />
           ))}
+        </div>
+
+        {/* Mobile Layout */}
+        <div className="md:hidden relative" style={{
+          minHeight: "520px",
+          backgroundImage: "url(/all-pic/AL-HADAYA/price-image.png)",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center"
+        }}>
+          {/* Gray Overlay */}
+          <div className="absolute inset-0 bg-gray-400 opacity-20"></div>
+
+          <div className="absolute inset-0 flex flex-col items-center p-4 pt-16">
+            {/* Top Row - 2 boxes */}
+            <div className="flex gap-8 justify-center w-full mb-20">
+              <_PriceBox label={priceBoxes[0].label} price={priceBoxes[0].price} pos="" isMobile />
+              <_PriceBox label={priceBoxes[1].label} price={priceBoxes[1].price} pos="" isMobile />
+            </div>
+
+            {/* Middle - 1 box */}
+            <div className="flex justify-center mb-20 flex-1 flex-col justify-center">
+              <_PriceBox label={priceBoxes[2].label} price={priceBoxes[2].price} pos="" isMobile />
+            </div>
+
+            {/* Bottom Row - 2 boxes */}
+            <div className="flex gap-8 justify-center w-full">
+              <_PriceBox label={priceBoxes[3].label} price={priceBoxes[3].price} pos="" isMobile />
+              <_PriceBox label={priceBoxes[4].label} price={priceBoxes[4].price} pos="" isMobile />
+            </div>
+          </div>
         </div>
       </div>
     </section>

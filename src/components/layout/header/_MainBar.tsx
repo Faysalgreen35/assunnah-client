@@ -95,10 +95,10 @@ export function _MainBar({ onMenuToggle }: Props) {
           </div>
 
           {/* Center — Logo */}
-          <Link href="/" className="flex shrink-0 items-center -my-8">
-            <div className="relative h-40 w-40 hover:opacity-80 transition-opacity">
+          <Link href="/" className="flex shrink-0 items-center">
+            <div className="relative h-16 w-24 hover:opacity-80 transition-opacity">
               <Image
-                src="/logo/bg_remove_logo_black.png"
+                src="/logo/new-logo-removebg-preview.png"
                 alt="As-Sunnah Logo"
                 fill
                 className="object-contain"

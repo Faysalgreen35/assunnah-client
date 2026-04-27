@@ -1,58 +1,225 @@
-import Link from "next/link";
-import { Card, CardBody, Chip } from "@/components/ui/nextui";
+"use client";
 
-import { PageShell } from "@/components/layout/page-shell";
-import { occasionTags, products, recipientTags } from "@/lib/site-data";
+import { useState, useMemo } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
+import { FilterSidebar } from "@/components/product/FilterSidebar";
+import productsData from "@/data/all-products.json";
 
 export default function ProductsPage() {
-  return (
-    <PageShell
-      title="All Products"
-      description="Browse storefront-ready product cards aligned to backend product, review, coupon and flash-sale modules."
-    >
-      <section className="surface-card rounded-[1.75rem] p-6">
-        <p className="text-sm uppercase tracking-[0.25em] text-warning-300">Occasions</p>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {occasionTags.map((tag) => (
-            <Chip key={tag} variant="bordered" className="border-white/20 text-white/80">
-              {tag}
-            </Chip>
-          ))}
-        </div>
-        <p className="mt-6 text-sm uppercase tracking-[0.25em] text-warning-300">Recipients</p>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {recipientTags.map((tag) => (
-            <Chip key={tag} variant="bordered" className="border-white/20 text-white/80">
-              {tag}
-            </Chip>
-          ))}
-        </div>
-      </section>
+  const [selectedOccasions, setSelectedOccasions] = useState<string[]>([]);
+  const [selectedRecipients, setSelectedRecipients] = useState<string[]>([]);
+  const [sortBy, setSortBy] = useState("");
+  const [showFilters, setShowFilters] = useState(false);
 
-      <section className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-        {products.map((product) => (
-          <Card key={product.slug} shadow="none" className="surface-card rounded-[1.5rem]">
-            <CardBody className="gap-4 p-6">
-              <p className="text-xs uppercase tracking-[0.25em] text-warning-300">{product.category}</p>
-              <h2 className="text-2xl font-semibold text-white">{product.name}</h2>
-              <p className="text-sm leading-6 text-white/70">{product.shortDescription}</p>
-              <div className="flex flex-wrap gap-2">
-                {product.recipients.map((recipient) => (
-                  <Chip key={recipient} size="sm" variant="flat" className="bg-white/10 text-white/80">
-                    {recipient}
-                  </Chip>
+  const isLoading = false;
+  const error = null;
+
+  // Filter products based on selected filters
+  const displayProducts = useMemo(() => {
+    let filtered = productsData.filter((product: any) => {
+      const occasionMatch =
+        selectedOccasions.length === 0 ||
+        selectedOccasions.some((occ) => product.occasions?.includes(occ));
+      const recipientMatch =
+        selectedRecipients.length === 0 ||
+        selectedRecipients.some((rec) => product.recipients?.includes(rec));
+
+      return occasionMatch && recipientMatch;
+    });
+
+    // Apply sorting
+    if (sortBy === "-price") {
+      filtered.sort((a: any, b: any) => b.price - a.price);
+    } else if (sortBy === "price") {
+      filtered.sort((a: any, b: any) => a.price - b.price);
+    } else if (sortBy === "-rating") {
+      filtered.sort((a: any, b: any) => b.rating - a.rating);
+    }
+
+    return filtered;
+  }, [selectedOccasions, selectedRecipients, sortBy]);
+
+  const handleOccasionChange = (occasion: string) => {
+    setSelectedOccasions((prev) =>
+      prev.includes(occasion) ? prev.filter((o) => o !== occasion) : [...prev, occasion]
+    );
+  };
+
+  const handleRecipientChange = (recipient: string) => {
+    setSelectedRecipients((prev) =>
+      prev.includes(recipient) ? prev.filter((r) => r !== recipient) : [...prev, recipient]
+    );
+  };
+
+  const handleClearFilters = () => {
+    setSelectedOccasions([]);
+    setSelectedRecipients([]);
+  };
+
+  return (
+    <div className="min-h-screen text-[#1a1a1a]" style={{ background: "#faf8f4" }}>
+      <Header />
+
+      {/* Breadcrumb */}
+      <div className="border-b border-[#ede8df] bg-white">
+        <div className="mx-auto max-w-[1280px] px-5 py-2">
+          <nav className="flex items-center gap-1 text-[11px] text-[#aaa]">
+            <Link href="/" className="hover:text-[#a4722c] transition-colors">
+              Home
+            </Link>
+            <span>/</span>
+            <span className="text-[#a4722c]">All Products</span>
+          </nav>
+        </div>
+      </div>
+
+      {/* Page title */}
+      <div className="bg-white border-b border-[#ede8df]">
+        <div className="mx-auto max-w-[1280px] px-5 py-4">
+          <h1 className="text-xl font-bold text-[#1a1a1a]" style={{ fontFamily: "Georgia, serif" }}>
+            All Products
+          </h1>
+          <p className="mt-0.5 text-[12px] text-[#aaa]">
+            {isLoading ? "Loading..." : `${displayProducts.length} products`}
+          </p>
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-[1280px] px-5 py-5">
+        {/* Sort bar & Filter button */}
+        <div className="mb-4 flex items-center justify-between rounded border border-[#ede8df] bg-white px-4 py-2">
+          <div className="flex items-center gap-3 flex-1">
+            {/* Filter button (mobile only) */}
+            <button
+              onClick={() => setShowFilters(!showFilters)}
+              className="md:hidden flex items-center gap-2 text-[12px] font-semibold text-[#555] hover:text-[#a4722c] transition-colors"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="4" y1="6" x2="20" y2="6" />
+                <line x1="4" y1="12" x2="20" y2="12" />
+                <line x1="4" y1="18" x2="20" y2="18" />
+              </svg>
+              Filters
+            </button>
+
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className="text-[12px] font-semibold text-[#555] hover:text-[#a4722c] transition-colors cursor-pointer bg-transparent border-0"
+            >
+              <option value="">Featured</option>
+              <option value="-rating">Best Rating</option>
+              <option value="price">Price: Low to High</option>
+              <option value="-price">Price: High to Low</option>
+            </select>
+          </div>
+          <span className="text-[12px] text-[#bbb]">
+            {isLoading ? "Loading..." : `${displayProducts.length} products`}
+          </span>
+        </div>
+
+        <div className="flex gap-5 items-start">
+          {/* Sidebar with Filters - Hidden on mobile */}
+          <div className="hidden md:block w-72">
+            <FilterSidebar
+              selectedOccasions={selectedOccasions}
+              selectedRecipients={selectedRecipients}
+              onOccasionChange={handleOccasionChange}
+              onRecipientChange={handleRecipientChange}
+              onClearFilters={handleClearFilters}
+            />
+          </div>
+
+          {/* Product grid */}
+          <div className="flex-1 min-w-0">
+            {error ? (
+              <div className="rounded border border-[#ede8df] bg-white p-8 text-center">
+                <p className="text-[#888]">Error loading products. Please try again.</p>
+              </div>
+            ) : isLoading ? (
+              <div className="rounded border border-[#ede8df] bg-white p-8 text-center">
+                <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#a4722c]"></div>
+                <p className="text-[#888] mt-4">Loading products...</p>
+              </div>
+            ) : displayProducts.length === 0 ? (
+              <div className="rounded border border-[#ede8df] bg-white p-8 text-center">
+                <p className="text-[#888]">No products found. Try adjusting your filters.</p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
+                {displayProducts.map((product: any) => (
+                  <Link
+                    key={product.slug}
+                    href={`/products/${product.slug}`}
+                    className="group relative block overflow-hidden rounded-lg border border-[#e8dcc8] bg-white transition-all hover:shadow-md hover:border-[#c4a87a]"
+                  >
+                    {/* Image */}
+                    <div className="relative w-full h-40 overflow-hidden">
+                      <Image
+                        src={product.img}
+                        alt={product.name}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                      />
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-3">
+                      <p className="text-[10px] text-[#888] font-medium mb-1">{product.category}</p>
+                      <h3 className="text-[12px] font-bold text-[#1a1a1a] line-clamp-2 mb-2">
+                        {product.name}
+                      </h3>
+                      <div className="flex items-center justify-between">
+                        <span className="text-[12px] font-bold text-[#a4722c]">
+                          PKR {product.price.toLocaleString()}
+                        </span>
+                        {product.rating && (
+                          <span className="text-[10px] text-[#f59e0b]">
+                            ★ {product.rating}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </Link>
                 ))}
               </div>
-              <div className="flex items-center justify-between">
-                <p className="text-lg font-semibold text-warning-300">{product.price}</p>
-                <Link href={`/products/${product.slug}`} className="text-sm font-medium text-warning-300">
-                  View details →
-                </Link>
+            )}
+          </div>
+        </div>
+
+        {/* Mobile Filter Modal */}
+        {showFilters && (
+          <div className="md:hidden fixed inset-0 z-50 bg-black/50" onClick={() => setShowFilters(false)}>
+            <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-lg p-6 max-h-[80vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-lg font-semibold">Filters</h2>
+                <button
+                  onClick={() => setShowFilters(false)}
+                  className="text-[#888] hover:text-[#1a1a1a]"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </button>
               </div>
-            </CardBody>
-          </Card>
-        ))}
-      </section>
-    </PageShell>
+              <FilterSidebar
+                selectedOccasions={selectedOccasions}
+                selectedRecipients={selectedRecipients}
+                onOccasionChange={handleOccasionChange}
+                onRecipientChange={handleRecipientChange}
+                onClearFilters={handleClearFilters}
+              />
+            </div>
+          </div>
+        )}
+      </div>
+
+      <Footer />
+    </div>
   );
 }

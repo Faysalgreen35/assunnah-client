@@ -16,11 +16,11 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   icons: {
     icon: [
-      { url: "/logo/bg_remove_logo_black.png", type: "image/png", sizes: "32x32" },
-      { url: "/logo/bg_remove_logo_black.png", type: "image/png", sizes: "16x16" },
+      { url: "/logo/new-logo-removebg-preview.png", type: "image/png", sizes: "32x32" },
+      { url: "/logo/new-logo-removebg-preview.png", type: "image/png", sizes: "16x16" },
     ],
     apple: [
-      { url: "/logo/bg_remove_logo_white.png", sizes: "180x180", type: "image/png" },
+      { url: "/logo/new-logo-removebg-preview.png", sizes: "180x180", type: "image/png" },
     ],
   },
   themeColor: [
@@ -52,7 +52,8 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <link rel="apple-touch-icon" href="/logo/bg_remove_logo_white.png" />
+        <link rel="icon" href="/logo/new-logo-removebg-preview.png" type="image/png" sizes="any" />
+        <link rel="apple-touch-icon" href="/logo/new-logo-removebg-preview.png" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />

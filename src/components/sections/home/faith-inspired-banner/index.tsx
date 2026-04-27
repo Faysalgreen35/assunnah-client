@@ -5,34 +5,72 @@ import { _CircleImage } from "./_CircleImage";
 export function FaithInspiredBanner() {
   return (
     <section className="py-12 bg-white">
-      <div className="page-width">
+      <div
+        className="w-full md:page-width"
+        style={{ background: "#f5ede0" }}
+      >
         <div
-          className="flex flex-col md:flex-row items-stretch min-h-[360px] gap-0 rounded-3xl overflow-hidden relative"
-          style={{ background: "#f5ede0" }}
+          className="flex flex-col md:flex-row items-stretch min-h-[360px] gap-0 md:rounded-3xl overflow-hidden relative"
         >
-          <_CurvedImage />
+          {/* Mobile layout */}
+          <div className="flex flex-col md:hidden w-full">
+            {/* Cards container - top */}
+            <div className="relative flex justify-center items-center gap-0 px-4 pt-6 h-48">
+              <div className="flex-shrink-0 relative -top-6 z-10">
+                <_CurvedImage />
+              </div>
+              <div className="flex-shrink-0 relative top-6 z-20 -ml-8">
+                <_CircleImage />
+              </div>
+            </div>
 
-          {/* Center CTA */}
-          <div className="flex flex-col items-center justify-center text-center px-4 py-12 flex-1">
-            <h3
-              className="mb-4 text-[26px] lg:text-[30px] font-semibold leading-tight text-[#2a1a0a]"
-              style={{ fontFamily: "Georgia, serif" }}
-            >
-              Faith-Inspired, Heartful,<br />
-              and <span className="text-[#a4722c]">Uniquely</span> Yours
-            </h3>
-            <p className="mb-7 text-[13px] leading-6 text-[#888] max-w-[320px]">
-              Whether it&apos;s a gift for yourself or a loved one, find something truly meaningful that reflects your connection to Allah.
-            </p>
-            <Link
-              href="/collections"
-              className="inline-block rounded-full bg-[#6b4a1f] px-7 py-3 text-sm font-semibold text-white hover:bg-[#4a321a] transition-colors tracking-wide shadow-sm"
-            >
-              Make Your Own Hamper
-            </Link>
+            {/* Text and button container - bottom */}
+            <div className="flex flex-col items-center justify-center text-center px-4 py-8 flex-1">
+              <h3
+                className="mb-4 text-[20px] md:text-[26px] font-semibold leading-tight text-[#2a1a0a]"
+                style={{ fontFamily: "Georgia, serif" }}
+              >
+                Faith-Inspired, Heartful,<br />
+                and <span className="text-[#a4722c]">Uniquely</span> Yours
+              </h3>
+              <p className="mb-7 text-[13px] leading-6 text-[#888] max-w-[320px]">
+                Whether it&apos;s a gift for yourself or a loved one, find something truly meaningful that reflects your connection to Allah.
+              </p>
+              <Link
+                href="/collections"
+                className="inline-block rounded-full bg-[#6b4a1f] px-7 py-3 text-sm font-semibold text-white hover:bg-[#4a321a] transition-colors tracking-wide shadow-sm"
+              >
+                Make Your Own Hamper
+              </Link>
+            </div>
           </div>
 
-          <_CircleImage />
+          {/* Desktop layout */}
+          <div className="hidden md:flex items-stretch w-full gap-0">
+            <_CurvedImage />
+
+            {/* Center CTA */}
+            <div className="flex flex-col items-center justify-center text-center px-4 py-12 flex-1">
+              <h3
+                className="mb-4 text-[20px] sm:text-[26px] lg:text-[30px] font-semibold leading-tight text-[#2a1a0a]"
+                style={{ fontFamily: "Georgia, serif" }}
+              >
+                Faith-Inspired, Heartful,<br />
+                and <span className="text-[#a4722c]">Uniquely</span> Yours
+              </h3>
+              <p className="mb-7 text-[13px] leading-6 text-[#888] max-w-[320px]">
+                Whether it&apos;s a gift for yourself or a loved one, find something truly meaningful that reflects your connection to Allah.
+              </p>
+              <Link
+                href="/collections"
+                className="inline-block rounded-full bg-[#6b4a1f] px-7 py-3 text-sm font-semibold text-white hover:bg-[#4a321a] transition-colors tracking-wide shadow-sm"
+              >
+                Make Your Own Hamper
+              </Link>
+            </div>
+
+            <_CircleImage />
+          </div>
         </div>
       </div>
     </section>

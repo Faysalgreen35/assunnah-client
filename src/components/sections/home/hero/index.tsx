@@ -17,7 +17,7 @@ export function HeroSlideshow() {
   const next = useCallback(() => setActive(a => (a + 1) % slidesData.length), []);
 
   return (
-    <div className="relative w-full overflow-hidden" style={{ height: "520px" }}>
+    <div className="relative w-full overflow-hidden md:h-[520px] h-64">
       {slidesData.map((s, i) => (
         <_Slide key={s.id} img={s.img} title={s.title} active={i === active} />
       ))}

@@ -38,19 +38,19 @@ export function FilterSidebar({
       {hasActiveFilters && (
         <button
           onClick={onClearFilters}
-          className="w-full px-4 py-2 text-sm font-semibold text-primary border border-primary rounded-lg hover:bg-primary/5 transition-colors"
+          className="w-full px-4 py-2 text-sm font-semibold text-[#a4722c] border border-[#a4722c] rounded-lg hover:bg-[#f9f3ee] transition-colors"
         >
           Clear All Filters
         </button>
       )}
 
       {/* Occasions Filter */}
-      <div className="bg-white rounded-lg p-4 border border-border">
+      <div className="bg-white rounded-lg p-4 border border-[#ede8df]">
         <button
           onClick={() => toggleSection("occasions")}
-          className="w-full flex items-center justify-between mb-4 hover:text-primary transition-colors"
+          className="w-full flex items-center justify-between mb-4 hover:text-[#a4722c] transition-colors"
         >
-          <h3 className="font-bold text-heading text-sm uppercase tracking-wider">Occasions</h3>
+          <h3 className="font-bold text-[#1a1a1a] text-sm uppercase tracking-wider">Occasions</h3>
           <svg
             className={`w-5 h-5 transition-transform ${expandedSections.occasions ? "rotate-180" : ""}`}
             fill="none"
@@ -69,9 +69,9 @@ export function FilterSidebar({
                   type="checkbox"
                   checked={selectedOccasions.includes(occasion)}
                   onChange={() => onOccasionChange(occasion)}
-                  className="w-4 h-4 text-primary rounded cursor-pointer"
+                  className="w-4 h-4 text-[#a4722c] rounded cursor-pointer"
                 />
-                <span className="text-sm text-body group-hover:text-primary transition-colors">
+                <span className="text-sm text-[#555] group-hover:text-[#a4722c] transition-colors">
                   {occasion}
                 </span>
               </label>
@@ -81,12 +81,12 @@ export function FilterSidebar({
       </div>
 
       {/* Recipients Filter */}
-      <div className="bg-white rounded-lg p-4 border border-border">
+      <div className="bg-white rounded-lg p-4 border border-[#ede8df]">
         <button
           onClick={() => toggleSection("recipients")}
-          className="w-full flex items-center justify-between mb-4 hover:text-primary transition-colors"
+          className="w-full flex items-center justify-between mb-4 hover:text-[#a4722c] transition-colors"
         >
-          <h3 className="font-bold text-heading text-sm uppercase tracking-wider">For Whom</h3>
+          <h3 className="font-bold text-[#1a1a1a] text-sm uppercase tracking-wider">For Whom</h3>
           <svg
             className={`w-5 h-5 transition-transform ${expandedSections.recipients ? "rotate-180" : ""}`}
             fill="none"
@@ -105,9 +105,9 @@ export function FilterSidebar({
                   type="checkbox"
                   checked={selectedRecipients.includes(recipient)}
                   onChange={() => onRecipientChange(recipient)}
-                  className="w-4 h-4 text-primary rounded cursor-pointer"
+                  className="w-4 h-4 text-[#a4722c] rounded cursor-pointer"
                 />
-                <span className="text-sm text-body group-hover:text-primary transition-colors">
+                <span className="text-sm text-[#555] group-hover:text-[#a4722c] transition-colors">
                   For {recipient}
                 </span>
               </label>
@@ -118,18 +118,18 @@ export function FilterSidebar({
 
       {/* Active Filters Display */}
       {hasActiveFilters && (
-        <div className="bg-primary/5 rounded-lg p-4 border border-primary/20">
-          <p className="text-xs font-semibold text-primary mb-3">Active Filters:</p>
+        <div className="bg-[#f9f3ee] rounded-lg p-4 border border-[#e8dcc8]">
+          <p className="text-xs font-semibold text-[#a4722c] mb-3">Active Filters:</p>
           <div className="space-y-2">
             {selectedOccasions.map((occasion) => (
               <div
                 key={occasion}
-                className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full text-xs text-primary font-medium"
+                className="inline-flex items-center gap-2 px-3 py-1 bg-[#a4722c]/10 rounded-full text-xs text-[#a4722c] font-medium"
               >
                 {occasion}
                 <button
                   onClick={() => onOccasionChange(occasion)}
-                  className="hover:text-primary/70 transition-colors"
+                  className="hover:text-[#a4722c]/70 transition-colors"
                   aria-label="Remove filter"
                 >
                   ✕
@@ -139,12 +139,12 @@ export function FilterSidebar({
             {selectedRecipients.map((recipient) => (
               <div
                 key={recipient}
-                className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full text-xs text-primary font-medium"
+                className="inline-flex items-center gap-2 px-3 py-1 bg-[#a4722c]/10 rounded-full text-xs text-[#a4722c] font-medium"
               >
                 {recipient}
                 <button
                   onClick={() => onRecipientChange(recipient)}
-                  className="hover:text-primary/70 transition-colors"
+                  className="hover:text-[#a4722c]/70 transition-colors"
                   aria-label="Remove filter"
                 >
                   ✕

@@ -42,9 +42,9 @@ export function _FooterMain({ data }: Props) {
         {/* Brand Column */}
         <div className="flex flex-col gap-4">
           <Link href="/" className="inline-flex shrink-0 hover:opacity-80 transition-opacity">
-            <div className="relative h-48 w-48">
+            <div className="relative h-32 w-40">
               <Image
-                src="/logo/bg_remove_logo_white.png"
+                src="/logo/new-logo-removebg-preview.png"
                 alt="As-Sunnah Logo"
                 fill
                 className="object-contain"
