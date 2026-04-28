@@ -89,25 +89,27 @@ export function IndustryLeaders() {
           <GoldDivider />
         </div>
         <div
-          className="flex items-center justify-center gap-4 sm:gap-6"
+          className="flex items-center justify-center gap-4 sm:gap-6 relative"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
           <button
             onClick={handlePrev}
-            className="shrink-0 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-transparent border border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c]"
+            className="shrink-0 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] relative z-10 hover:z-20"
+            style={{ background: "transparent" }}
             aria-label="Previous"
           >
             ‹
           </button>
-          <div className="flex flex-1 items-center gap-3 sm:gap-5 justify-center overflow-hidden">
+          <div className="flex flex-1 items-center gap-3 sm:gap-5 justify-center overflow-visible">
             {getDisplayedLogos().map((src, i) => (
               <_LogoItem key={`${idx}-${i}`} src={src} index={i} />
             ))}
           </div>
           <button
             onClick={handleNext}
-            className="shrink-0 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-transparent border border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c]"
+            className="shrink-0 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] relative z-10 hover:z-20"
+            style={{ background: "transparent" }}
             aria-label="Next"
           >
             ›
