@@ -17,7 +17,15 @@ export function OurStory() {
           </h2>
           <GoldDivider />
         </div>
-        <SwiperRow gridClassName="grid-cols-1 md:grid-cols-3" spaceBetween={32}>
+        <SwiperRow
+          gridClassName="grid-cols-1 md:grid-cols-3"
+          spaceBetween={32}
+          mobileSlides={1}
+          tabletSlides={2}
+          autoplay={true}
+          autoplayDelay={3000}
+          showPagination={true}
+        >
           {stories.map(story => (
             <_StoryCard key={story.title} title={story.title} desc={story.desc} img={story.img} />
           ))}
