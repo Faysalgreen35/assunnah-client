@@ -89,13 +89,13 @@ export function IndustryLeaders() {
           <GoldDivider />
         </div>
         <div
-          className="flex items-center justify-center gap-1 sm:gap-2 md:gap-3 lg:gap-4 relative min-h-[140px] sm:min-h-[180px] md:min-h-[200px] w-full overflow-x-auto"
+          className="flex items-center justify-center gap-0 relative min-h-[140px] sm:min-h-[180px] md:min-h-[200px] w-full"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
           <button
             onClick={handlePrev}
-            className="flex h-12 w-12 sm:h-14 sm:w-14 md:h-15 md:w-15 lg:h-16 lg:w-16 shrink-0 items-center justify-center rounded-full border-4 border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] relative z-20 hover:z-30"
+            className="flex h-12 w-12 sm:h-14 sm:w-14 md:h-15 md:w-15 lg:h-16 lg:w-16 shrink-0 items-center justify-center rounded-full border-4 border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] relative z-20 hover:z-30 -mr-2 sm:-mr-3 md:-mr-4"
             style={{
               background: "transparent",
               fontSize: "clamp(18px, 5vw, 28px)"
@@ -104,14 +104,14 @@ export function IndustryLeaders() {
           >
             ‹
           </button>
-          <div className="flex items-center gap-2 sm:gap-3 md:gap-5 justify-center shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-5 justify-center">
             {getDisplayedLogos().map((src, i) => (
               <_LogoItem key={`${idx}-${i}`} src={src} index={i} />
             ))}
           </div>
           <button
             onClick={handleNext}
-            className="flex h-12 w-12 sm:h-14 sm:w-14 md:h-15 md:w-15 lg:h-16 lg:w-16 shrink-0 items-center justify-center rounded-full border-4 border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] relative z-20 hover:z-30"
+            className="flex h-12 w-12 sm:h-14 sm:w-14 md:h-15 md:w-15 lg:h-16 lg:w-16 shrink-0 items-center justify-center rounded-full border-4 border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] relative z-20 hover:z-30 -ml-2 sm:-ml-3 md:-ml-4"
             style={{
               background: "transparent",
               fontSize: "clamp(18px, 5vw, 28px)"
