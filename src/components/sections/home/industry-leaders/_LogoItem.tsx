@@ -9,12 +9,12 @@ interface Props {
 export const _LogoItem = memo(function LogoItem({ src, index }: Props) {
   return (
     <div
-      className="relative shrink-0 overflow-hidden bg-white transition-all duration-300"
+      className="relative shrink-0 bg-white transition-all duration-300"
       style={{
-        width: "clamp(130px, 25vw, 240px)",
+        width: "clamp(130px, 25vw, 198px)",
         height: "clamp(70px, 12vw, 100px)",
-        borderRadius: 999,
-        border: "1.5px solid #ddc9a0"
+        border: "1.5px solid #ddc9a0",
+        clipPath: "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)"
       }}
     >
       <Image
