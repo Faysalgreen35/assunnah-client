@@ -44,20 +44,18 @@ export function _CollectionStrip({ items }: Props) {
 
                 {/* Content wrapper */}
                 <div
-                  className="relative z-10 flex items-center justify-center w-full h-full"
+                  className="relative z-10 w-full h-full overflow-hidden"
                   style={{
                     clipPath: "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)"
                   }}
                 >
-                  <div className="relative h-[65px] w-[65px] overflow-hidden">
-                    <Image
-                      src={item.src}
-                      alt={item.label}
-                      fill
-                      className="object-contain group-hover:scale-110 transition-transform duration-300"
-                      sizes="65px"
-                    />
-                  </div>
+                  <Image
+                    src={item.src}
+                    alt={item.label}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-300"
+                    sizes="65px"
+                  />
                 </div>
               </div>
               <span className="mt-2 w-[90px] text-[10.5px] font-semibold leading-[13px] text-[#3d3d3d] group-hover:text-[#a4722c] transition-colors text-center">

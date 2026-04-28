@@ -44,7 +44,7 @@ export const OctagonalCard = memo(function Card({
 
         {/* Content wrapper */}
         <div
-          className="relative z-10 flex items-center justify-center w-full h-full overflow-hidden"
+          className="relative z-10 w-full h-full overflow-hidden"
           style={{
             clipPath: "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)"
           }}

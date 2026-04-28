@@ -34,7 +34,7 @@ export const _LogoItem = memo(function LogoItem({ src, index }: Props) {
 
       {/* Content wrapper */}
       <div
-        className="relative z-10 flex items-center justify-center w-full h-full"
+        className="relative z-10 flex items-center justify-center w-full h-full overflow-hidden"
         style={{
           padding: "12px",
           clipPath: "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)"
@@ -43,9 +43,8 @@ export const _LogoItem = memo(function LogoItem({ src, index }: Props) {
         <Image
           src={src}
           alt={`Partner ${index + 1}`}
-          width={100}
-          height={60}
-          className="object-contain"
+          fill
+          className="object-cover"
           sizes="(max-width: 640px) 130px, (max-width: 1024px) 160px, 240px"
         />
       </div>
