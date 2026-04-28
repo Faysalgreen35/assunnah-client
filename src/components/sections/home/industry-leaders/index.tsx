@@ -18,6 +18,7 @@ const infiniteLogos = [...logos, ...logos, ...logos];
 export function IndustryLeaders() {
   const [idx, setIdx] = useState(0);
   const [visibleItems, setVisibleItems] = useState(5);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -35,6 +36,22 @@ export function IndustryLeaders() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  useEffect(() => {
+    if (isHovered) return;
+
+    const interval = setInterval(() => {
+      setIdx((i) => {
+        const nextIdx = i + 1;
+        if (nextIdx >= logos.length * 2) {
+          return 0;
+        }
+        return nextIdx;
+      });
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isHovered]);
 
   const handleNext = useCallback(() => {
     setIdx((i) => {
@@ -71,7 +88,11 @@ export function IndustryLeaders() {
           <h2 className="text-2xl font-bold text-[#1a1a1a]" style={{ fontFamily: "Georgia, serif" }}>Our Trusted Industry Leaders</h2>
           <GoldDivider />
         </div>
-        <div className="flex items-center justify-center gap-4 sm:gap-6">
+        <div
+          className="flex items-center justify-center gap-4 sm:gap-6"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           <button
             onClick={handlePrev}
             className="shrink-0 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-transparent border border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c]"
