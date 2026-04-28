@@ -43,17 +43,24 @@ export function _CollectionStrip({ items }: Props) {
   const getDisplayedItems = () => {
     if (!isMobile) return items;
 
+    // Always ensure exactly 3 cards are displayed
     const displayed = [];
+    const itemsCount = items.length;
+
     for (let i = 0; i < 3; i++) {
-      displayed.push(items[(scrollIndex + i) % items.length]);
+      const index = (scrollIndex + i) % itemsCount;
+      displayed.push(items[index]);
     }
+
     return displayed;
   };
 
   const containerStyle = isMobile
     ? {
-        transform: `translateX(-${scrollIndex * (360 / 3)}px)`,
-        transition: "transform 0.5s ease-in-out",
+        display: "flex",
+        gap: "1rem",
+        width: "100%",
+        transition: "none",
       }
     : undefined;
 
@@ -61,10 +68,9 @@ export function _CollectionStrip({ items }: Props) {
     <div className="border-b border-[#ebebeb] bg-white">
       <div className="mx-auto max-w-[1280px] overflow-hidden px-5 py-4 scrollbar-none">
         <div
-          className="flex gap-4 sm:gap-5 md:gap-6 min-w-max mx-auto justify-center"
+          className={`flex gap-4 sm:gap-5 md:gap-6 ${isMobile ? "w-full justify-start" : "min-w-max mx-auto justify-center"}`}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          style={isMobile ? { display: "flex", width: "100%", ...containerStyle } : undefined}
         >
           {getDisplayedItems().map((item, idx) => (
             <Link
