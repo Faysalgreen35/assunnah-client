@@ -82,21 +82,21 @@ export function IndustryLeaders() {
   };
 
   return (
-    <section className="py-12" style={{ background: "#faf6ef" }}>
+    <section className="py-12 relative" style={{ background: "#faf6ef" }}>
       <div className="page-width">
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold text-[#1a1a1a]" style={{ fontFamily: "Georgia, serif" }}>Our Trusted Industry Leaders</h2>
           <GoldDivider />
         </div>
         <div
-          className="flex items-center justify-center gap-4 sm:gap-6 relative"
+          className="flex items-center justify-center gap-4 sm:gap-6 relative min-h-[140px] sm:min-h-[160px]"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
           <button
             onClick={handlePrev}
-            className="shrink-0 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] relative z-10 hover:z-20"
-            style={{ background: "transparent" }}
+            className="hidden lg:flex h-12 w-12 items-center justify-center rounded-full border border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] absolute z-10 hover:z-20"
+            style={{ background: "transparent", left: "200px", top: "50%", transform: "translateY(-50%)" }}
             aria-label="Previous"
           >
             ‹
@@ -108,8 +108,8 @@ export function IndustryLeaders() {
           </div>
           <button
             onClick={handleNext}
-            className="shrink-0 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] relative z-10 hover:z-20"
-            style={{ background: "transparent" }}
+            className="hidden lg:flex h-12 w-12 items-center justify-center rounded-full border border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] absolute z-10 hover:z-20"
+            style={{ background: "transparent", right: "200px", top: "50%", transform: "translateY(-50%)" }}
             aria-label="Next"
           >
             ›
