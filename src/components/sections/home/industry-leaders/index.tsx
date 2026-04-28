@@ -95,8 +95,13 @@ export function IndustryLeaders() {
         >
           <button
             onClick={handlePrev}
-            className="hidden lg:flex h-12 w-12 items-center justify-center rounded-full border border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] absolute z-10 hover:z-20"
-            style={{ background: "transparent", left: "200px", top: "50%", transform: "translateY(-50%)" }}
+            className="flex h-9 w-9 sm:h-10 sm:w-10 md:h-11 md:w-11 lg:h-12 lg:w-12 items-center justify-center rounded-full border-2 border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] absolute z-10 hover:z-20"
+            style={{
+              background: "transparent",
+              right: "clamp(10px, 2.5%, 200px)",
+              top: "50%",
+              transform: "translateY(-50%)"
+            }}
             aria-label="Previous"
           >
             ‹
@@ -108,8 +113,13 @@ export function IndustryLeaders() {
           </div>
           <button
             onClick={handleNext}
-            className="hidden lg:flex h-12 w-12 items-center justify-center rounded-full border border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] absolute z-10 hover:z-20"
-            style={{ background: "transparent", right: "200px", top: "50%", transform: "translateY(-50%)" }}
+            className="flex h-9 w-9 sm:h-10 sm:w-10 md:h-11 md:w-11 lg:h-12 lg:w-12 items-center justify-center rounded-full border-2 border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] absolute z-10 hover:z-20"
+            style={{
+              background: "transparent",
+              left: "clamp(10px, 2.5%, 200px)",
+              top: "50%",
+              transform: "translateY(-50%)"
+            }}
             aria-label="Next"
           >
             ›

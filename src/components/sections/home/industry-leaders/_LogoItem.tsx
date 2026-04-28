@@ -11,8 +11,8 @@ export const _LogoItem = memo(function LogoItem({ src, index }: Props) {
     <div
       className="relative shrink-0 bg-white transition-all duration-300 flex items-center justify-center"
       style={{
-        width: "clamp(130px, 25vw, 198px)",
-        height: "clamp(70px, 12vw, 100px)",
+        width: "clamp(150px, 30vw, 220px)",
+        height: "clamp(85px, 15vw, 120px)",
         border: "2.5px solid #ddc9a0",
         padding: "12px",
         clipPath: "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)"
