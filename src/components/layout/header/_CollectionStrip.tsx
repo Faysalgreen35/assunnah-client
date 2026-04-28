@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { ICollectionStripItem } from "@/types/navbar";
@@ -7,11 +10,63 @@ interface Props {
 }
 
 export function _CollectionStrip({ items }: Props) {
+  const [scrollIndex, setScrollIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile || isHovered) return;
+
+    const interval = setInterval(() => {
+      setScrollIndex((prev) => {
+        const nextIndex = prev + 1;
+        if (nextIndex >= items.length) {
+          return 0;
+        }
+        return nextIndex;
+      });
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isMobile, isHovered, items.length]);
+
+  const getDisplayedItems = () => {
+    if (!isMobile) return items;
+
+    const displayed = [];
+    for (let i = 0; i < 3; i++) {
+      displayed.push(items[(scrollIndex + i) % items.length]);
+    }
+    return displayed;
+  };
+
+  const containerStyle = isMobile
+    ? {
+        transform: `translateX(-${scrollIndex * (360 / 3)}px)`,
+        transition: "transform 0.5s ease-in-out",
+      }
+    : undefined;
+
   return (
     <div className="border-b border-[#ebebeb] bg-white">
-      <div className="mx-auto max-w-[1280px] overflow-x-auto px-5 py-4 scrollbar-none">
-        <div className="flex gap-4 sm:gap-5 md:gap-6 min-w-max mx-auto justify-center">
-          {items.map(item => (
+      <div className="mx-auto max-w-[1280px] overflow-hidden px-5 py-4 scrollbar-none">
+        <div
+          className="flex gap-4 sm:gap-5 md:gap-6 min-w-max mx-auto justify-center"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          style={isMobile ? { display: "flex", width: "100%", ...containerStyle } : undefined}
+        >
+          {getDisplayedItems().map((item, idx) => (
             <Link
               key={item.slug}
               href={`/collections/${item.slug}`}
