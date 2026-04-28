@@ -89,32 +89,32 @@ export function IndustryLeaders() {
           <GoldDivider />
         </div>
         <div
-          className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 relative min-h-[140px] sm:min-h-[180px] md:min-h-[200px]"
+          className="flex items-center justify-center gap-1 sm:gap-2 md:gap-3 lg:gap-4 relative min-h-[140px] sm:min-h-[180px] md:min-h-[200px] w-full overflow-x-auto"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
           <button
             onClick={handlePrev}
-            className="flex h-14 w-14 sm:h-15 sm:w-15 md:h-16 md:w-16 lg:h-16 lg:w-16 shrink-0 items-center justify-center rounded-full border-4 border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] relative z-20 hover:z-30"
+            className="flex h-12 w-12 sm:h-14 sm:w-14 md:h-15 md:w-15 lg:h-16 lg:w-16 shrink-0 items-center justify-center rounded-full border-4 border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] relative z-20 hover:z-30"
             style={{
               background: "transparent",
-              fontSize: "clamp(20px, 5vw, 28px)"
+              fontSize: "clamp(18px, 5vw, 28px)"
             }}
             aria-label="Previous"
           >
             ‹
           </button>
-          <div className="flex flex-1 items-center gap-3 sm:gap-5 justify-center overflow-visible">
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-5 justify-center shrink-0">
             {getDisplayedLogos().map((src, i) => (
               <_LogoItem key={`${idx}-${i}`} src={src} index={i} />
             ))}
           </div>
           <button
             onClick={handleNext}
-            className="flex h-14 w-14 sm:h-15 sm:w-15 md:h-16 md:w-16 lg:h-16 lg:w-16 shrink-0 items-center justify-center rounded-full border-4 border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] relative z-20 hover:z-30"
+            className="flex h-12 w-12 sm:h-14 sm:w-14 md:h-15 md:w-15 lg:h-16 lg:w-16 shrink-0 items-center justify-center rounded-full border-4 border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] relative z-20 hover:z-30"
             style={{
               background: "transparent",
-              fontSize: "clamp(20px, 5vw, 28px)"
+              fontSize: "clamp(18px, 5vw, 28px)"
             }}
             aria-label="Next"
           >
