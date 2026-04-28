@@ -85,13 +85,13 @@ export function IndustryLeaders() {
     <section className="py-12 relative overflow-visible" style={{ background: "#faf6ef" }}>
       <button
         onClick={handlePrev}
-        className="flex h-14 w-14 sm:h-16 sm:w-16 md:h-18 md:w-18 lg:h-20 lg:w-20 items-center justify-center rounded-full border-4 border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] absolute z-20 hover:z-30"
+        className="flex h-14 w-14 sm:h-15 sm:w-15 md:h-16 md:w-16 lg:h-16 lg:w-16 items-center justify-center rounded-full border-4 border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] absolute z-20 hover:z-30"
         style={{
           background: "transparent",
           left: "clamp(16px, 3%, 100px)",
-          top: "50%",
+          top: "calc(48px + 80px)",
           transform: "translateY(-50%)",
-          fontSize: "clamp(20px, 5vw, 32px)"
+          fontSize: "clamp(20px, 5vw, 28px)"
         }}
         aria-label="Previous"
       >
@@ -116,13 +116,13 @@ export function IndustryLeaders() {
       </div>
       <button
         onClick={handleNext}
-        className="flex h-14 w-14 sm:h-16 sm:w-16 md:h-18 md:w-18 lg:h-20 lg:w-20 items-center justify-center rounded-full border-4 border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] absolute z-20 hover:z-30"
+        className="flex h-14 w-14 sm:h-15 sm:w-15 md:h-16 md:w-16 lg:h-16 lg:w-16 items-center justify-center rounded-full border-4 border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] absolute z-20 hover:z-30"
         style={{
           background: "transparent",
           right: "clamp(16px, 3%, 100px)",
-          top: "50%",
+          top: "calc(48px + 80px)",
           transform: "translateY(-50%)",
-          fontSize: "clamp(20px, 5vw, 32px)"
+          fontSize: "clamp(20px, 5vw, 28px)"
         }}
         aria-label="Next"
       >
