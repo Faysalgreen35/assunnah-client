@@ -82,50 +82,52 @@ export function IndustryLeaders() {
   };
 
   return (
-    <section className="py-12 relative" style={{ background: "#faf6ef" }}>
+    <section className="py-12 relative overflow-visible" style={{ background: "#faf6ef" }}>
+      <button
+        onClick={handlePrev}
+        className="flex h-14 w-14 sm:h-16 sm:w-16 md:h-18 md:w-18 lg:h-20 lg:w-20 items-center justify-center rounded-full border-4 border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] absolute z-20 hover:z-30"
+        style={{
+          background: "transparent",
+          left: "clamp(16px, 3%, 100px)",
+          top: "50%",
+          transform: "translateY(-50%)",
+          fontSize: "clamp(20px, 5vw, 32px)"
+        }}
+        aria-label="Previous"
+      >
+        ‹
+      </button>
       <div className="page-width">
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold text-[#1a1a1a]" style={{ fontFamily: "Georgia, serif" }}>Our Trusted Industry Leaders</h2>
           <GoldDivider />
         </div>
         <div
-          className="flex items-center justify-center gap-4 sm:gap-6 relative min-h-[140px] sm:min-h-[160px]"
+          className="flex items-center justify-center gap-4 sm:gap-6 relative min-h-[140px] sm:min-h-[180px] md:min-h-[200px]"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <button
-            onClick={handlePrev}
-            className="flex h-9 w-9 sm:h-10 sm:w-10 md:h-11 md:w-11 lg:h-12 lg:w-12 items-center justify-center rounded-full border-2 border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] absolute z-10 hover:z-20"
-            style={{
-              background: "transparent",
-              right: "clamp(10px, 2.5%, 200px)",
-              top: "50%",
-              transform: "translateY(-50%)"
-            }}
-            aria-label="Previous"
-          >
-            ‹
-          </button>
           <div className="flex flex-1 items-center gap-3 sm:gap-5 justify-center overflow-visible">
             {getDisplayedLogos().map((src, i) => (
               <_LogoItem key={`${idx}-${i}`} src={src} index={i} />
             ))}
           </div>
-          <button
-            onClick={handleNext}
-            className="flex h-9 w-9 sm:h-10 sm:w-10 md:h-11 md:w-11 lg:h-12 lg:w-12 items-center justify-center rounded-full border-2 border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] absolute z-10 hover:z-20"
-            style={{
-              background: "transparent",
-              left: "clamp(10px, 2.5%, 200px)",
-              top: "50%",
-              transform: "translateY(-50%)"
-            }}
-            aria-label="Next"
-          >
-            ›
-          </button>
         </div>
       </div>
+      <button
+        onClick={handleNext}
+        className="flex h-14 w-14 sm:h-16 sm:w-16 md:h-18 md:w-18 lg:h-20 lg:w-20 items-center justify-center rounded-full border-4 border-[#ddc9a0] text-[#a4722c] transition hover:bg-[#a4722c] hover:text-white hover:border-[#a4722c] absolute z-20 hover:z-30"
+        style={{
+          background: "transparent",
+          right: "clamp(16px, 3%, 100px)",
+          top: "50%",
+          transform: "translateY(-50%)",
+          fontSize: "clamp(20px, 5vw, 32px)"
+        }}
+        aria-label="Next"
+      >
+        ›
+      </button>
     </section>
   );
 }
