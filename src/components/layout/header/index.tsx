@@ -7,7 +7,7 @@ import type { INavItem, ICollectionStripItem } from "@/types/navbar";
 import { _AnnouncementBar } from "./_AnnouncementBar";
 import { _MainBar } from "./_MainBar";
 import { _MegaNavBar } from "./_MegaNavBar";
-import { _CollectionStrip } from "./_CollectionStrip";
+import { CollectionStrip } from "./_CollectionStrip";
 import { _MobileDrawer } from "./_MobileDrawer";
 
 const navItems = navMenuData as INavItem[];
@@ -22,7 +22,7 @@ export function Header() {
       <_AnnouncementBar />
       <_MainBar onMenuToggle={() => setMobileOpen(v => !v)} />
       <_MegaNavBar navItems={navItems} />
-      <_CollectionStrip items={stripItems} />
+      <CollectionStrip items={stripItems} />
       {mobileOpen && (
         <_MobileDrawer navItems={navItems} onClose={() => setMobileOpen(false)} />
       )}

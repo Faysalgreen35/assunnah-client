@@ -9,7 +9,7 @@ interface Props {
   items: ICollectionStripItem[];
 }
 
-export function _CollectionStrip({ items }: Props) {
+export function CollectionStrip({ items }: Props) {
   const [scrollIndex, setScrollIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
