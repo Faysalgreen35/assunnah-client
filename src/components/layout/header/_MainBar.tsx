@@ -58,16 +58,29 @@ export function _MainBar({ onMenuToggle }: Props) {
       {/* Top Row */}
       <div className="mx-auto max-w-[1280px] px-5 py-0">
         <div className="flex items-center justify-between h-20">
-          {/* Left — Hamburger */}
-          <button
-            className="shrink-0 rounded p-1 text-body hover:text-primary lg:hidden"
-            onClick={onMenuToggle}
-            aria-label="Toggle menu"
-          >
-            <svg width="22" height="18" viewBox="0 0 22 18" fill="none">
-              <path d="M1 1h20M1 9h20M1 17h20" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
-            </svg>
-          </button>
+          {/* Left — Hamburger + Logo (Mobile) */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <button
+              className="shrink-0 rounded p-1 text-body hover:text-primary"
+              onClick={onMenuToggle}
+              aria-label="Toggle menu"
+            >
+              <svg width="22" height="18" viewBox="0 0 22 18" fill="none">
+                <path d="M1 1h20M1 9h20M1 17h20" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+              </svg>
+            </button>
+            <Link href="/" className="flex shrink-0 items-center">
+              <div className="relative h-12 w-20 hover:opacity-80 transition-opacity">
+                <Image
+                  src="/logo/new-logo-removebg-preview.png"
+                  alt="As-Sunnah Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </Link>
+          </div>
 
           {/* Desktop Left — Location pill + Search */}
           <div className="hidden md:flex flex-1 items-center gap-3 min-w-0">
@@ -94,8 +107,8 @@ export function _MainBar({ onMenuToggle }: Props) {
             </div>
           </div>
 
-          {/* Center — Logo */}
-          <Link href="/" className="flex shrink-0 items-center">
+          {/* Desktop Center — Logo */}
+          <Link href="/" className="hidden md:flex shrink-0 items-center">
             <div className="relative h-16 w-24 hover:opacity-80 transition-opacity">
               <Image
                 src="/logo/new-logo-removebg-preview.png"

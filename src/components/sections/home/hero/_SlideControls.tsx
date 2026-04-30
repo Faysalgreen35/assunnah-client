@@ -8,34 +8,18 @@ interface Props {
   onNext: () => void;
 }
 
-export const _SlideControls = memo(function SlideControls({ total, active, onDot, onPrev, onNext }: Props) {
+export const _SlideControls = memo(function SlideControls({ total, active, onDot }: Props) {
   return (
-    <>
-      {/* Dot indicators */}
-      <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 gap-2 z-10">
-        {Array.from({ length: total }).map((_, i) => (
-          <button
-            key={i}
-            onClick={() => onDot(i)}
-            className={`h-1.5 rounded-full transition-all ${i === active ? "w-8 bg-white" : "w-2 bg-white/50"}`}
-            aria-label={`Go to slide ${i + 1}`}
-          />
-        ))}
-      </div>
-
-      {/* Prev */}
-      <button
-        onClick={onPrev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/20 hover:bg-black/40 text-white text-2xl transition-colors"
-        aria-label="Previous slide"
-      >‹</button>
-
-      {/* Next */}
-      <button
-        onClick={onNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/20 hover:bg-black/40 text-white text-2xl transition-colors"
-        aria-label="Next slide"
-      >›</button>
-    </>
+    <div className="w-full flex justify-center gap-4 py-8 pb-16 bg-white border-t border-gray-200 relative z-20">
+      {Array.from({ length: total }).map((_, i) => (
+        <button
+          key={i}
+          onClick={() => onDot(i)}
+          className={`rounded-full transition-all cursor-pointer hover:scale-110 ${i === active ? "h-4 w-12" : "h-4 w-4 bg-gray-300 hover:bg-gray-400"}`}
+          style={i === active ? { backgroundColor: "#a4722c" } : {}}
+          aria-label={`Go to slide ${i + 1}`}
+        />
+      ))}
+    </div>
   );
 });

@@ -66,9 +66,9 @@ export function _CollectionStrip({ items }: Props) {
 
   return (
     <div className="border-b border-[#ebebeb] bg-white">
-      <div className="mx-auto max-w-[1280px] overflow-hidden px-5 py-4 scrollbar-none">
+      <div className={`mx-auto overflow-hidden py-4 scrollbar-none ${isMobile ? "px-0" : "max-w-[1280px] px-5"}`}>
         <div
-          className={`flex gap-4 sm:gap-5 md:gap-6 ${isMobile ? "w-full justify-start" : "min-w-max mx-auto justify-center"}`}
+          className={`flex gap-4 sm:gap-5 md:gap-6 ${isMobile ? "pl-8 pr-8 w-full justify-start" : "min-w-max mx-auto justify-center px-5"}`}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >

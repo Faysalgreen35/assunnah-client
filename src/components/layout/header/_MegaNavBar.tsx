@@ -225,7 +225,7 @@ export function _MegaNavBar({ navItems }: Props) {
       </AnimatePresence>
 
       {/* Mobile Hamburger Menu - Coming Soon */}
-      <div className="md:hidden bg-[#f5efe6] border-b border-[#e8ddd1] px-4 py-4">
+      {/* <div className="md:hidden bg-[#f5efe6] border-b border-[#e8ddd1] px-4 py-4">
         <button className="text-[#3d3d3d] hover:text-[#8b6f47]">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <line x1="3" y1="6" x2="21" y2="6" />
@@ -233,7 +233,7 @@ export function _MegaNavBar({ navItems }: Props) {
             <line x1="3" y1="18" x2="21" y2="18" />
           </svg>
         </button>
-      </div>
+      </div> */}
     </>
   );
 }

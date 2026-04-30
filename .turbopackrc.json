@@ -1,0 +1,7 @@
+{
+  "cacheDir": ".turbopack",
+  "globalPassthrough": false,
+  "remoteCache": {
+    "enabled": false
+  }
+}

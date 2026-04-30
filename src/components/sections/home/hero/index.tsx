@@ -17,17 +17,21 @@ export function HeroSlideshow() {
   const next = useCallback(() => setActive(a => (a + 1) % slidesData.length), []);
 
   return (
-    <div className="relative w-full overflow-hidden md:h-[520px] h-64">
-      {slidesData.map((s, i) => (
-        <_Slide key={s.id} img={s.img} title={s.title} active={i === active} />
-      ))}
-      <_SlideControls
-        total={slidesData.length}
-        active={active}
-        onDot={setActive}
-        onPrev={prev}
-        onNext={next}
-      />
-    </div>
+    <>
+      <div className="relative w-full overflow-hidden md:h-[520px] h-48">
+        {slidesData.map((s, i) => (
+          <_Slide key={s.id} img={s.img} title={s.title} active={i === active} />
+        ))}
+      </div>
+      <div className="w-full">
+        <_SlideControls
+          total={slidesData.length}
+          active={active}
+          onDot={setActive}
+          onPrev={prev}
+          onNext={next}
+        />
+      </div>
+    </>
   );
 }

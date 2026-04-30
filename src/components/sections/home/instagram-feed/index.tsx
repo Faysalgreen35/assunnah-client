@@ -16,7 +16,9 @@ export function InstagramFeed() {
         </div>
         <div className="flex gap-4 justify-center overflow-x-auto scrollbar-none pb-2">
           {feedImages.map((src, idx) => (
-            <_FeedCard key={idx} src={src} index={idx} />
+            <div key={idx} className={idx === 0 ? "" : "hidden md:block"}>
+              <_FeedCard src={src} index={idx} />
+            </div>
           ))}
         </div>
         <div className="mt-8 text-center">

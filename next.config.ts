@@ -7,11 +7,13 @@ const nextConfig: NextConfig = {
     pagesBufferLength: 5,
   },
   experimental: {
-    optimizePackageImports: ["@nextui-org/react"],
+    optimizePackageImports: ["@nextui-org/react", "@reduxjs/toolkit", "react-redux"],
   },
   compress: true,
   poweredByHeader: false,
-  turbopack: {},
+  turbopack: {
+    resolveAlias: {},
+  },
 };
 
 const withPWAConfig = withPWA({
